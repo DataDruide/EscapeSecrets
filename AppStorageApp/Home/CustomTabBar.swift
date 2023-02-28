@@ -7,62 +7,68 @@
 
 import SwiftUI
 
-enum Tab: String, CaseIterable {
-    case house
-    case book
-    case person
-    case leaf
-    case folder
-}
-
-struct CustomTabBar: View {
-    @Binding var selectedTab: Tab
-    private var fillImage: String {
-        selectedTab.rawValue + ".fill"
-    }
-    private var tabColor: Color {
-        switch selectedTab {
-        case .house:
-            return .red
-        case .book:
-            return .indigo
-        case .person:
-            return .purple
-        case .leaf:
-            return .green
-        case .folder:
-            return .orange
-        }
-    }
-    
+struct CustomTabView: View {
+    @State private var selection = 0
     
     var body: some View {
-        VStack {
-            HStack {
-                ForEach(Tab.allCases, id: \.rawValue) { tab in
-                    Spacer()
-                    Image(systemName: selectedTab == tab ? fillImage : tab.rawValue)
-                        .scaleEffect(tab == selectedTab ? 1.25 : 1.0)
-                        .foregroundColor(tab == selectedTab ? tabColor : .gray)
-                        .font(.system(size: 20))
-                        .onTapGesture {
-                            withAnimation(.easeInOut(duration: 0.1)) {
-                                selectedTab = tab
-                            }
-                        }
-                    Spacer()
+        TabView(selection: $selection) {
+            Text("View 1")
+                .tabItem {
+                    VStack {
+                        Image(systemName: "1.circle")
+                        Home()
+                    }
                 }
-            }
-            .frame(width: nil, height: 60)
-            .background(.thinMaterial)
-            .cornerRadius(20)
-            .padding()
+                .tag(0)
+            
+            Text("View 2")
+                .tabItem {
+                    VStack {
+                        Image(systemName: "2.circle")
+                        PlaneView()
+                    }
+                }
+                .tag(1)
+            
+            Text("View 3")
+                .tabItem {
+                    VStack {
+                        Image(systemName: "3.circle")
+                        ProfilView()
+                    }
+                }
+                .tag(2)
+            
+            Text("View 4")
+                .tabItem {
+                    VStack {
+                        Image(systemName: "4.circle")
+                        JobView()
+                    }
+                }
+                .tag(3)
+            Text("View 4")
+                .tabItem {
+                    VStack {
+                        Image(systemName: "4.circle")
+                        HotelView()
+                    }
+                }
+                .tag(4)
+            Text("View 4")
+                .tabItem {
+                    VStack {
+                        Image(systemName: "4.circle")
+                        Text("View 4")
+                    }
+                }
+                .tag(5)
         }
     }
 }
 
-struct CustomTabBar_Previews: PreviewProvider {
+struct CustomTabView_Previews: PreviewProvider {
     static var previews: some View {
-        CustomTabBar(selectedTab: .constant(.house))
+        CustomTabView()
     }
 }
