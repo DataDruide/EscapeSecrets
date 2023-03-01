@@ -17,7 +17,6 @@
 		E721332F29ADB5300062D3FF /* OnBoardingPageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721332E29ADB5300062D3FF /* OnBoardingPageOne.swift */; };
 		E721333129ADB5440062D3FF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333029ADB5440062D3FF /* MainView.swift */; };
 		E721333329ADB5520062D3FF /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333229ADB5520062D3FF /* MainAppView.swift */; };
-		E721333629ADE8060062D3FF /* CreateFlightPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333529ADE8060062D3FF /* CreateFlightPassView.swift */; };
 		E721333929ADE8B50062D3FF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333829ADE8B50062D3FF /* SplashView.swift */; };
 		E7D48B8029ADEECB008C6B41 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48B7F29ADEECB008C6B41 /* LoginView.swift */; };
 		E7D48B8329AE1821008C6B41 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48B8229AE1821008C6B41 /* RoundedButton.swift */; };
@@ -35,12 +34,9 @@
 		E7D48BB129AE30CC008C6B41 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E7D48BB029AE30CC008C6B41 /* FirebaseStorage */; };
 		E7D48BB329AE30CC008C6B41 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = E7D48BB229AE30CC008C6B41 /* FirebaseStorageCombine-Community */; };
 		E7D48BB529AE34D0008C6B41 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E7D48BB429AE34CF008C6B41 /* GoogleService-Info.plist */; };
-		E7D48BB729AE4403008C6B41 /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48BB629AE4403008C6B41 /* CustomTabBar.swift */; };
-		E7D48BBA29AE50B6008C6B41 /* PlaneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48BB929AE50B6008C6B41 /* PlaneView.swift */; };
 		E7D48BBD29AE50E0008C6B41 /* Amadeus in Frameworks */ = {isa = PBXBuildFile; productRef = E7D48BBC29AE50E0008C6B41 /* Amadeus */; };
 		E7D48BC029AE5114008C6B41 /* FlightSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48BBF29AE5114008C6B41 /* FlightSearchViewModel.swift */; };
 		E7D48BC229AE523D008C6B41 /* ProfilView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48BC129AE523D008C6B41 /* ProfilView.swift */; };
-		E7D48BC529AE5297008C6B41 /* JobView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48BC429AE5297008C6B41 /* JobView.swift */; };
 		E7D48BC729AE52BC008C6B41 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48BC629AE52BC008C6B41 /* EmptyStateView.swift */; };
 		E7D48BC929AE52E9008C6B41 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48BC829AE52E9008C6B41 /* SearchBar.swift */; };
 		E7D48BCB29AE530A008C6B41 /* JobView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48BCA29AE530A008C6B41 /* JobView2.swift */; };
@@ -51,6 +47,14 @@
 		E7D48BD629AE53C4008C6B41 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48BD529AE53C4008C6B41 /* ModelData.swift */; };
 		E7D48BD929AE5426008C6B41 /* HotelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48BD829AE5426008C6B41 /* HotelView.swift */; };
 		E7D48BDC29AE5459008C6B41 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E7D48BDB29AE5459008C6B41 /* Alamofire */; };
+		E7F47BE929AEC1FB000D9CA4 /* ReiseZieleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BE829AEC1FB000D9CA4 /* ReiseZieleViewModel.swift */; };
+		E7F47BEB29AEC249000D9CA4 /* ReiseZieleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BEA29AEC249000D9CA4 /* ReiseZieleModel.swift */; };
+		E7F47BED29AEC384000D9CA4 /* ShowHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BEC29AEC384000D9CA4 /* ShowHomeView.swift */; };
+		E7F47BEF29AEC3CB000D9CA4 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BEE29AEC3CB000D9CA4 /* ItemListView.swift */; };
+		E7F47BF529AED238000D9CA4 /* HomeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BF429AED238000D9CA4 /* HomeRow.swift */; };
+		E7F47BF729AED439000D9CA4 /* PlaneRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BF629AED439000D9CA4 /* PlaneRow.swift */; };
+		E7F47BF929AED49C000D9CA4 /* JobRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BF829AED49C000D9CA4 /* JobRow.swift */; };
+		E7F47BFB29AED4E6000D9CA4 /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BFA29AED4E6000D9CA4 /* ProfileRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +88,6 @@
 		E721332E29ADB5300062D3FF /* OnBoardingPageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageOne.swift; sourceTree = "<group>"; };
 		E721333029ADB5440062D3FF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E721333229ADB5520062D3FF /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
-		E721333529ADE8060062D3FF /* CreateFlightPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFlightPassView.swift; sourceTree = "<group>"; };
 		E721333829ADE8B50062D3FF /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		E7D48B7F29ADEECB008C6B41 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E7D48B8229AE1821008C6B41 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
@@ -92,11 +95,8 @@
 		E7D48B8829AE2A51008C6B41 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E7D48B8B29AE2EDB008C6B41 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E7D48BB429AE34CF008C6B41 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E7D48BB629AE4403008C6B41 /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
-		E7D48BB929AE50B6008C6B41 /* PlaneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneView.swift; sourceTree = "<group>"; };
 		E7D48BBF29AE5114008C6B41 /* FlightSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewModel.swift; sourceTree = "<group>"; };
 		E7D48BC129AE523D008C6B41 /* ProfilView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilView.swift; sourceTree = "<group>"; };
-		E7D48BC429AE5297008C6B41 /* JobView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobView.swift; sourceTree = "<group>"; };
 		E7D48BC629AE52BC008C6B41 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		E7D48BC829AE52E9008C6B41 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		E7D48BCA29AE530A008C6B41 /* JobView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobView2.swift; sourceTree = "<group>"; };
@@ -106,6 +106,14 @@
 		E7D48BD329AE53AB008C6B41 /* JobModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobModel.swift; sourceTree = "<group>"; };
 		E7D48BD529AE53C4008C6B41 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
 		E7D48BD829AE5426008C6B41 /* HotelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelView.swift; sourceTree = "<group>"; };
+		E7F47BE829AEC1FB000D9CA4 /* ReiseZieleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReiseZieleViewModel.swift; sourceTree = "<group>"; };
+		E7F47BEA29AEC249000D9CA4 /* ReiseZieleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReiseZieleModel.swift; sourceTree = "<group>"; };
+		E7F47BEC29AEC384000D9CA4 /* ShowHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHomeView.swift; sourceTree = "<group>"; };
+		E7F47BEE29AEC3CB000D9CA4 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		E7F47BF429AED238000D9CA4 /* HomeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRow.swift; sourceTree = "<group>"; };
+		E7F47BF629AED439000D9CA4 /* PlaneRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneRow.swift; sourceTree = "<group>"; };
+		E7F47BF829AED49C000D9CA4 /* JobRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRow.swift; sourceTree = "<group>"; };
+		E7F47BFA29AED4E6000D9CA4 /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +176,7 @@
 		E721330229ADABA30062D3FF /* AppStorageApp */ = {
 			isa = PBXGroup;
 			children = (
+				E7F47BF029AEC7A1000D9CA4 /* Profile */,
 				E7D48BD729AE5417008C6B41 /* Hotels */,
 				E7D48BD029AE5381008C6B41 /* Models */,
 				E7D48BC329AE5286008C6B41 /* Jobs */,
@@ -180,7 +189,6 @@
 				E7D48B8129AE1803008C6B41 /* RoundedButton */,
 				E7D48B7E29ADEEB8008C6B41 /* Login */,
 				E721333729ADE8A30062D3FF /* Splash */,
-				E721333429ADE7D20062D3FF /* KundenDatenSpeicherung */,
 				E721332D29ADB4FD0062D3FF /* OnBoarding */,
 				E721330329ADABA30062D3FF /* AppStorageAppApp.swift */,
 				E721330529ADABA30062D3FF /* ContentView.swift */,
@@ -226,14 +234,6 @@
 			path = OnBoarding;
 			sourceTree = "<group>";
 		};
-		E721333429ADE7D20062D3FF /* KundenDatenSpeicherung */ = {
-			isa = PBXGroup;
-			children = (
-				E721333529ADE8060062D3FF /* CreateFlightPassView.swift */,
-			);
-			path = KundenDatenSpeicherung;
-			sourceTree = "<group>";
-		};
 		E721333729ADE8A30062D3FF /* Splash */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,8 +269,10 @@
 		E7D48B8729AE2A46008C6B41 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E7F47BF329AED21A000D9CA4 /* HomeRow */,
 				E7D48B8829AE2A51008C6B41 /* Home.swift */,
-				E7D48BB629AE4403008C6B41 /* CustomTabBar.swift */,
+				E7F47BEC29AEC384000D9CA4 /* ShowHomeView.swift */,
+				E7F47BEE29AEC3CB000D9CA4 /* ItemListView.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -286,7 +288,7 @@
 		E7D48BB829AE50A1008C6B41 /* Plane */ = {
 			isa = PBXGroup;
 			children = (
-				E7D48BB929AE50B6008C6B41 /* PlaneView.swift */,
+				E7F47BF629AED439000D9CA4 /* PlaneRow.swift */,
 			);
 			path = Plane;
 			sourceTree = "<group>";
@@ -296,6 +298,7 @@
 			children = (
 				E7D48BBF29AE5114008C6B41 /* FlightSearchViewModel.swift */,
 				E7D48BCE29AE5353008C6B41 /* JobListViewModel.swift */,
+				E7F47BE829AEC1FB000D9CA4 /* ReiseZieleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -303,11 +306,11 @@
 		E7D48BC329AE5286008C6B41 /* Jobs */ = {
 			isa = PBXGroup;
 			children = (
-				E7D48BC429AE5297008C6B41 /* JobView.swift */,
 				E7D48BC629AE52BC008C6B41 /* EmptyStateView.swift */,
 				E7D48BC829AE52E9008C6B41 /* SearchBar.swift */,
 				E7D48BCA29AE530A008C6B41 /* JobView2.swift */,
 				E7D48BCC29AE5329008C6B41 /* JobDetailView.swift */,
+				E7F47BF829AED49C000D9CA4 /* JobRow.swift */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -318,6 +321,7 @@
 				E7D48BD129AE538F008C6B41 /* Model.swift */,
 				E7D48BD329AE53AB008C6B41 /* JobModel.swift */,
 				E7D48BD529AE53C4008C6B41 /* ModelData.swift */,
+				E7F47BEA29AEC249000D9CA4 /* ReiseZieleModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -328,6 +332,22 @@
 				E7D48BD829AE5426008C6B41 /* HotelView.swift */,
 			);
 			path = Hotels;
+			sourceTree = "<group>";
+		};
+		E7F47BF029AEC7A1000D9CA4 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				E7F47BFA29AED4E6000D9CA4 /* ProfileRow.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		E7F47BF329AED21A000D9CA4 /* HomeRow */ = {
+			isa = PBXGroup;
+			children = (
+				E7F47BF429AED238000D9CA4 /* HomeRow.swift */,
+			);
+			path = HomeRow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,28 +503,32 @@
 				E7D48BC729AE52BC008C6B41 /* EmptyStateView.swift in Sources */,
 				E721333129ADB5440062D3FF /* MainView.swift in Sources */,
 				E7D48BCF29AE5353008C6B41 /* JobListViewModel.swift in Sources */,
-				E7D48BC529AE5297008C6B41 /* JobView.swift in Sources */,
-				E721333629ADE8060062D3FF /* CreateFlightPassView.swift in Sources */,
+				E7F47BED29AEC384000D9CA4 /* ShowHomeView.swift in Sources */,
 				E7D48BD429AE53AB008C6B41 /* JobModel.swift in Sources */,
+				E7F47BF529AED238000D9CA4 /* HomeRow.swift in Sources */,
 				E7D48BC229AE523D008C6B41 /* ProfilView.swift in Sources */,
 				E721332F29ADB5300062D3FF /* OnBoardingPageOne.swift in Sources */,
-				E7D48BB729AE4403008C6B41 /* CustomTabBar.swift in Sources */,
 				E7D48B8C29AE2EDB008C6B41 /* AuthService.swift in Sources */,
-				E7D48BBA29AE50B6008C6B41 /* PlaneView.swift in Sources */,
 				E7D48B8929AE2A51008C6B41 /* Home.swift in Sources */,
 				E7D48BD629AE53C4008C6B41 /* ModelData.swift in Sources */,
 				E721330629ADABA30062D3FF /* ContentView.swift in Sources */,
 				E7D48B8329AE1821008C6B41 /* RoundedButton.swift in Sources */,
 				E721333329ADB5520062D3FF /* MainAppView.swift in Sources */,
+				E7F47BF729AED439000D9CA4 /* PlaneRow.swift in Sources */,
 				E7D48BD229AE538F008C6B41 /* Model.swift in Sources */,
 				E7D48BCB29AE530A008C6B41 /* JobView2.swift in Sources */,
 				E721330429ADABA30062D3FF /* AppStorageAppApp.swift in Sources */,
+				E7F47BF929AED49C000D9CA4 /* JobRow.swift in Sources */,
+				E7F47BE929AEC1FB000D9CA4 /* ReiseZieleViewModel.swift in Sources */,
 				E7D48BCD29AE5329008C6B41 /* JobDetailView.swift in Sources */,
 				E7D48B8029ADEECB008C6B41 /* LoginView.swift in Sources */,
+				E7F47BFB29AED4E6000D9CA4 /* ProfileRow.swift in Sources */,
 				E7D48BC929AE52E9008C6B41 /* SearchBar.swift in Sources */,
 				E721333929ADE8B50062D3FF /* SplashView.swift in Sources */,
+				E7F47BEF29AEC3CB000D9CA4 /* ItemListView.swift in Sources */,
 				E7D48BD929AE5426008C6B41 /* HotelView.swift in Sources */,
 				E7D48B8629AE2A06008C6B41 /* SignUp.swift in Sources */,
+				E7F47BEB29AEC249000D9CA4 /* ReiseZieleModel.swift in Sources */,
 				E7D48BC029AE5114008C6B41 /* FlightSearchViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

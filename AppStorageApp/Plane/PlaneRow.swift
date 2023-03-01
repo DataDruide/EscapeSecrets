@@ -1,9 +1,13 @@
 //
-//  PlaneView.swift
+//  PlaneRow.swift
 //  AppStorageApp
 //
-//  Created by Marcel Zimmermann on 28.02.23.
+//  Created by Marcel Zimmermann on 01.03.23.
 //
+
+
+import SwiftUI
+
 
 import SwiftUI
 import Combine
@@ -11,8 +15,8 @@ import Amadeus
 import Foundation
 
 
-struct PlaneView: View {
-
+struct PlaneRow: View {
+    
     // Erstellen einer Instanz von FlightSearchViewModel als StateObject, um ihre Eigenschaften zwischen den Ansichtsaktualisierungen zu erhalten
     @StateObject var viewModel = FlightSearchViewModel()
     

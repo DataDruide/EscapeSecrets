@@ -1,9 +1,11 @@
 //
-//  CreateFlightPassView.swift
+//  ProfileRow.swift
 //  AppStorageApp
 //
-//  Created by Marcel Zimmermann on 28.02.23.
+//  Created by Marcel Zimmermann on 01.03.23.
 //
+
+
 
 import SwiftUI
 
@@ -17,9 +19,7 @@ struct Settings {
     static let isSubscribedKey = "isSubscriper"
 
 }
-
-
-struct CreateFlightPassView: View {
+struct ProfileRow: View {
     
     // Persönliche Daten
     @AppStorage(Settings.firstNameKey) var firstname = ""
@@ -32,8 +32,6 @@ struct CreateFlightPassView: View {
     @AppStorage(Settings.childrens) var childrens = ""
     
     @AppStorage(Settings.isSubscribedKey) var isSubscriber = false
-
-
 
     var body: some View {
         NavigationView {
@@ -65,11 +63,5 @@ struct CreateFlightPassView: View {
             }
             .navigationTitle("AppSpeicher")
         }
-    }
-}
-
-struct CreateFlightPassView_Previews: PreviewProvider {
-    static var previews: some View {
-        CreateFlightPassView()
     }
 }

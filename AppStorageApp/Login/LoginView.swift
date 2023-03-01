@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    
+    @EnvironmentObject var authService : AuthService
     // State Variablen weil wir ihren Wert verfolgen wollen
     @State var color = Color.black.opacity(0.7)
     @State var email = ""
@@ -83,7 +83,7 @@ struct LoginView: View {
                     .padding()
                     
                     Button(action: {
-                        Home()
+                        authService.signIn(email: email, password: passwort)
                     }) {
                         Text("Login")
                             .foregroundColor(.black)

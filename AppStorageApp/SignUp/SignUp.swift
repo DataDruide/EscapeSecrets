@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SignUp: View {
-
+    @EnvironmentObject var authService : AuthService
     // State Variablen weil wir ihren Wert verfolgen wollen
     @State var color = Color.black.opacity(0.7)
     @State var email = ""
@@ -90,17 +90,14 @@ struct SignUp: View {
                     .background(RoundedRectangle(cornerRadius: 4).stroke(self.passwort != "" ? Color("Color") : self.color,lineWidth: 2))
                     .padding(10)
                     
-                    Button(action: {
-                        self.show.toggle()
-                    }){
-                        Text("Register")
-                            .foregroundColor(.black)
-                            .padding(.vertical)
-                            .frame(width: UIScreen.main.bounds.width - 50)
+                    Button("Register"){
+                        authService.signUp(email: email, password: passwort)
                     }
-                    .background(Color.black)
+                    .background(Color.orange)
                     .cornerRadius(10)
                     .padding(.top,25)
+                    .foregroundColor(Color.white)
+
                    
                 }
                 .padding(.horizontal, 25)

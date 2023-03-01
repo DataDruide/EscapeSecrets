@@ -20,7 +20,7 @@ struct SplashView: View {
             ContentView(show: $show)
         } else {
             ZStack {
-                Color.yellow.opacity(0.1)
+                Image("willcomebild")
                     .ignoresSafeArea()
                 VStack {
                     VStack {
