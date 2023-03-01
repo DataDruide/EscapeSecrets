@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseAuth
 
+
 final class AuthService: ObservableObject{
     var user :User?{
         didSet{

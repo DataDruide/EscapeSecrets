@@ -242,6 +242,13 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
+		E793FA5329AF3FA3000B0B15 /* Profil */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profil;
+			sourceTree = "<group>";
+		};
 		E7D48B7E29ADEEB8008C6B41 /* Login */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +325,7 @@
 		E7D48BD029AE5381008C6B41 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E793FA5329AF3FA3000B0B15 /* Profil */,
 				E7D48BD129AE538F008C6B41 /* Model.swift */,
 				E7D48BD329AE53AB008C6B41 /* JobModel.swift */,
 				E7D48BD529AE53C4008C6B41 /* ModelData.swift */,

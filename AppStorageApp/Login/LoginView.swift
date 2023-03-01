@@ -10,7 +10,7 @@ import SwiftUI
 struct LoginView: View {
     @EnvironmentObject var authService : AuthService
     // State Variablen weil wir ihren Wert verfolgen wollen
-    @State var color = Color.black.opacity(0.7)
+   // @State var color = Color.black.opacity(0.7)
     @State var email = ""
     @State var passwort = ""
     @State var visible = false
@@ -30,38 +30,34 @@ struct LoginView: View {
                     Text("Log in to your account")
                         .font(.title)
                         .fontWeight(.bold)
-                        .foregroundColor(self.color)
+                        .foregroundColor(.gray)
                         
                     
-                    TextField("Email", text: self.$email)
+                    TextField("Email", text: $email)
                         .padding()
-                        .background(RoundedRectangle(cornerRadius: 4).stroke(self.email != "" ? Color("Color") : self.color,lineWidth: 2))
-                        .padding(25)
+                      //  .background(RoundedRectangle(cornerRadius: 4)
+                      //  .padding(25)
                     
                     HStack(spacing: 10) {
                         
                         VStack {
                             
                             if self.visible{
-                                TextField("Passwort", text: self.$passwort)
+                                TextField("Passwort", text: $passwort)
                             }
                             else{
-                                SecureField("Passwort", text: self.$passwort)
-
+                                SecureField("Passwort", text: $passwort)
                             }
                         }
-                        
                         Button(action: {
                             self.visible.toggle()
                         }) {
-                            
-                            Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill" )
-                                .foregroundColor(self.color)
+                            Image(systemName: visible ? "eye.slash.fill" : "eye.fill" )
+                               // .foregroundColor(self.color)
                         }
-                        
                     }
                     .padding()
-                    .background(RoundedRectangle(cornerRadius: 4).stroke(self.passwort != "" ? Color("Color") : self.color,lineWidth: 2))
+                   // .background(RoundedRectangle(cornerRadius: 4).stroke(self.passwort != "" ? Color("Color") : self.color,lineWidth: 2))
                     .padding(25)
                     
                     HStack {
@@ -77,8 +73,6 @@ struct LoginView: View {
                                 .foregroundColor(Color.black)
                                 .padding(25)
                         }
-                        
-                        
                     }
                     .padding()
                     
@@ -92,26 +86,9 @@ struct LoginView: View {
                     }
                     .background(Color.orange)
                     .cornerRadius(10)
-                    
-                    
                 }
-                
-                Button(action: {
-                    
-                }) {
-                  Text("Register")
-                    .fontWeight(.bold)
-                    .foregroundColor(Color.orange)
-                }
-                .padding()
             }
         }
     }
 }
 
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
-    }
-}
