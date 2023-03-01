@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+//MARK: einzelnes ReisezielItem
+
 struct ItemListView: View {
     let name: String
     let hotelStars: Int
@@ -44,7 +46,7 @@ struct ItemListView: View {
 
 struct ItemListView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemListView(name: "Hummus", hotelStars: 322,
-                     reiseImage: "IMGhummus")
+        ItemListView(name: "Star Deluxe Hotel", hotelStars: 322,
+                     reiseImage: "greece")
     }
 }

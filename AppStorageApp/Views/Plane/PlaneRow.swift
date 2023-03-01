@@ -5,10 +5,6 @@
 //  Created by Marcel Zimmermann on 01.03.23.
 //
 
-
-import SwiftUI
-
-
 import SwiftUI
 import Combine
 import Amadeus
@@ -25,15 +21,24 @@ struct PlaneRow: View {
         // NavigationView zur Darstellung von Navigationsleisten und -elementen
         NavigationView {
             // ZStack zur Anordnung von Elementen in einer Schichtung
-           
                 VStack {
+                    HStack{
+                        Image(systemName: "globe.americas")
+                            .padding()
+                        Spacer()
+                        Text("Flugsuche")
+                        Spacer()
+
+                        Image(systemName: "airplane.departure")
+                            .padding()
+
+                    }
                     // Button zur Auslösung der Flugsuche
                     Button(action: {
                         viewModel.fetchFlightDestinations {
-                            // Completion-Handler-Funktion, um die Ansicht nach der Abfrage zu aktualisieren
                         }
                     }) {
-                        Text("Fetch Flight Destinations")
+                        Text("Flug Suchen")
                             .padding()
                             .background(Color.orange.opacity(0.5)) // Anpassung der Transparenz
                             .cornerRadius(10) // Abgerundete Ecken
@@ -46,6 +51,7 @@ struct PlaneRow: View {
                         VStack(alignment: .center) {
                             Text("From: \(destination.origin)")
                                 .font(.headline)
+                                .multilineTextAlignment(.leading)
 
                             Text("To: \(destination.destination)")                                .font(.headline)
                             Text("Departure Date: \(destination.departureDate)")
@@ -74,3 +80,9 @@ struct PlaneRow: View {
         }
     }
 
+
+struct PlaneRow_Previews: PreviewProvider {
+    static var previews: some View {
+        PlaneRow()
+    }
+}

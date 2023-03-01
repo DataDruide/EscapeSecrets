@@ -93,6 +93,7 @@ struct SignUp: View {
                     Button("Register"){
                         authService.signUp(email: email, password: passwort)
                     }
+                    .frame(width: UIScreen.main.bounds.width - 50)
                     .background(Color.orange)
                     .cornerRadius(10)
                     .padding(.top,25)

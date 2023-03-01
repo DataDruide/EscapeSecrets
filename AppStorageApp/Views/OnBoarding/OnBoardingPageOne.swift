@@ -49,6 +49,7 @@ struct OnBoardingPageOne: View {
                             Text("Wenn Sie am Flughafen ankommen müssen\n Sie den CheckIn absolvieren,\n deshalb bitten wir Sie alle \n1,5 m Abstand zum nächsten Reisenden einzuhalten")
                                 .multilineTextAlignment(.center)
                                 .font(.system(size: 18))
+                                .fontWeight(.thin)
                                 .foregroundColor(.black)
                                 .animation(Animation.interpolatingSpring(stiffness: 40, damping: 7).delay(0.1))
                         }.frame(width: gp.frame(in: .global).width)
@@ -64,6 +65,7 @@ struct OnBoardingPageOne: View {
 
                             Text("Nach der Zollabfertigung geht es dann\n in die Wartehalle wo sie\n nochmals die Möglichkeit besitzen\n sich kleine Snacks und Getränke zukaufen\n und auf ihren Flieger zu warten")
                                 .multilineTextAlignment(.center)
+                                .fontWeight(.thin)
                                 .font(.system(size: 18))
 
                                 .padding()
@@ -83,8 +85,10 @@ struct OnBoardingPageOne: View {
 
 
                             Text("Beim Abflug bitten wir Sie alle noch\n solange an ihrem Platz zu bleiben\n bis die Sitzlichter über \nihnen erloschen sind")
+                                .fontWeight(.thin)
                                 .multilineTextAlignment(.center)
-                                .font(.system(size: 18))                 .padding()
+                                .font(.system(size: 18))
+                                .padding()
                                 .foregroundColor(.black)
                                 .fixedSize(horizontal: true, vertical: true)
                                 .animation(Animation.interpolatingSpring(stiffness: 40, damping: 7).delay(0.1))

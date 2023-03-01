@@ -12,7 +12,7 @@ struct LoginView: View {
     // State Variablen weil wir ihren Wert verfolgen wollen
    // @State var color = Color.black.opacity(0.7)
     @State var email = ""
-    @State var passwort = ""
+    @State var password = ""
     @State var visible = false
     
     var body: some View {
@@ -34,31 +34,27 @@ struct LoginView: View {
                         
                     
                     TextField("Email", text: $email)
-                        .padding()
-                      //  .background(RoundedRectangle(cornerRadius: 4)
-                      //  .padding(25)
+                        .padding(25)
                     
                     HStack(spacing: 10) {
                         
                         VStack {
                             
                             if self.visible{
-                                TextField("Passwort", text: $passwort)
+                                TextField("Passwort", text: $password)
                             }
                             else{
-                                SecureField("Passwort", text: $passwort)
+                                SecureField("Passwort", text: $password)
                             }
                         }
                         Button(action: {
                             self.visible.toggle()
                         }) {
                             Image(systemName: visible ? "eye.slash.fill" : "eye.fill" )
-                               // .foregroundColor(self.color)
                         }
                     }
                     .padding()
-                   // .background(RoundedRectangle(cornerRadius: 4).stroke(self.passwort != "" ? Color("Color") : self.color,lineWidth: 2))
-                    .padding(25)
+                  
                     
                     HStack {
                         
@@ -77,7 +73,11 @@ struct LoginView: View {
                     .padding()
                     
                     Button(action: {
-                        authService.signIn(email: email, password: passwort)
+                        authService.logIn(email: email, password: password)
+                        NavigationLink(destination: HomeRow()) {
+                            Text("Login")
+                            HomeRow()
+                        }
                     }) {
                         Text("Login")
                             .foregroundColor(.black)

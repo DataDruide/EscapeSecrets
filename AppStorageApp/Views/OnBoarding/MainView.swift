@@ -25,14 +25,15 @@ struct MainView: View {
     
     var body: some View {
         ZStack {
-            Image("neuHinter").opacity(0.4)
+            Image("neuHinter").opacity(0.65)
                 .ignoresSafeArea()
             
             VStack(spacing: 20) {
                 
-                Text("Plan your next Step")
-                    .font(.system(size: 34))
-                    .foregroundColor(.brown)
+                Text("Plan your next\nStep")
+                    .font(.system(size: 44))
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.orange)
                     .padding()
                 
                   
@@ -47,7 +48,7 @@ struct MainView: View {
                             .foregroundColor(.black)
                             .frame(maxWidth: 200)
                             .frame(height: 60)
-                            .background(Color.yellow).opacity(0.5)
+                            .background(Color.orange).opacity(0.8)
                             .cornerRadius(8)
                             .padding(.bottom, 15)
                         
@@ -70,7 +71,7 @@ struct MainView: View {
                             .foregroundColor(.black)
                             .frame(maxWidth: 200)
                             .frame(height: 60)
-                            .background(Color.yellow).opacity(0.5)
+                            .background(Color.orange).opacity(0.8)
                             .cornerRadius(8)
                             .padding(.bottom, 15)
                         
@@ -88,7 +89,7 @@ struct MainView: View {
                         .foregroundColor(.black)
                         .frame(maxWidth: 200)
                         .frame(height: 60)
-                        .background(Color.yellow).opacity(0.5)
+                        .background(Color.orange).opacity(0.8)
                         .cornerRadius(8)
                         .padding(.bottom, 15)
                 
@@ -104,9 +105,9 @@ struct MainView: View {
                     .foregroundColor(.black)
                     .frame(maxWidth: 200)
                     .frame(height: 60)
-                    .background(Color.yellow).opacity(0.5)
+                    .background(Color.orange).opacity(0.8)
                     .cornerRadius(8)
-                    .padding(.bottom, 15)
+                    .padding(.bottom, 65)
                 
                 
                     .sheet(isPresented: $showHome) {
@@ -114,7 +115,10 @@ struct MainView: View {
                         
                         
                     }
-                        
+                    Text("The Time is yours")
+                    .foregroundColor(Color.orange)
+                    .fontWeight(.semibold)
+                    .multilineTextAlignment(.center)
                         
                     }
                 }

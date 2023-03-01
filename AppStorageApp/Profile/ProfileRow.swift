@@ -35,6 +35,7 @@ struct ProfileRow: View {
 
     var body: some View {
         NavigationView {
+            
             VStack {
                 Form {
                     Section(header: Text("Persönliche Daten")){
@@ -62,6 +63,7 @@ struct ProfileRow: View {
                 }
             }
             .navigationTitle("AppSpeicher")
+            .background(Color.orange.opacity(0.55))
         }
     }
 }

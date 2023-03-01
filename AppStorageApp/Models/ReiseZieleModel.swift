@@ -13,4 +13,5 @@ struct ReiseZieleModel: Identifiable {
     let hotelStars: Int
     let description: String
     let reiseImage: String
+    let reiseURL: String
 }

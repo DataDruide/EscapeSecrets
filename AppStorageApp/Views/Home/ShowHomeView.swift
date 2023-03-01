@@ -15,8 +15,10 @@ struct ShowHomeView: View {
 
 
     var body: some View {
-       Text("ShowHomeView")
-            .font(.largeTitle)
+        ZStack{
+            Color.orange.opacity(0.35)
+                .ignoresSafeArea()
+         
             VStack {
                 ScrollView {
                     Text(.init(theDescription))
@@ -25,14 +27,14 @@ struct ShowHomeView: View {
                 
                 Button(action: {
                     
-
+                    
                 }) {
                     Text("Reiseangebote")
                         .font(.body)
                         .foregroundColor(Color.white)
                         .padding()
                         .frame(width: 150, height: 50)
-                        .background(Color.orange)
+                        .background(Color.orange).opacity(0.54)
                         .cornerRadius(10)
                 }
                 
@@ -41,27 +43,27 @@ struct ShowHomeView: View {
                 Spacer()
                 
                 Link(
-                    destination: URL(string: reiseURL)!,
+                    destination: URL(string: "https://www.example.com/TOS.html")!,
                     label: {
                         ZStack {
                             Image( imageName)
                                 .resizable()
                                 .scaledToFit()
                                 .cornerRadius(20)
-                                .scaleEffect(0.8)
+                                .scaleEffect(0.9)
                             
                             Text("Click image for more description")
                                 .foregroundColor(.white)
                                 .font(.headline)
                                 .padding()
                                 .background(
-                                Capsule()
-                                    .fill(Color.orange
-                                            .opacity(0.7))
+                                    Capsule()
+                                        .fill(Color.orange
+                                            .opacity(0.55))
                                 )
                         }
                     })
-                
+            }
             }
         }
     }
@@ -72,9 +74,12 @@ struct ShowHomeView_Previews: PreviewProvider {
         ShowHomeView(
             theDescription: """
 **Ingredients**
-- Über diese Unterkunft
 
-Genießen Sie den herrlichen Panoramablick auf den Strand Choeng Mon und die Insel Ko Fan. Die Villa Rapha ist eine moderne Luxusvilla mit privatem Infinity-Pool. Das Hotel liegt ideal in der bestehenden Wohnanlage Horizon Villas, nur wenige Gehminuten vom Strand Choeng Mon und eine kurze Fahrt von Chaweng, Fisherman's Village und dem Flughafen entfernt. 1000 Mbit/s Glasfaser-Breitband, WLAN, Netflix und IPTV mit Hunderten von internationalen Live-TV-Kanälen und kostenlosen Filmen auf Anfrage.
+Über diese Unterkunft
+
+Genießen Sie den herrlichen Panoramablick auf den Strand Choeng Mon und die Insel Ko Fan. Die Villa Rapha ist eine moderne Luxusvilla mit privatem Infinity-Pool. Das Hotel liegt ideal in der bestehenden Wohnanlage Horizon Villas, nur wenige Gehminuten vom Strand Choeng Mon und eine kurze Fahrt von Chaweng.
+
+ Fisherman's Village und dem Flughafen entfernt. 1000 Mbit/s Glasfaser-Breitband, WLAN, Netflix und IPTV mit Hunderten von internationalen Live-TV-Kanälen und kostenlosen Filmen auf Anfrage.
 
 Die Unterkunft
 
@@ -88,8 +93,8 @@ Live
 
 Im Herzen der Villa Rapha befindet sich der große offene Wohn- und Essbereich mit zweifachen Türen, die sich vollständig auf eine private Poolterrasse öffnen.
 """,
-            imageName: "schweden2",
-            reiseURL: "https://www.robinson.com")
+            imageName: "greece",
+            reiseURL: "https://www.inspiredtaste.net/15938/easy-and-smooth-hummus-recipe/")
     }
 }
 

@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct HomeRow: View {
     @EnvironmentObject var authService : AuthService
     @StateObject var reiseViewModel: ReiseZieleViewModel = ReiseZieleViewModel()
@@ -31,9 +29,16 @@ struct HomeRow: View {
                     Text("Hallo, \(authService.user?.email ?? "")!")
                           
                         Button("Log Out"){
-                            authService.signOut()
+                            authService.logOut()
                         }
+                        
                     }
                 }
             }
         }
+
+struct HomeRow_Previews: PreviewProvider {
+    static var previews: some View {
+        HomeRow()
+    }
+}

@@ -19,9 +19,12 @@ import Foundation
                 description: """
                 **Bezeichnung**
                 
-                - Die Alpenrepublik Ös
+                - Die Alpenrepublik Österreich steht für Sport und Schnee soweit das Auge reicht, die Idylle ist einfach einzigartig und auch die Reichen verlaufen sich regelmäßig hierher.
+                
+                - Deshalb haben wir hiermit genau das richtige für Sie 12 Wochen 4 Sterne mit All Inclusiv und einen Job mit dazu als Hausmeister in unserem Haus helfen sie wo sie halt gebraucht werden 
                 """,
-                reiseImage: "singapur"
+                reiseImage: "singapur",
+                reiseURL: "https://www.example.com/TOS.html"
             ),
             ReiseZieleModel(
                 name: "Schweiz",
@@ -31,7 +34,8 @@ import Foundation
                 
                 - Hotels
                 """,
-                reiseImage: "malaysia"
+                reiseImage: "malaysia",
+                reiseURL: "https://www.example.com/TOS.html"
             ),
             ReiseZieleModel(
                 name: "Schweden",
@@ -41,7 +45,8 @@ import Foundation
                 
                 - Das
                 """,
-                reiseImage: "marina"
+                reiseImage: "marina",
+                reiseURL: "https://www.example.com/TOS.html"
             ),
             ReiseZieleModel(
                 name: "Canada",
@@ -51,7 +56,8 @@ import Foundation
                 
                 - Highlights der Weltreise
                 """,
-                reiseImage: "trip card"
+                reiseImage: "trip card",
+                reiseURL: "https://www.example.com/TOS.html"
             ),
             ReiseZieleModel(
                 name: "Weltreise-Kreuzfahrt",
@@ -61,7 +67,8 @@ import Foundation
                 
                 - Eingeschlossene Leistungen
                 """,
-                reiseImage: "queenmary"
+                reiseImage: "queenmary",
+                reiseURL: "https://www.example.com/TOS.html"
             ),
             ReiseZieleModel(
                 name: "USA",
@@ -71,7 +78,8 @@ import Foundation
                 
                 - Dank der Nähe zu beliebten Sehenswürdigkeiten wie Merlion Park (0,7 km) und Little India (1,5 km) können Gäste des Peninsula Hotel Singapore d
                 """,
-                reiseImage: "burjKahlifa"
+                reiseImage: "burjKahlifa",
+                reiseURL: "https://www.inspiredtaste.net/15938/easy-and-smooth-hummus-recipe/"
             ),
             ReiseZieleModel(
                 name: "Greece",
@@ -82,7 +90,8 @@ import Foundation
                 - 1 (15-ounce) can chickpeas or 1 ½ cups (250 grams) cooked chickpeas
                 - 1/4 cup (60 ml) fresh lemon juice, 1 large lemon
                 """,
-                reiseImage: "greece"
+                reiseImage: "greece",
+                reiseURL: "https://www.inspiredtaste.net/15938/easy-and-smooth-hummus-recipe/"
             ),
             ReiseZieleModel(
                 name: "Thailand",
@@ -93,7 +102,8 @@ import Foundation
                 - Über diese Unterkunft
                 4 Schlafzimmer zu Hause, 4 Badezimmer, Kü
                 """,
-                reiseImage: "tailand"
+                reiseImage: "tailand",
+                reiseURL: "https://www.inspiredtaste.net/15938/easy-and-smooth-hummus-recipe/"
             ),
             ReiseZieleModel(
                 name: "Spanien",
@@ -105,7 +115,8 @@ import Foundation
                 Schö
                 HUTG-014398
                 """,
-                reiseImage: "spain"
+                reiseImage: "spain",
+                reiseURL: "https://www.inspiredtaste.net/15938/easy-and-smooth-hummus-recipe/"
             )
         ]
     }

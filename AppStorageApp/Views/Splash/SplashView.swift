@@ -29,7 +29,7 @@ struct SplashView: View {
                                               size: 26))
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color.brown)
-                        Image("applogo")
+                        Image("ren")
                     }
                     .scaleEffect(size)
                     .opacity(opacity)
