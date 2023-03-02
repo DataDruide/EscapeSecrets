@@ -20,7 +20,9 @@ class FlightSearchViewModel: ObservableObject {
     
     // Die Flugziele, die aus der API-Anfrage zurückgegeben werden, werden hier gespeichert
     @Published var flightDestinations = [FlightDestination]()
-    
+    @Published var destinationCode: String = "" // Neues @Published property hinzufügen
+    @Published var originCode: String = "" // Neues @Published property hinzufügen
+
     // Methode zum Abrufen der Flugziele aus der Amadeus-API
     func fetchFlightDestinations(completion: @escaping () -> Void) {
         amadeus.shopping.flightDestinations.get(params: ["origin": "MAD", "oneWay": "false", "nonStop": "false"]) { result in

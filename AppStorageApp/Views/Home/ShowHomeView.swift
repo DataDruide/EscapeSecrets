@@ -31,7 +31,7 @@ struct ShowHomeView: View {
                 }) {
                     Text("Reiseangebote")
                         .font(.body)
-                        .foregroundColor(Color.white)
+                        .foregroundColor(Color.indigo)
                         .padding()
                         .frame(width: 150, height: 50)
                         .background(Color.orange).opacity(0.54)
@@ -53,7 +53,7 @@ struct ShowHomeView: View {
                                 .scaleEffect(0.9)
                             
                             Text("Click image for more description")
-                                .foregroundColor(.white)
+                                .foregroundColor(.indigo)
                                 .font(.headline)
                                 .padding()
                                 .background(

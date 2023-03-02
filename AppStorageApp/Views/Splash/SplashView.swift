@@ -30,6 +30,7 @@ struct SplashView: View {
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color.brown)
                         Image("ren")
+                            .frame(width: 200, height: 200)
                     }
                     .scaleEffect(size)
                     .opacity(opacity)

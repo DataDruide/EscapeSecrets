@@ -21,6 +21,12 @@ struct EmptyStateView: View {
       Spacer()
     }
     .padding()
-    .foregroundColor(Color(.green))
+    .foregroundColor(Color(.systemOrange))
   }
+}
+
+struct EmptyStateView_Previews: PreviewProvider {
+    static var previews: some View {
+        EmptyStateView()
+    }
 }

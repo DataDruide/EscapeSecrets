@@ -9,10 +9,10 @@ import SwiftUI
 
 struct HomeRow: View {
     @EnvironmentObject var authService : AuthService
-    @StateObject var reiseViewModel: ReiseZieleViewModel = ReiseZieleViewModel()
+    @StateObject var reiseZieleModel: ReiseZieleViewModel = ReiseZieleViewModel()
     var body: some View {
         NavigationView {
-            List(self.reiseViewModel.reiseZieleModels) { item in
+            List(self.reiseZieleModel.reiseZieleModels) { item in
                 NavigationLink(destination: {
                     ShowHomeView(
                         theDescription: item.description,
@@ -24,21 +24,23 @@ struct HomeRow: View {
                         hotelStars: item.hotelStars,
                         reiseImage: item.reiseImage)
                 })
-            }.navigationTitle("Top Reisen")
-                    HStack {
-                    Text("Hallo, \(authService.user?.email ?? "")!")
-                          
-                        Button("Log Out"){
-                            authService.logOut()
-                        }
-                        
-                    }
+            }
+            .listStyle(.plain) // Für ein vollständiges Ausblenden benötigen Sie eine "plain"-ListStyle
+            .transition(.opacity) // Verwenden Sie die Opacity-Transition für die Ausblendung
+            .animation(.easeOut(duration: 0.5)) // Verwenden Sie die Ease-Out-Animation für eine sanfte Wirkung
+            .navigationTitle("Top Reisen")
+            VStack{
+                Text("Hallo, \(authService.user?.email ?? "")!")
+                Button("Log Out"){
+                    authService.signOut()
+                }
+            }
                 }
             }
         }
 
 struct HomeRow_Previews: PreviewProvider {
     static var previews: some View {
-        HomeRow()
+        HomeRow().environmentObject(AuthService())
     }
 }

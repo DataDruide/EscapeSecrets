@@ -34,12 +34,12 @@ struct ItemListView: View {
                 .cornerRadius(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.white, lineWidth: 1)
+                        .stroke(Color.indigo, lineWidth: 1)
                 )
                 .shadow(color: .white.opacity(0.7), radius: 10, x: 0, y: 0)
         }
         .padding(.horizontal)
-            .background(Color.black.cornerRadius(10))
+            .background(Color.gray.cornerRadius(10))
             
     }
 }

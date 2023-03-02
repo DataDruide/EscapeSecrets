@@ -14,7 +14,6 @@ struct MainView: View {
     @State private var showHome = false
 
     @State private var showLoginView = false
-    @State private var showSignUpView = false
     @State private var RestartOnboarding = false
     @State private var size = 0.8
     @State private var opacity = 0.5
@@ -59,28 +58,6 @@ struct MainView: View {
                                 
                             }
                         
-                        
-                        // 2 Button
-                        Button(action: {
-                            self.showSignUpView = true
-                        }) {
-                            Text("zum SignUp")
-                            
-                        }.padding()
-                            .accentColor(Color.orange)
-                            .foregroundColor(.black)
-                            .frame(maxWidth: 200)
-                            .frame(height: 60)
-                            .background(Color.orange).opacity(0.8)
-                            .cornerRadius(8)
-                            .padding(.bottom, 15)
-                        
-                        
-                            .sheet(isPresented: $showSignUpView) {
-                                SignUp(show: $show)
-                                
-                                
-                            }
                         
                         Button("Rewatch Onboarding"){
                             onBoarding.toggle()

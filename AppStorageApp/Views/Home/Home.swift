@@ -12,16 +12,17 @@ import SwiftUI
 struct Home: View {
     @StateObject var jobViewModel: JobListViewModel = JobListViewModel()
     @StateObject var flightViewModel: FlightSearchViewModel = FlightSearchViewModel()
-    @StateObject var reiseViewModel: ReiseZieleViewModel = ReiseZieleViewModel()
+    @StateObject var reiseZieleModel: ReiseZieleViewModel = ReiseZieleViewModel()
     var body: some View {
         TabView {
             
-            HomeRow(reiseViewModel: ReiseZieleViewModel())
+            HomeRow(reiseZieleModel: ReiseZieleViewModel())
             .tabItem {
                 VStack {
                     VStack {
                         Image(systemName: "house.fill")
                         Text("Home")
+
                     }
                        
 
