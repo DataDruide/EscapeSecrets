@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E70F67D429B0ED350041B808 /* OfferCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70F67D329B0ED350041B808 /* OfferCard.swift */; };
 		E721330429ADABA30062D3FF /* AppStorageAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721330329ADABA30062D3FF /* AppStorageAppApp.swift */; };
 		E721330629ADABA30062D3FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721330529ADABA30062D3FF /* ContentView.swift */; };
 		E721330829ADABA40062D3FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E721330729ADABA40062D3FF /* Assets.xcassets */; };
@@ -18,7 +19,6 @@
 		E721333129ADB5440062D3FF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333029ADB5440062D3FF /* MainView.swift */; };
 		E721333329ADB5520062D3FF /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333229ADB5520062D3FF /* MainAppView.swift */; };
 		E721333929ADE8B50062D3FF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333829ADE8B50062D3FF /* SplashView.swift */; };
-		E772A46B29AFF990005C01B6 /* FormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772A46A29AFF990005C01B6 /* FormField.swift */; };
 		E772A46D29B032C5005C01B6 /* PlaneCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772A46C29B032C5005C01B6 /* PlaneCard.swift */; };
 		E793FA9329AF8078000B0B15 /* InfoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E793FA9229AF8078000B0B15 /* InfoAlertView.swift */; };
 		E793FA9529AF8723000B0B15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E793FA9429AF8723000B0B15 /* GoogleService-Info.plist */; };
@@ -26,7 +26,6 @@
 		E793FA9B29AF885B000B0B15 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E793FA9A29AF885B000B0B15 /* FirebaseDatabase */; };
 		E793FA9D29AF885B000B0B15 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E793FA9C29AF885B000B0B15 /* FirebaseFirestore */; };
 		E793FA9F29AF885B000B0B15 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = E793FA9E29AF885B000B0B15 /* FirebaseStorage */; };
-		E793FAA129AF8B86000B0B15 /* BasicAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E793FAA029AF8B86000B0B15 /* BasicAuthService.swift */; };
 		E7D48B8029ADEECB008C6B41 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48B7F29ADEECB008C6B41 /* LoginView.swift */; };
 		E7D48B8329AE1821008C6B41 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48B8229AE1821008C6B41 /* RoundedButton.swift */; };
 		E7D48B8629AE2A06008C6B41 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48B8529AE2A06008C6B41 /* SignUp.swift */; };
@@ -73,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E70F67D329B0ED350041B808 /* OfferCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCard.swift; sourceTree = "<group>"; };
 		E721330029ADABA30062D3FF /* AppStorageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStorageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E721330329ADABA30062D3FF /* AppStorageAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageAppApp.swift; sourceTree = "<group>"; };
 		E721330529ADABA30062D3FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -87,11 +87,9 @@
 		E721333029ADB5440062D3FF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E721333229ADB5520062D3FF /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
 		E721333829ADE8B50062D3FF /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		E772A46A29AFF990005C01B6 /* FormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormField.swift; sourceTree = "<group>"; };
 		E772A46C29B032C5005C01B6 /* PlaneCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneCard.swift; sourceTree = "<group>"; };
 		E793FA9229AF8078000B0B15 /* InfoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertView.swift; sourceTree = "<group>"; };
 		E793FA9429AF8723000B0B15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E793FAA029AF8B86000B0B15 /* BasicAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAuthService.swift; sourceTree = "<group>"; };
 		E7D48B7F29ADEECB008C6B41 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E7D48B8229AE1821008C6B41 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		E7D48B8529AE2A06008C6B41 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
@@ -258,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				E7D48B7F29ADEECB008C6B41 /* LoginView.swift */,
-				E772A46A29AFF990005C01B6 /* FormField.swift */,
 			);
 			path = Anmelden;
 			sourceTree = "<group>";
@@ -294,7 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				E7D48B8B29AE2EDB008C6B41 /* AuthService.swift */,
-				E793FAA029AF8B86000B0B15 /* BasicAuthService.swift */,
 			);
 			path = AuthService;
 			sourceTree = "<group>";
@@ -345,6 +341,7 @@
 			isa = PBXGroup;
 			children = (
 				E7D48BD829AE5426008C6B41 /* HotelView.swift */,
+				E70F67D329B0ED350041B808 /* OfferCard.swift */,
 			);
 			path = Hotels;
 			sourceTree = "<group>";
@@ -514,6 +511,7 @@
 				E721333129ADB5440062D3FF /* MainView.swift in Sources */,
 				E7D48BCF29AE5353008C6B41 /* JobListViewModel.swift in Sources */,
 				E7F47BED29AEC384000D9CA4 /* ShowHomeView.swift in Sources */,
+				E70F67D429B0ED350041B808 /* OfferCard.swift in Sources */,
 				E7D48BD429AE53AB008C6B41 /* JobModel.swift in Sources */,
 				E7F47BF529AED238000D9CA4 /* HomeRow.swift in Sources */,
 				E7D48BC229AE523D008C6B41 /* ProfilView.swift in Sources */,
@@ -533,9 +531,7 @@
 				E7F47BF929AED49C000D9CA4 /* JobRow.swift in Sources */,
 				E7F47BE929AEC1FB000D9CA4 /* ReiseZieleViewModel.swift in Sources */,
 				E7D48BCD29AE5329008C6B41 /* JobDetailView.swift in Sources */,
-				E793FAA129AF8B86000B0B15 /* BasicAuthService.swift in Sources */,
 				E7D48B8029ADEECB008C6B41 /* LoginView.swift in Sources */,
-				E772A46B29AFF990005C01B6 /* FormField.swift in Sources */,
 				E7F47BFB29AED4E6000D9CA4 /* ProfileRow.swift in Sources */,
 				E7D48BC929AE52E9008C6B41 /* SearchBar.swift in Sources */,
 				E721333929ADE8B50062D3FF /* SplashView.swift in Sources */,

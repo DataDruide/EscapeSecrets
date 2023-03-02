@@ -26,11 +26,12 @@ struct SplashView: View {
                     VStack {
                         Text("Take Off\nand find Out.....")
                             .font(Font.custom("Baskerville-Bold",
-                                              size: 26))
+                                              size: 40))
                             .multilineTextAlignment(.center)
-                            .foregroundColor(Color.brown)
+                            .foregroundColor(Color.orange)
                         Image("ren")
-                            .frame(width: 200, height: 200)
+                            .frame(width: 100, height: 100)
+                            .opacity(0.2)
                     }
                     .scaleEffect(size)
                     .opacity(opacity)

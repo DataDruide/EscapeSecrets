@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainAppView: View {
+    
+    @EnvironmentObject var authService : AuthService
   @AppStorage("onBoarding")  var onBoarding = true
     
     @Binding var show : Bool
@@ -17,8 +19,16 @@ struct MainAppView: View {
             if onBoarding {
                 OnBoardingPageOne()
             } else {
-                MainView(show: $show)
-                    .transition(.opacity.animation(.default))
+                Group{
+                    if authService.user != nil{
+                        Home()
+                    }else{
+                        MainView(show: $show)
+                            .transition(.opacity.animation(.default))                    }
+                }.onAppear{
+                    authService.listenToAuthState()
+                }
+               
             }
         }
         }

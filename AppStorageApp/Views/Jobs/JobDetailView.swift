@@ -14,7 +14,7 @@ struct JobDetailView: View {
             VStack(alignment: .center) {
                 Text(job.title)
                     .font(.title)
-                    .foregroundColor(.white)
+                    .foregroundColor(.gray)
                 Text("\(job.companyName)")
                     .font(.title2)
                     .foregroundColor(.green.opacity(0.7))
@@ -28,7 +28,7 @@ struct JobDetailView: View {
                     Text((job.jobType == "") ? "Job Type: N/A" :"Job Type: \(job.jobType)")
                 }
                 .font(.headline)
-                .foregroundColor(.white)
+                .foregroundColor(.gray)
                 Spacer()
                 Button(action: { }) {
                     HStack {
@@ -40,7 +40,7 @@ struct JobDetailView: View {
                     }
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .padding(.vertical, 15)
-                    .foregroundColor(.white)
+                    .foregroundColor(.gray)
                     .background(Color.orange)
                     .cornerRadius(40)
                 }

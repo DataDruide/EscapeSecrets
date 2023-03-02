@@ -9,12 +9,30 @@ import SwiftUI
 
 struct HotelView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        ZStack {
+            Image("eisberge")
+                .opacity(0.3)
 
-struct HotelView_Previews: PreviewProvider {
-    static var previews: some View {
-        HotelView()
+            Image("canyon")
+                .opacity(0.6)
+            VStack(spacing: 25) {
+                HStack{
+                    
+                    Image(systemName: "arrow.uturn.backward.square.fill")
+                    Text("ProductCard")
+                    Image(systemName: "heart")
+                }
+                .padding(.top)
+                OfferCard()
+                    .padding(.bottom)
+
+            }
+        }
     }
-}
+        struct HotelView_Previews: PreviewProvider {
+            static var previews: some View {
+                HotelView()
+            }
+        }
+    }
+

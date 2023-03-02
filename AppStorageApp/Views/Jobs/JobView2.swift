@@ -16,21 +16,22 @@ struct JobView2: View {
             HStack {
                 Text(job.title)
                     .font(.title2)
-                    .foregroundColor(Color(.white))
+                    .foregroundColor(Color(.black))
                 }
             HStack {
                 Text((job.salary == "") ? "Salary: N/A" :"Salary: \(job.salary)")
                     .font(.footnote)
-                    .foregroundColor(Color(.gray))
+                    .foregroundColor(Color(.white))
                 Spacer()
                 Text((job.location == "") ? "Location: N/A" :"Location: \(job.location)")
                     .font(.footnote)
-                    .foregroundColor(Color(.gray))
+                    .foregroundColor(Color(.white))
                 Spacer()
                 Text((job.jobType == "") ? "Job Type: N/A" :"Job Type: \(job.jobType)")
                     .font(.footnote)
-                    .foregroundColor(Color(.gray))
+                    .foregroundColor(Color(.white))
             }
+            .background(Color.gray)
             }
         }
     }

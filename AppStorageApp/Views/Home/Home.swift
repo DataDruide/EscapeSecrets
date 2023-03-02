@@ -10,6 +10,8 @@ import SwiftUI
 
 
 struct Home: View {
+    
+    @State var selectedTab = 1
     @StateObject var jobViewModel: JobListViewModel = JobListViewModel()
     @StateObject var flightViewModel: FlightSearchViewModel = FlightSearchViewModel()
     @StateObject var reiseZieleModel: ReiseZieleViewModel = ReiseZieleViewModel()
@@ -68,6 +70,8 @@ struct Home: View {
             static var previews: some View {
                 Home().environmentObject(AuthService())
                     .previewInterfaceOrientation(.portrait)
+                ShowHomeView(theDescription: "", imageName: "", reiseURL: "").environmentObject(ReiseZieleViewModel())
+
             }
         }
         

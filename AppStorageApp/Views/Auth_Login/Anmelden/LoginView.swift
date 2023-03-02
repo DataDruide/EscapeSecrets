@@ -11,11 +11,21 @@ struct LoginView: View {
     @EnvironmentObject var authService : AuthService
     @State var email : String = ""
     @State var password : String = ""
+
+    
     
     var body: some View {
+        
+     var isButtonEnabled = !email.isEmpty && !password.isEmpty
+
         ZStack {
-            Image("loginhintergrund")
-                
+            //Background Color
+            Color(.yellow).opacity(0.1)
+                .ignoresSafeArea()
+            Color(.orange).opacity(0.3)
+                .ignoresSafeArea()
+            
+            
             VStack{
                 
                 
@@ -29,31 +39,52 @@ struct LoginView: View {
                     .foregroundColor(.orange)
                     .padding(.top,35)
                 
+                TextField("Email", text: $email)
+                SecureField("Password", text: $password)
                 
-                FormField(image: "envelope", placeholder: "example@email.com", isSecure: false)
                 
-                FormField(image: "lock", placeholder: "password", isSecure: true)
-                    .padding(.top)
-
-                Button("Register"){
+                // ******************************************+
+                
+                // Registrieren Überprüfung
+                
+                Button(action: {
+                   
                     authService.signUp(email: email, password: password)
-                }
-                Button("Log In"){
-                    authService.signIn(email: email, password: password)
+                    
+                }, label: {
+                    
+                    Text("Register")
+                        .font(.system(size: 21, weight: .bold))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: 300)
+                        .frame(height: 60)
+                        .background(isButtonEnabled ? Color.orange : Color.gray)
+                        .cornerRadius(8)
+                        .padding(.top)
+                })
+                .disabled(!isButtonEnabled)
                 
-                }
-            
-                NavigationLink(destination: HomeRow()) {
+                
+                // ******************************************+
+                
+                // Login Überprüfung
+                
+                Button(action: {
+                   
+                    authService.signIn(email: email, password: password)
+                    
+                }, label: {
                     
                     Text("Login")
                         .font(.system(size: 21, weight: .bold))
                         .foregroundColor(.white)
                         .frame(maxWidth: 300)
                         .frame(height: 60)
-                        .background(Color.orange)
+                        .background(isButtonEnabled ? Color.orange : Color.gray)
                         .cornerRadius(8)
                         .padding(.top)
-                }
+                })
+                .disabled(!isButtonEnabled)
                 
                 
                 HStack(spacing: 15) {

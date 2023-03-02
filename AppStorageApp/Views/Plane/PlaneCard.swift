@@ -20,7 +20,7 @@ struct PlaneCard: View {
                 .fill(Color.black)
                 .frame(width: 350, height: 350) // reduzieren der Größe des Rechtecks
                 .cornerRadius(20)
-                .opacity(0.8)
+                .opacity(0.6)
                 .overlay(
                     Rectangle()
                         .stroke(Color.black, lineWidth: 3)
@@ -29,7 +29,7 @@ struct PlaneCard: View {
             VStack() {
                 
                 Text("Geben sie hier ihre Daten ein")
-                    .foregroundColor(.indigo)
+                    .foregroundColor(.purple)
                 TextField("airportOfDeparture", text: $airportOfDeparture)
                     .background(Color.gray)
                     .cornerRadius(2)
