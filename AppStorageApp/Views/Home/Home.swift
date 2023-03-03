@@ -14,14 +14,14 @@ struct Home: View {
     @State var selectedTab = 1
     @StateObject var jobViewModel: JobListViewModel = JobListViewModel()
     @StateObject var flightViewModel: FlightSearchViewModel = FlightSearchViewModel()
-    @StateObject var reiseZieleModel: ReiseZieleViewModel = ReiseZieleViewModel()
+    @StateObject var reiseZieleModel: ReiseAuswahlViewModel = ReiseAuswahlViewModel()
     var body: some View {
         ZStack{
             Color.orange.opacity(0.35)
                 .ignoresSafeArea()
             TabView {
                 
-                HomeRow(reiseViewModel: ReiseZieleViewModel())
+                HomeRow(reiseViewModel: ReiseAuswahlViewModel())
                     .tabItem {
                         VStack {
                             VStack {

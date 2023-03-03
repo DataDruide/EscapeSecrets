@@ -9,46 +9,45 @@ import SwiftUI
 
 struct HomeRow: View {
     @EnvironmentObject var authService : AuthService
-    @StateObject var reiseViewModel: ReiseZieleViewModel = ReiseZieleViewModel()
+    @StateObject var reiseViewModel: ReiseAuswahlViewModel = ReiseAuswahlViewModel()
     var body: some View {
         NavigationView {
             
-                VStack(){
+            VStack(){
+                
+                HStack {
                     
-                    HStack {
+                    Button("Log Out"){
                         
-                        Button("Log Out"){
-                            
-                            authService.signOut()
-                        }
-                        .padding().padding(.top, 50)
-                        Text("Hi schön dich wiederzusehen ... \(authService.user?.email ?? "")!")
-                            .padding().padding(.top, 50)
-                        
-                        
+                        authService.signOut()
                     }
-                    Text("Unsere Top Angebote\ndirekt auf Studenten zugeschnitten")
-                        .multilineTextAlignment(.leading)
-                        .frame(maxWidth: 300)
-                        .background(.gray)
+                    .padding().padding(.top, 50)
+                    Text("Hi schön dich wiederzusehen ... \(authService.user?.email ?? "")!")
+                        .padding().padding(.top, 50)
                     
                     
-                    List(self.reiseViewModel.reiseZieleModels) { item in
+                }
+                Text("Unsere Top Angebote\ndirekt auf Studenten zugeschnitten")
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: 300)
+                    .background(.gray)
+                
+                
+                NavigationView {
+                    List(self.reiseViewModel.reiseAuswahlModels) { item in
                         NavigationLink(destination: {
-                            ShowHomeView(theDescription: item.description, imageName: item.reiseImage, reiseURL: item.reiseURL)
-                            
+                            CountryDetailView(
+                                theReise: item.reise,
+                                imageName: item.reiseImage,
+                                reiseURL: item.reiseURL)
+                            .navigationBarTitle("",displayMode: .inline)
                         }, label: {
                             ItemListView(
                                 name: item.name,
-                                hotelStars: item.hotelStars,
                                 reiseImage: item.reiseImage)
                         })
-                        .background(.orange)
-                    }
-                    
+                    }.navigationTitle("Reisen")
                 }
-                .background(.gray)
-
                 
             }
         }
@@ -58,4 +57,5 @@ struct HomeRow: View {
             HomeRow().environmentObject(AuthService())
         }
     }
-
+    
+}

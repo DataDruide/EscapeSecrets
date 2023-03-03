@@ -5,36 +5,30 @@
 //  Created by Marcel Zimmermann on 28.02.23.
 //
 import SwiftUI
-
 struct HotelView: View {
+    let landmark: Landmark
+    @State var isSelected: Bool = false
+
     var body: some View {
-        ScrollView{
-            ZStack {
-                Image("canyon")
-                    .opacity(0.6)
-                    .ignoresSafeArea()
-                  Image("")
-                VStack(spacing: 25) {
-                    HStack{
-                        Image(systemName: "arrow.uturn.backward.square.fill")
-                        Text("ProductCard")
-                        Image(systemName: "heart")
-                    }
-                    .padding(.top)
-                    
-                    OfferCard()
-                        .padding(.bottom)
-                    OfferCard2()
-                        .padding(.bottom)
-                        
-                    
+        VStack {
+            Image(landmark.imageName)
+                .resizable()
+                .frame(width: 200, height: 200)
+                .scaledToFit()
+                .overlay(
+                    isSelected ?
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(Color.red, lineWidth: 5) :
+                        nil
+                )
+
+            Text(landmark.name)
+                .font(.headline)
+                .padding()
+                .foregroundColor(isSelected ? .red : .black)
+                .onTapGesture {
+                    isSelected.toggle()
                 }
-            }
         }
-    }
-}
-struct HotelView_Previews: PreviewProvider {
-    static var previews: some View {
-        HotelView()
     }
 }

@@ -7,11 +7,8 @@
 
 import SwiftUI
 
-//MARK: einzelnes ReisezielItem
-
 struct ItemListView: View {
     let name: String
-    let hotelStars: Int
     let reiseImage: String
     
     let imageDim: CGFloat = 70
@@ -20,7 +17,6 @@ struct ItemListView: View {
             VStack(alignment: .leading, spacing: 5) {
                 Text(name)
                     .foregroundColor(.orange)
-                Text("\(hotelStars) Hotelsterne")
                     .font(.caption)
                     .foregroundColor(.white)
                     .fontWeight(.semibold)
@@ -34,19 +30,19 @@ struct ItemListView: View {
                 .cornerRadius(10)
                 .overlay(
                     RoundedRectangle(cornerRadius: 10)
-                        .stroke(Color.indigo, lineWidth: 1)
+                        .stroke(Color.white, lineWidth: 1)
                 )
                 .shadow(color: .white.opacity(0.7), radius: 10, x: 0, y: 0)
         }
         .padding(.horizontal)
-            .background(Color.gray.cornerRadius(10))
+            .background(Color.black.cornerRadius(10))
             
     }
 }
 
 struct ItemListView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemListView(name: "Star Deluxe Hotel", hotelStars: 322,
-                     reiseImage: "greece")
+        ItemListView(name: "Deutschland",
+                     reiseImage: "brandenburger_tor")
     }
 }
