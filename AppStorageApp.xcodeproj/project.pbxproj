@@ -19,6 +19,10 @@
 		E721333129ADB5440062D3FF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333029ADB5440062D3FF /* MainView.swift */; };
 		E721333329ADB5520062D3FF /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333229ADB5520062D3FF /* MainAppView.swift */; };
 		E721333929ADE8B50062D3FF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333829ADE8B50062D3FF /* SplashView.swift */; };
+		E7321A2829B16D83003BA60D /* OfferCard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7321A2729B16D83003BA60D /* OfferCard2.swift */; };
+		E7321A2A29B17C70003BA60D /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7321A2929B17C70003BA60D /* GifImage.swift */; };
+		E7321A2C29B17CD4003BA60D /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = E7321A2B29B17CD4003BA60D /* logo.gif */; };
+		E7321A2E29B18291003BA60D /* vagation.gif in Resources */ = {isa = PBXBuildFile; fileRef = E7321A2D29B18291003BA60D /* vagation.gif */; };
 		E772A46D29B032C5005C01B6 /* PlaneCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772A46C29B032C5005C01B6 /* PlaneCard.swift */; };
 		E793FA9329AF8078000B0B15 /* InfoAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E793FA9229AF8078000B0B15 /* InfoAlertView.swift */; };
 		E793FA9529AF8723000B0B15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E793FA9429AF8723000B0B15 /* GoogleService-Info.plist */; };
@@ -87,6 +91,10 @@
 		E721333029ADB5440062D3FF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		E721333229ADB5520062D3FF /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
 		E721333829ADE8B50062D3FF /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		E7321A2729B16D83003BA60D /* OfferCard2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCard2.swift; sourceTree = "<group>"; };
+		E7321A2929B17C70003BA60D /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+		E7321A2B29B17CD4003BA60D /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo.gif; sourceTree = "<group>"; };
+		E7321A2D29B18291003BA60D /* vagation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = vagation.gif; sourceTree = "<group>"; };
 		E772A46C29B032C5005C01B6 /* PlaneCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneCard.swift; sourceTree = "<group>"; };
 		E793FA9229AF8078000B0B15 /* InfoAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoAlertView.swift; sourceTree = "<group>"; };
 		E793FA9429AF8723000B0B15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -226,6 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				E721333829ADE8B50062D3FF /* SplashView.swift */,
+				E7321A2B29B17CD4003BA60D /* logo.gif */,
+				E7321A2929B17C70003BA60D /* GifImage.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -342,6 +352,7 @@
 			children = (
 				E7D48BD829AE5426008C6B41 /* HotelView.swift */,
 				E70F67D329B0ED350041B808 /* OfferCard.swift */,
+				E7321A2729B16D83003BA60D /* OfferCard2.swift */,
 			);
 			path = Hotels;
 			sourceTree = "<group>";
@@ -357,6 +368,7 @@
 		E7F47BF329AED21A000D9CA4 /* HomeRow */ = {
 			isa = PBXGroup;
 			children = (
+				E7321A2D29B18291003BA60D /* vagation.gif */,
 				E7F47BF429AED238000D9CA4 /* HomeRow.swift */,
 				E793FA9229AF8078000B0B15 /* InfoAlertView.swift */,
 			);
@@ -480,7 +492,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7321A2E29B18291003BA60D /* vagation.gif in Resources */,
 				E721330B29ADABA40062D3FF /* Preview Assets.xcassets in Resources */,
+				E7321A2C29B17CD4003BA60D /* logo.gif in Resources */,
 				E721330829ADABA40062D3FF /* Assets.xcassets in Resources */,
 				E793FA9529AF8723000B0B15 /* GoogleService-Info.plist in Resources */,
 			);
@@ -531,7 +545,9 @@
 				E7F47BF929AED49C000D9CA4 /* JobRow.swift in Sources */,
 				E7F47BE929AEC1FB000D9CA4 /* ReiseZieleViewModel.swift in Sources */,
 				E7D48BCD29AE5329008C6B41 /* JobDetailView.swift in Sources */,
+				E7321A2A29B17C70003BA60D /* GifImage.swift in Sources */,
 				E7D48B8029ADEECB008C6B41 /* LoginView.swift in Sources */,
+				E7321A2829B16D83003BA60D /* OfferCard2.swift in Sources */,
 				E7F47BFB29AED4E6000D9CA4 /* ProfileRow.swift in Sources */,
 				E7D48BC929AE52E9008C6B41 /* SearchBar.swift in Sources */,
 				E721333929ADE8B50062D3FF /* SplashView.swift in Sources */,

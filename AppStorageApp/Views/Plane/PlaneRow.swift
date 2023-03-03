@@ -22,6 +22,8 @@ struct PlaneRow: View {
                     Button("Fetch Flight Destinations") {
                         viewModel.fetchFlightDestinations {}
                     }
+                    .background(.green)
+                    .frame(width: 290)
                     // List zur Darstellung der Flugziele
                     List(viewModel.flightDestinations) { destination in
                         // VStack zur Anordnung der Textelemente in einer vertikalen Richtung
@@ -33,10 +35,10 @@ struct PlaneRow: View {
                             Text("Return Date: \(destination.returnDate)")
                             Text("Price: \(destination.price.total)")
                         }
-                        .padding()
-                        .background(Color.black.opacity(0.8)) // Anpassung der Transparenz
+                        .background(Color.gray.opacity(1.0)) // Anpassung der Transparenz
                         .cornerRadius(10) // Abgerundete Ecken
                     }
+                    .opacity(0.4)
                 }
                 .padding()
             }

@@ -1,13 +1,13 @@
 //
-//  OfferCard.swift
+//  OfferCard2.swift
 //  AppStorageApp
 //
-//  Created by Marcel Zimmermann on 02.03.23.
+//  Created by Marcel Zimmermann on 03.03.23.
 //
 
 import SwiftUI
 
-struct OfferCard: View {
+struct OfferCard2: View {
     
     @State var offerProduct : String = ""
     @State var offerPrice : String = ""
@@ -21,14 +21,14 @@ struct OfferCard: View {
                 .opacity(0.6)
                 .overlay(
                     Rectangle()
-                        .stroke(Color.yellow, lineWidth: 3)
+                        .stroke(Color.black, lineWidth: 3)
                         .cornerRadius(20)
                 )
             VStack() {
                 HStack{
-                    Image("descriptionOffer")
+                    Image("offercard2img")
                         
-                    Image("price")
+                    Image("offercardpriceimg")
                 }
                
                 Button(action: {}) {
@@ -54,8 +54,8 @@ struct OfferCard: View {
     }
 }
 
-struct OfferCard_Previews: PreviewProvider {
+struct OfferCard2_Previews: PreviewProvider {
     static var previews: some View {
-        OfferCard()
+        OfferCard2()
     }
 }

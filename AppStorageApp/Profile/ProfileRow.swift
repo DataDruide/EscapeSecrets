@@ -62,8 +62,7 @@ struct ProfileRow: View {
                     }
                 }
             }
-            .navigationTitle("AppSpeicher")
-            .background(Color.orange.opacity(0.55))
+            .navigationTitle("Create a Member Profil")
         }
     }
 }

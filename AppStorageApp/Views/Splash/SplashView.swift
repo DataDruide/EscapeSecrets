@@ -11,7 +11,7 @@ struct SplashView: View {
     
     @State private var isActive = false
     @State private var size = 0.8
-    @State private var opacity = 0.5
+    @State private var opacity = 0.05
     
     @State var show = false
 
@@ -29,16 +29,21 @@ struct SplashView: View {
                                               size: 40))
                             .multilineTextAlignment(.center)
                             .foregroundColor(Color.orange)
-                        Image("ren")
-                            .frame(width: 100, height: 100)
-                            .opacity(0.2)
+                        
+                        // Aufruf GifImage 
+                        
+                        GifImage("logo")
+                                       .frame(width: 200, height: 200)
+                                       .opacity(0.1)
+                                       .cornerRadius(100)
+                                       
                     }
                     .scaleEffect(size)
                     .opacity(opacity)
                     .onAppear {
                         withAnimation(.easeIn(duration: 1.2)) {
                             self.size = 0.9
-                            self.opacity = 1.0
+                            self.opacity = 0.8
                         }
                     }
                 }

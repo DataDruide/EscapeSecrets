@@ -16,62 +16,64 @@ struct Home: View {
     @StateObject var flightViewModel: FlightSearchViewModel = FlightSearchViewModel()
     @StateObject var reiseZieleModel: ReiseZieleViewModel = ReiseZieleViewModel()
     var body: some View {
-        TabView {
-            
-            HomeRow(reiseZieleModel: ReiseZieleViewModel())
-            .tabItem {
-                VStack {
-                    VStack {
-                        Image(systemName: "house.fill")
-                        Text("Home")
-
-                    }
-                       
-
-                }
-            }.tag(1)
-            
-               PlaneRow(viewModel: FlightSearchViewModel())
-                .tabItem {
-                    VStack {
+        ZStack{
+            Color.orange.opacity(0.35)
+                .ignoresSafeArea()
+            TabView {
+                
+                HomeRow(reiseViewModel: ReiseZieleViewModel())
+                    .tabItem {
                         VStack {
-                            Image(systemName: "airplane.departure")
-                            Text("Abflug")
+                            VStack {
+                                Image(systemName: "house.fill")
+                                Text("Home")
+                                
+                            }
+                            
+                            
                         }
-
-                    }
-                }.tag(2)
+                    }.tag(1)
+                
+                PlaneRow(viewModel: FlightSearchViewModel())
+                    .tabItem {
+                        VStack {
+                            VStack {
+                                Image(systemName: "airplane.departure")
+                                Text("Abflug")
+                            }
+                            
+                        }
+                    }.tag(2)
                 JobRow(viewModel: JobListViewModel())
                     .tabItem {
                         VStack {
-                           VStack {
-                            Image(systemName: "book")
-                            Text("Job")
+                            VStack {
+                                Image(systemName: "book")
+                                Text("Job")
+                            }
+                            
                         }
-
-                    }
-                }.tag(3)
+                    }.tag(3)
                 ProfileRow()
-                .tabItem {
-                    VStack {
+                    .tabItem {
                         VStack {
-                            Image(systemName: "person.crop.circle")
-                            Text("Account")
+                            VStack {
+                                Image(systemName: "person.crop.circle")
+                                Text("Account")
+                            }
+                            
+                            
                         }
-                        
-
-                    }
-                }.tag(4)
+                    }.tag(4)
+            }
+            .background(.thinMaterial)
         }
-        .background(.thinMaterial)
-
     }
         struct Home_Previews: PreviewProvider {
             static var previews: some View {
                 Home().environmentObject(AuthService())
                     .previewInterfaceOrientation(.portrait)
-                ShowHomeView(theDescription: "", imageName: "", reiseURL: "").environmentObject(ReiseZieleViewModel())
-
+                
             }
         }
         

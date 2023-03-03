@@ -11,33 +11,43 @@ struct ShowHomeView: View {
     let theDescription: String
     let imageName: String
     let reiseURL: String
-    
+    @State private var showHotel = false
 
 
     var body: some View {
         ZStack{
-            Color.orange.opacity(0.35)
+            GifImage("logo")
                 .ignoresSafeArea()
-         
+            Color.orange.opacity(0.1)
+                .ignoresSafeArea()
+
             VStack {
                 ScrollView {
                     Text(.init(theDescription))
                         .padding()
                 }
                 
+                // 1 Button
                 Button(action: {
-                    
-                    
+                    self.showHotel = true
                 }) {
-                    Text("Reiseangebote")
-                        .font(.body)
-                        .foregroundColor(Color.indigo)
-                        .padding()
-                        .frame(width: 150, height: 50)
-                        .background(Color.orange).opacity(0.54)
-                        .cornerRadius(10)
-                }
+                    Text("Hotels")
+                    
+                }.padding()
+                    .accentColor(Color.orange)
+                    .foregroundColor(.black)
+                    .frame(maxWidth: 200)
+                    .frame(height: 60)
+                    .background(Color.orange).opacity(0.8)
+                    .cornerRadius(8)
+                    .padding(.bottom, 15)
                 
+                
+                    .sheet(isPresented: $showHotel) {
+                        HotelView()
+                        
+                        
+                    }
                 
                 
                 Spacer()
