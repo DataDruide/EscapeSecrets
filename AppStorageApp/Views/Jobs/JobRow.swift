@@ -21,8 +21,7 @@ struct JobRow: View {
     
     var body: some View {
         NavigationView {
-            ZStack {
-                Color.yellow.opacity(0.3)
+           
                 
                 VStack {
                     Spacer(minLength: 100)
@@ -57,4 +56,4 @@ struct JobRow: View {
             }
         }
     }
-}
+

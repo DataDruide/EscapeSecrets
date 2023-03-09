@@ -8,9 +8,25 @@
 
 import Foundation
 
+
+struct Bild {
+    let id: Int
+    let name: String
+    let imageName: String
+}
+
 class ReiseAuswahlViewModel: ObservableObject {
     @Published var reiseAuswahlModels: [ReiseAuswahlModel] = []
- 
+    @Published var feedbackList: [Feedback] = []
+    @Published var bilder: [Bild] = [
+          Bild(id: 1, name: "Roma", imageName: "Roma"),
+          Bild(id: 2, name: "Paris", imageName: "Paris"),
+          Bild(id: 3, name: "London", imageName: "London")
+      ]
+    
+       @Published var selectedOption: String = ""
+       @Published var savedOption: String = ""
+      
     
     // Initialize the model
     init() {
@@ -89,4 +105,30 @@ class ReiseAuswahlViewModel: ObservableObject {
         
         
     }
+    
+    
+    func getBildById(_ id: Int) -> Bild? {
+        return bilder.first { $0.id == id }
+    }
+  
+  func saveFlight() {
+          savedOption = selectedOption
+      }
+  
+  
+  func addFeedback(title: String, text: String) {
+          let feedback = Feedback(title: title, text: text)
+          feedbackList.append(feedback)
+      }
+  func updateFeedback(feedback: Feedback) {
+      guard let index = feedbackList.firstIndex(where: { $0.id == feedback.id }) else {
+          return
+      }
+      
+      feedbackList[index] = feedback
+  }
+
+  func deleteFeedback(feedback: Feedback) {
+      feedbackList.removeAll(where: { $0.id == feedback.id })
+  }
 }

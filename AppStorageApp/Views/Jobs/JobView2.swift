@@ -12,11 +12,11 @@ struct JobView2: View {
   var body: some View {
     VStack {
         HStack {
-            VStack( alignment: .leading) {
+            VStack() {
             HStack {
                 Text(job.title)
                     .font(.title2)
-                    .foregroundColor(Color(.black))
+                    .foregroundColor(Color(.white))
                 }
             HStack {
                 Text((job.salary == "") ? "Salary: N/A" :"Salary: \(job.salary)")
@@ -31,9 +31,10 @@ struct JobView2: View {
                     .font(.footnote)
                     .foregroundColor(Color(.white))
             }
-            .background(Color.gray)
+            .background(Color.black)
             }
         }
     }
   }
 }
+

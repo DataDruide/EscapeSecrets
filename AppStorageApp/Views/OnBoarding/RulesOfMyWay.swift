@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainAppView: View {
+struct RulesOfMyWay: View {
     
     @EnvironmentObject var authService : AuthService
   @AppStorage("onBoarding")  var onBoarding = true
@@ -23,7 +23,7 @@ struct MainAppView: View {
                     if authService.user != nil{
                         Home()
                     }else{
-                        MainView(show: $show)
+                        YourWayView(show: $show)
                             .transition(.opacity.animation(.default))                    }
                 }.onAppear{
                     authService.listenToAuthState()

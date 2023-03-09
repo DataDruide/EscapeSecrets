@@ -20,19 +20,18 @@ struct HotelDetailView: View {
 
     var body: some View {
         VStack {
-            List{
+            List {
                 ForEach(landmarks) { landmark in
                     HotelView(landmark: landmark) // Für jede Sehenswürdigkeit wird eine LandmarkView erzeugt und angezeigt
                 }
-                
-                Spacer() // Ein Abstandshalter, um die Sehenswürdigkeiten nach oben zu drücken
             }
-            .navigationTitle("Sehenswürdigkeiten in \(country)") // Der Titel der Navigationsleiste
+            Spacer() // Ein Abstandshalter, um die Sehenswürdigkeiten nach oben zu drücken
         }
+        .navigationTitle("Sehenswürdigkeiten in \(country)") // Der Titel der Navigationsleiste
     }
 }
 
-struct HotelDetailView_Previews: PreviewProvider {
+struct LandmarkDetailView_Previews: PreviewProvider {
     static var previews: some View {
         HotelDetailView(country: "Deutschland")
     }

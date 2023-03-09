@@ -11,126 +11,86 @@ struct LoginView: View {
     @EnvironmentObject var authService : AuthService
     @State var email : String = ""
     @State var password : String = ""
-
+    
     
     
     var body: some View {
-        
-     var isButtonEnabled = !email.isEmpty && !password.isEmpty
-
         ZStack {
-            //Background Color
-            Color(.yellow).opacity(0.1)
-                .ignoresSafeArea()
-            Color(.orange).opacity(0.3)
+            Image("willcomebild")
                 .ignoresSafeArea()
             
+            var isButtonEnabled = !email.isEmpty && !password.isEmpty
             
             VStack{
-                
-                
                 Image("mountain")
                     .resizable()
-                    .frame(width :200, height :200)
-                
+                    .frame(width :300, height :300)
+                    .padding(.top,35)
+                    .cornerRadius(110)
+
                 Text("Create a Account")
                     .font(.title)
                     .fontWeight(.bold)
                     .foregroundColor(.orange)
-                    .padding(.top,35)
-                
+                Spacer()
+
                 TextField("Email", text: $email)
+                    .foregroundColor(.black)
+                    .frame(width :370, height :45)
+                    .background(.black).opacity(0.4)
+                    .cornerRadius(8)
                 SecureField("Password", text: $password)
-                
-                
+                    .foregroundColor(.black)
+                    .frame(width :360, height :45)
+                    .background(.black).opacity(0.4)
+                    .cornerRadius(8)
+                    .padding(.top)
+                    
                 // ******************************************+
                 
                 // Registrieren Überprüfung
-                
-                Button(action: {
-                   
-                    authService.signUp(email: email, password: password)
-                    
-                }, label: {
-                    
-                    Text("Register")
-                        .font(.system(size: 21, weight: .bold))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: 300)
-                        .frame(height: 60)
-                        .background(isButtonEnabled ? Color.orange : Color.gray)
-                        .cornerRadius(8)
-                        .padding(.top)
-                })
-                .disabled(!isButtonEnabled)
-                
-                
-                // ******************************************+
-                
-                // Login Überprüfung
-                
-                Button(action: {
-                   
-                    authService.signIn(email: email, password: password)
-                    
-                }, label: {
-                    
-                    Text("Login")
-                        .font(.system(size: 21, weight: .bold))
-                        .foregroundColor(.white)
-                        .frame(maxWidth: 300)
-                        .frame(height: 60)
-                        .background(isButtonEnabled ? Color.orange : Color.gray)
-                        .cornerRadius(8)
-                        .padding(.top)
-                })
-                .disabled(!isButtonEnabled)
-                
-                
-                HStack(spacing: 15) {
-                    Button(action: {}, label: {
-                        RoundedRectangle(cornerRadius: 8)
-                            .frame(height: 60)
-                            .foregroundColor(.white)
-                            .overlay(
-                                HStack {
-                                    Image("facebook")
-                                        .resizable()
-                                        .frame(width: 30, height: 30)
-                                        .foregroundColor(Color(#colorLiteral(red: 0.2505864799, green: 0.224209547, blue: 0.5444943309, alpha: 1)))
-                                    
-                                    Text("Sign Up")
-                                        .font(.system(size: 21, weight: .bold))
-                                        .foregroundColor(.black)
-                                        .padding(.leading, 8)
-                                }
-                            )
-                            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0.0, y: 0.0)
+               
+                    Button(action: {
+                        
+                        authService.signUp(email: email, password: password)
+                        
+                    }, label: {
+                        
+                        Text("Register")
+                            .font(.system(size: 26, weight: .semibold))
+                            .foregroundColor(.gray)
+                            .bold()
+                            .frame(maxWidth: 300)
+                            .frame(height: 80)
+                            .background(.orange).opacity(0.25)
+                            .padding()
+                            .padding(.bottom)
+                            .cornerRadius(50)
                     })
+                    .disabled(!isButtonEnabled)
                     
-                    Button(action: {}, label: {
-                        RoundedRectangle(cornerRadius: 8)
+                    
+                    // ******************************************+
+                    // Login Überprüfung
+                    
+                    Button(action: {
+                        
+                        authService.signIn(email: email, password: password)
+                        
+                    }, label: {
+                        
+                        Text("Login")
+                            .font(.system(size: 21, weight: .bold))
+                            .foregroundColor(.gray)
+                            .frame(maxWidth: 270)
                             .frame(height: 60)
-                            .foregroundColor(.white)
-                            .overlay(
-                                HStack {
-                                    Image("google")
-                                        .resizable()
-                                        .frame(width: 25, height: 25)
-                                    
-                                    Text("Sign Up")
-                                        .font(.system(size: 21, weight: .bold))
-                                        .foregroundColor(.black)
-                                        .padding(.leading, 8)
-                                }
-                            )
-                            .shadow(color: Color.black.opacity(0.1), radius: 10, x: 0.0, y: 0.0)
+                            .padding(.top)
                     })
-                }
-                .padding(.top)
+                    .disabled(!isButtonEnabled)
+
+                Spacer(minLength: 50)
                 
-                
-                Spacer()
+                Text("forget your Password")
             }
             .padding(.horizontal)
         }

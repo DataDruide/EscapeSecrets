@@ -18,7 +18,7 @@ struct OfferCard: View {
                 .fill(Color.black)
                 .frame(width: 390, height: 200) // reduzieren der Größe des Rechtecks
                 .cornerRadius(20)
-                .opacity(0.6)
+                .opacity(0.75)
                 .overlay(
                     Rectangle()
                         .stroke(Color.yellow, lineWidth: 3)
@@ -33,21 +33,14 @@ struct OfferCard: View {
                
                 Button(action: {}) {
                     Text("Book now")
-                        .foregroundColor(.orange)
+                        .foregroundColor(.white)
                         .padding(.horizontal, 50)
                         .padding(.vertical, 10)
-                        .background(Color.purple)
+                        .background(Color.orange)
                         .cornerRadius(10)
                 }
                 
-                Button(action: {}) {
-                    Text("Cancel")
-                        .foregroundColor(.indigo)
-                        .padding(.horizontal, 50)
-                        .padding(.vertical, 10)
-                        .background(Color.green)
-                        .cornerRadius(10)
-                }
+                
             }
             .padding(30)
         }

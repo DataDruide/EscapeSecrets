@@ -33,21 +33,14 @@ struct OfferCard2: View {
                
                 Button(action: {}) {
                     Text("Book now")
-                        .foregroundColor(.orange)
+                        .foregroundColor(.white)
                         .padding(.horizontal, 50)
                         .padding(.vertical, 10)
-                        .background(Color.purple)
+                        .background(Color.orange)
                         .cornerRadius(10)
                 }
                 
-                Button(action: {}) {
-                    Text("Cancel")
-                        .foregroundColor(.indigo)
-                        .padding(.horizontal, 50)
-                        .padding(.vertical, 10)
-                        .background(Color.green)
-                        .cornerRadius(10)
-                }
+                
             }
             .padding(30)
         }

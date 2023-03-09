@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainView: View {
+struct YourWayView: View {
     
     @AppStorage("onBoarding")  var onBoarding = true
     // kommt später wieder weg !!!!
@@ -102,3 +102,4 @@ struct MainView: View {
             }
         }
   
+

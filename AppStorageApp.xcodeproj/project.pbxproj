@@ -16,13 +16,16 @@
 		E721331F29ADABA40062D3FF /* AppStorageAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721331E29ADABA40062D3FF /* AppStorageAppUITests.swift */; };
 		E721332129ADABA40062D3FF /* AppStorageAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721332029ADABA40062D3FF /* AppStorageAppUITestsLaunchTests.swift */; };
 		E721332F29ADB5300062D3FF /* OnBoardingPageOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721332E29ADB5300062D3FF /* OnBoardingPageOne.swift */; };
-		E721333129ADB5440062D3FF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333029ADB5440062D3FF /* MainView.swift */; };
-		E721333329ADB5520062D3FF /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333229ADB5520062D3FF /* MainAppView.swift */; };
+		E721333129ADB5440062D3FF /* YourWayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333029ADB5440062D3FF /* YourWayView.swift */; };
+		E721333329ADB5520062D3FF /* RulesOfMyWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333229ADB5520062D3FF /* RulesOfMyWay.swift */; };
 		E721333929ADE8B50062D3FF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333829ADE8B50062D3FF /* SplashView.swift */; };
 		E7321A2829B16D83003BA60D /* OfferCard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7321A2729B16D83003BA60D /* OfferCard2.swift */; };
 		E7321A2A29B17C70003BA60D /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7321A2929B17C70003BA60D /* GifImage.swift */; };
 		E7321A2C29B17CD4003BA60D /* logo.gif in Resources */ = {isa = PBXBuildFile; fileRef = E7321A2B29B17CD4003BA60D /* logo.gif */; };
 		E7321A2E29B18291003BA60D /* vagation.gif in Resources */ = {isa = PBXBuildFile; fileRef = E7321A2D29B18291003BA60D /* vagation.gif */; };
+		E75EF24229BA100300D61D02 /* fullstuff.gif in Resources */ = {isa = PBXBuildFile; fileRef = E75EF24129BA100200D61D02 /* fullstuff.gif */; };
+		E75EF24429BA1D3700D61D02 /* HotelDetailRow1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75EF24329BA1D3700D61D02 /* HotelDetailRow1.swift */; };
+		E75EF24629BA1E1100D61D02 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75EF24529BA1E1100D61D02 /* Feedback.swift */; };
 		E772A46D29B032C5005C01B6 /* PlaneCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E772A46C29B032C5005C01B6 /* PlaneCard.swift */; };
 		E7863AA529B2388C004B991F /* HotelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7863AA429B2388C004B991F /* HotelDetailView.swift */; };
 		E7863AA729B238F6004B991F /* LandMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7863AA629B238F6004B991F /* LandMark.swift */; };
@@ -90,13 +93,16 @@
 		E721331E29ADABA40062D3FF /* AppStorageAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageAppUITests.swift; sourceTree = "<group>"; };
 		E721332029ADABA40062D3FF /* AppStorageAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E721332E29ADB5300062D3FF /* OnBoardingPageOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingPageOne.swift; sourceTree = "<group>"; };
-		E721333029ADB5440062D3FF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
-		E721333229ADB5520062D3FF /* MainAppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
+		E721333029ADB5440062D3FF /* YourWayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourWayView.swift; sourceTree = "<group>"; };
+		E721333229ADB5520062D3FF /* RulesOfMyWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesOfMyWay.swift; sourceTree = "<group>"; };
 		E721333829ADE8B50062D3FF /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		E7321A2729B16D83003BA60D /* OfferCard2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCard2.swift; sourceTree = "<group>"; };
 		E7321A2929B17C70003BA60D /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		E7321A2B29B17CD4003BA60D /* logo.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = logo.gif; sourceTree = "<group>"; };
 		E7321A2D29B18291003BA60D /* vagation.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = vagation.gif; sourceTree = "<group>"; };
+		E75EF24129BA100200D61D02 /* fullstuff.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = fullstuff.gif; sourceTree = "<group>"; };
+		E75EF24329BA1D3700D61D02 /* HotelDetailRow1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailRow1.swift; sourceTree = "<group>"; };
+		E75EF24529BA1E1100D61D02 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		E772A46C29B032C5005C01B6 /* PlaneCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneCard.swift; sourceTree = "<group>"; };
 		E7863AA429B2388C004B991F /* HotelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailView.swift; sourceTree = "<group>"; };
 		E7863AA629B238F6004B991F /* LandMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandMark.swift; sourceTree = "<group>"; };
@@ -228,8 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				E721332E29ADB5300062D3FF /* OnBoardingPageOne.swift */,
-				E721333029ADB5440062D3FF /* MainView.swift */,
-				E721333229ADB5520062D3FF /* MainAppView.swift */,
+				E75EF24129BA100200D61D02 /* fullstuff.gif */,
+				E721333029ADB5440062D3FF /* YourWayView.swift */,
+				E721333229ADB5520062D3FF /* RulesOfMyWay.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -348,6 +355,7 @@
 				E7D48BD529AE53C4008C6B41 /* ModelData.swift */,
 				E7F47BEA29AEC249000D9CA4 /* ReiseAuswahlModel.swift */,
 				E7863AA629B238F6004B991F /* LandMark.swift */,
+				E75EF24529BA1E1100D61D02 /* Feedback.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -359,6 +367,7 @@
 				E70F67D329B0ED350041B808 /* OfferCard.swift */,
 				E7321A2729B16D83003BA60D /* OfferCard2.swift */,
 				E7863AA429B2388C004B991F /* HotelDetailView.swift */,
+				E75EF24329BA1D3700D61D02 /* HotelDetailRow1.swift */,
 			);
 			path = Hotels;
 			sourceTree = "<group>";
@@ -498,6 +507,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E75EF24229BA100300D61D02 /* fullstuff.gif in Resources */,
 				E7321A2E29B18291003BA60D /* vagation.gif in Resources */,
 				E721330B29ADABA40062D3FF /* Preview Assets.xcassets in Resources */,
 				E7321A2C29B17CD4003BA60D /* logo.gif in Resources */,
@@ -528,7 +538,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7D48BC729AE52BC008C6B41 /* EmptyStateView.swift in Sources */,
-				E721333129ADB5440062D3FF /* MainView.swift in Sources */,
+				E721333129ADB5440062D3FF /* YourWayView.swift in Sources */,
+				E75EF24629BA1E1100D61D02 /* Feedback.swift in Sources */,
 				E7D48BCF29AE5353008C6B41 /* JobListViewModel.swift in Sources */,
 				E7F47BED29AEC384000D9CA4 /* ShowHomeView.swift in Sources */,
 				E70F67D429B0ED350041B808 /* OfferCard.swift in Sources */,
@@ -543,8 +554,9 @@
 				E7D48BD629AE53C4008C6B41 /* ModelData.swift in Sources */,
 				E721330629ADABA30062D3FF /* ContentView.swift in Sources */,
 				E7863AA529B2388C004B991F /* HotelDetailView.swift in Sources */,
+				E75EF24429BA1D3700D61D02 /* HotelDetailRow1.swift in Sources */,
 				E7D48B8329AE1821008C6B41 /* RoundedButton.swift in Sources */,
-				E721333329ADB5520062D3FF /* MainAppView.swift in Sources */,
+				E721333329ADB5520062D3FF /* RulesOfMyWay.swift in Sources */,
 				E793FA9329AF8078000B0B15 /* InfoAlertView.swift in Sources */,
 				E7F47BF729AED439000D9CA4 /* PlaneRow.swift in Sources */,
 				E7D48BD229AE538F008C6B41 /* Model.swift in Sources */,

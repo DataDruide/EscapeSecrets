@@ -13,7 +13,6 @@ struct HotelView: View {
         VStack {
             Image(landmark.imageName)
                 .resizable()
-                .frame(width: 200, height: 200)
                 .scaledToFit()
                 .overlay(
                     isSelected ?
@@ -24,7 +23,6 @@ struct HotelView: View {
 
             Text(landmark.name)
                 .font(.headline)
-                .padding()
                 .foregroundColor(isSelected ? .red : .black)
                 .onTapGesture {
                     isSelected.toggle()

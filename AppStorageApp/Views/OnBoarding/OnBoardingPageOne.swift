@@ -14,62 +14,55 @@ struct OnBoardingPageOne: View {
     @State private var step = 1
     
     var body: some View {
-        ZStack {
-            //Background Color
-            Color(.yellow).opacity(0.1)
-                .ignoresSafeArea()
-            
-//            Rectangle()
-//                .fill(Color(.yellow))
-//                .scaleEffect(1.4)
-//                .rotationEffect(.degrees(-15))
-//                .offset(x: -100, y: 300)
-
-            VStack(spacing: 30) {
-                Text("Welcome to")
-                    .font(.largeTitle)
-                    .foregroundColor(Color(.brown))
-                    .padding(.top)
-                Text("your Work and Travel Adventure")
-                    .font(.largeTitle).bold()
-                    .foregroundColor(Color(.brown))
-                    .multilineTextAlignment(.center)
+  
+        VStack() {
+           
+            GeometryReader { gp in
                 
-                GeometryReader { gp in
-                    HStack {
-                        VStack(spacing: 40) {
-                            // Bild 1 einfügen
-                            Image("checkIn")
-                                .resizable()
-                                .frame(maxWidth: .infinity,maxHeight: 210)
+                HStack {
+                        
+                    VStack() {
+                        ScrollView(.horizontal) {
+                            HStack {
+                                Image("1img")
+                                    .resizable()
+                                    .frame(maxWidth: .infinity,maxHeight: 200)
+                                Image("2img")
+                                    .resizable()
+                                    .frame(maxWidth: .infinity,maxHeight: 200)
+                                Image("3img")
+                                    .resizable()
+                                    .frame(maxWidth: .infinity,maxHeight: 200)
+                            }
                             
-                            Divider()
-
-
-                            Text("Wenn Sie am Flughafen ankommen müssen\n Sie den CheckIn absolvieren,\n deshalb bitten wir Sie alle \n1,5 m Abstand zum nächsten Reisenden einzuhalten")
+                        }
+                        
+                            
+                        Text("Hier haben wir euch ein paar Bilder zusammen gestellt\nwo wir denken wir haben vielleicht Lust auf mehr geschaffen")
+                            .padding(.top)
                                 .multilineTextAlignment(.center)
                                 .font(.system(size: 18))
                                 .fontWeight(.thin)
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
                                 .animation(Animation.interpolatingSpring(stiffness: 40, damping: 7).delay(0.1))
                         }.frame(width: gp.frame(in: .global).width)
                         
                         VStack(spacing: 40) {
                             // Bild2 einfügen
-                            Image("wartehalle")
+                            Image("morePicture")
                                 .resizable()
                                 .frame(maxWidth: .infinity,maxHeight: 210)
 
                             Divider()
 
 
-                            Text("Nach der Zollabfertigung geht es dann\n in die Wartehalle wo sie\n nochmals die Möglichkeit besitzen\n sich kleine Snacks und Getränke zukaufen\n und auf ihren Flieger zu warten")
+                            Text("Das sind unsere Big Pictures\nund das wollen wir euch\nnatürlich nicht vorenthalten\nwollen")
                                 .multilineTextAlignment(.center)
                                 .fontWeight(.thin)
                                 .font(.system(size: 18))
 
                                 .padding()
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
                                 .fixedSize(horizontal: true, vertical: true)
                                 .animation(Animation.interpolatingSpring(stiffness: 40, damping: 7).delay(0.1))
                         }.frame(width: gp.frame(in: .global).width)
@@ -77,25 +70,27 @@ struct OnBoardingPageOne: View {
                         
                         VStack(spacing: 40) {
                             // Bild3 einfügen
-                            Image("abflug")
-                                .resizable()
-                                .frame(maxWidth: .infinity,maxHeight: 210)
+                            GifImage("fullstuff")
+                                           .frame(width: 200, height: 200)
+                                           .opacity(0.9)
+                                           .cornerRadius(100)
                             
                             Divider()
 
 
-                            Text("Beim Abflug bitten wir Sie alle noch\n solange an ihrem Platz zu bleiben\n bis die Sitzlichter über \nihnen erloschen sind")
+                            Text("Vergessen Sie vor der Abreise\nnicht sich über die Länder spezifischen\n Gesundheitsrichtlinien zu erkunden und\n ihre vollständigen Pass und\n Gesundheitszeugnisse")
                                 .fontWeight(.thin)
                                 .multilineTextAlignment(.center)
                                 .font(.system(size: 18))
                                 .padding()
-                                .foregroundColor(.black)
+                                .foregroundColor(.white)
                                 .fixedSize(horizontal: true, vertical: true)
                                 .animation(Animation.interpolatingSpring(stiffness: 40, damping: 7).delay(0.1))
                         }.frame(width: gp.frame(in: .global).width)
                     }
+                    .padding(.top)
                     .multilineTextAlignment(.center)
-                    .foregroundColor(Color.gray)
+                    .foregroundColor(Color.white)
                     .font(.title)
                     .frame(width: gp.frame(in: .global).width * 3)
                     
@@ -107,7 +102,7 @@ struct OnBoardingPageOne: View {
                 HStack(spacing: 20) {
                     Button(action: { self.step = 1 }) {
                         Text("1")
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.white)
                             .padding()
                             .background(Circle().shadow(radius: 10))
                             .scaleEffect(step == 1 ? 1 : 0.65)
@@ -115,7 +110,7 @@ struct OnBoardingPageOne: View {
                     
                     Button(action: { self.step = 2 }) {
                         Text("2")
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.white)
                             .padding()
                             .background(Circle().shadow(radius: 10))
                             .scaleEffect(step == 1 ? 1 : 0.65)
@@ -123,7 +118,7 @@ struct OnBoardingPageOne: View {
                     
                     Button(action: { self.step = 3 }) {
                         Text("3")
-                            .foregroundColor(Color.black)
+                            .foregroundColor(Color.white)
                             .padding()
                             .background(Circle().shadow(radius: 10))
                             .scaleEffect(step == 1 ? 1 : 0.65)
@@ -149,9 +144,15 @@ struct OnBoardingPageOne: View {
              
                         }
                     }
-                    .accentColor(Color.yellow)
+                    
                 }
-            }
+            
        
+
+struct OnBoardingPageOne_Previews: PreviewProvider {
+    static var previews: some View {
+        OnBoardingPageOne()
+    }
+}
 
 
