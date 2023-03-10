@@ -26,19 +26,19 @@ struct OnBoardingPageOne: View {
                             HStack {
                                 Image("1img")
                                     .resizable()
-                                    .frame(maxWidth: .infinity,maxHeight: 200)
+                                    .frame(maxWidth: .infinity,maxHeight: 210)
                                 Image("2img")
                                     .resizable()
-                                    .frame(maxWidth: .infinity,maxHeight: 200)
+                                    .frame(maxWidth: .infinity,maxHeight: 210)
                                 Image("3img")
                                     .resizable()
-                                    .frame(maxWidth: .infinity,maxHeight: 200)
+                                    .frame(maxWidth: .infinity,maxHeight: 210)
                             }
                             
                         }
                         
                             
-                        Text("Hier haben wir euch ein paar Bilder zusammen gestellt\nwo wir denken wir haben vielleicht Lust auf mehr geschaffen")
+                        Text("Hier haben wir euch ein paar Bilder zusammen gestellt\nwo wir denken wir haben vielleicht ihr Interesse wecken können.")
                             .padding(.top)
                                 .multilineTextAlignment(.center)
                                 .font(.system(size: 18))
@@ -47,14 +47,11 @@ struct OnBoardingPageOne: View {
                                 .animation(Animation.interpolatingSpring(stiffness: 40, damping: 7).delay(0.1))
                         }.frame(width: gp.frame(in: .global).width)
                         
-                        VStack(spacing: 40) {
+                        VStack() {
                             // Bild2 einfügen
                             Image("morePicture")
                                 .resizable()
                                 .frame(maxWidth: .infinity,maxHeight: 210)
-
-                            Divider()
-
 
                             Text("Das sind unsere Big Pictures\nund das wollen wir euch\nnatürlich nicht vorenthalten\nwollen")
                                 .multilineTextAlignment(.center)
@@ -68,15 +65,13 @@ struct OnBoardingPageOne: View {
                         }.frame(width: gp.frame(in: .global).width)
                         
                         
-                        VStack(spacing: 40) {
+                        VStack() {
                             // Bild3 einfügen
                             GifImage("fullstuff")
-                                           .frame(width: 200, height: 200)
+                                           .frame(width: 200, height: 210)
                                            .opacity(0.9)
                                            .cornerRadius(100)
                             
-                            Divider()
-
 
                             Text("Vergessen Sie vor der Abreise\nnicht sich über die Länder spezifischen\n Gesundheitsrichtlinien zu erkunden und\n ihre vollständigen Pass und\n Gesundheitszeugnisse")
                                 .fontWeight(.thin)

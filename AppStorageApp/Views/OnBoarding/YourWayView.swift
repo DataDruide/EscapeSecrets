@@ -10,9 +10,8 @@ import SwiftUI
 struct YourWayView: View {
     
     @AppStorage("onBoarding")  var onBoarding = true
-    // kommt später wieder weg !!!!
-    @State private var showHome = false
-
+    
+    
     @State private var showLoginView = false
     @State private var RestartOnboarding = false
     @State private var size = 0.8
@@ -35,47 +34,12 @@ struct YourWayView: View {
                     .foregroundColor(.orange)
                     .padding()
                 
-                  
-                        // 1 Button
-                        Button(action: {
-                            self.showLoginView = true
-                        }) {
-                            Text("zum Login")
-                            
-                        }.padding()
-                            .accentColor(Color.orange)
-                            .foregroundColor(.black)
-                            .frame(maxWidth: 200)
-                            .frame(height: 60)
-                            .background(Color.orange).opacity(0.8)
-                            .cornerRadius(8)
-                            .padding(.bottom, 15)
-                        
-                        
-                            .sheet(isPresented: $showLoginView) {
-                                LoginView()
-                                
-                                
-                            }
-                        
-                        
-                        Button("Rewatch Onboarding"){
-                            onBoarding.toggle()
-                        }
-                        .accentColor(Color.orange)
-                        .foregroundColor(.black)
-                        .frame(maxWidth: 200)
-                        .frame(height: 60)
-                        .background(Color.orange).opacity(0.8)
-                        .cornerRadius(8)
-                        .padding(.bottom, 15)
                 
-                
-                // Button kommt später wieder weg !!!!
+                // 1 Button
                 Button(action: {
-                    self.showHome = true
+                    self.showLoginView = true
                 }) {
-                    Text("Als Gast fortfahren")
+                    Text("zum Login")
                     
                 }.padding()
                     .accentColor(Color.orange)
@@ -84,22 +48,31 @@ struct YourWayView: View {
                     .frame(height: 60)
                     .background(Color.orange).opacity(0.8)
                     .cornerRadius(8)
-                    .padding(.bottom, 65)
+                    .padding(.bottom, 15)
                 
                 
-                    .sheet(isPresented: $showHome) {
-                        Home()
+                    .sheet(isPresented: $showLoginView) {
+                        LoginView()
                         
                         
                     }
-                    Text("The Time is yours")
-                    .foregroundColor(Color.orange)
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.center)
-                        
-                    }
+                
+                
+                Button("Rewatch Onboarding"){
+                    onBoarding.toggle()
                 }
+                .accentColor(Color.orange)
+                .foregroundColor(.black)
+                .frame(maxWidth: 200)
+                .frame(height: 60)
+                .background(Color.orange).opacity(0.8)
+                .cornerRadius(8)
+                .padding(.bottom, 15)
+                
             }
+            
         }
+    }
+}
   
 

@@ -26,23 +26,7 @@ struct HomeRow: View {
                         .padding(.top)
                         .position(x:196,y:50)
                     
-                    HStack {
-                        Button("LogOut"){
-                            
-                            authService.signOut()
-                        }
-                        .padding()
-                        .multilineTextAlignment(.leading)
-                        .foregroundColor(.white)
-                        .bold()
-                        .background(.orange)
-                        .cornerRadius(15)
-                        Text("Hi schön dich wiederzusehen ... \(authService.user?.email ?? "")!")
-                            .padding().padding()
-                            .multilineTextAlignment(.leading)
-                    }
-                    .padding(.top)
-                    .position(x:200,y:50)
+                    
                     
                     Image("airbus")
                         .resizable()
@@ -50,11 +34,36 @@ struct HomeRow: View {
                         .frame(width: 350, height: 350)
                         .position(x:100,y:150)
                     
+                    
+                   
+                    
                     NavigationLink(destination: MultiBookingView()) {
                                         Image("createticket") // Bild aus Assets.xcassets
                                             .resizable()
                                             .frame(width: 80, height: 80)
                                             .position(x:100,y:300)
+
+                        
+                                    }
+                                    .buttonStyle(BorderlessButtonStyle()) // Ändern des Stils des Buttons
+                    NavigationLink(destination: YourWayView(show: $showMenu)) {
+                        HStack {
+                            Button("LogOut"){
+                                
+                                authService.signOut()
+                            }
+                            .padding()
+                            .multilineTextAlignment(.leading)
+                            .foregroundColor(.white)
+                            .bold()
+                            .background(.orange)
+                            .cornerRadius(15)
+                            Text("Hi schön dich wiederzusehen ... \(authService.user?.email ?? "")!")
+                                .padding().padding()
+                                .multilineTextAlignment(.leading)
+                        }
+                        .padding(.top)
+                        .position(x:200,y:50)
 
                         
                                     }

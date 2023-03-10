@@ -27,12 +27,14 @@ struct CountryDetailView: View {
                 VStack(alignment: .leading, spacing: 8) {
                     Text(hotelName)
                         .font(.headline)
-                        .foregroundColor(.yellow)
+                        .foregroundColor(.orange)
                     
                     Text("$\(price) per night")
                         .font(.subheadline)
-                        .foregroundColor(.black)
+                        .foregroundColor(.orange)
                 }
+                .background(Color.black.opacity(0.6))
+                .frame(maxWidth: .infinity)
                
             }
         }
