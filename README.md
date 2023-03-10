@@ -4,5 +4,8 @@ final Version
 
 Projekt ist nach MvvM Standart
 
-https://user-images.githubusercontent.com/101304191/222545568-fb55d6b7-2b0a-4a39-b0b5-e74fd8d9be5e.mp4
+
+
+Neuester Stand meines Projektes
+https://user-images.githubusercontent.com/101304191/224448366-eb459586-efe9-4e9f-b2f5-4b510aa292e1.mp4
 
