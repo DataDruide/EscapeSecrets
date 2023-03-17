@@ -25,6 +25,7 @@ struct LoginView: View {
                 Image("mountain")
                     .resizable()
                     .frame(width :300, height :300)
+                    .opacity(0.7)
                     .padding(.top,35)
                     .cornerRadius(110)
 
@@ -35,12 +36,12 @@ struct LoginView: View {
                 Spacer()
 
                 TextField("Email", text: $email)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .frame(width :370, height :45)
                     .background(.black).opacity(0.4)
                     .cornerRadius(8)
                 SecureField("Password", text: $password)
-                    .foregroundColor(.black)
+                    .foregroundColor(.white)
                     .frame(width :360, height :45)
                     .background(.black).opacity(0.4)
                     .cornerRadius(8)
@@ -58,14 +59,13 @@ struct LoginView: View {
                         
                         Text("Register")
                             .font(.system(size: 26, weight: .semibold))
-                            .foregroundColor(.gray)
+                            .foregroundColor(.orange)
                             .bold()
                             .frame(maxWidth: 300)
-                            .frame(height: 80)
-                            .background(.orange).opacity(0.25)
+                            .frame(height: 60)
                             .padding()
                             .padding(.bottom)
-                            .cornerRadius(50)
+                            .cornerRadius(25)
                     })
                     .disabled(!isButtonEnabled)
                     
@@ -80,9 +80,9 @@ struct LoginView: View {
                     }, label: {
                         
                         Text("Login")
-                            .font(.system(size: 21, weight: .bold))
-                            .foregroundColor(.gray)
-                            .frame(maxWidth: 270)
+                            .font(.system(size: 23, weight: .bold))
+                            .foregroundColor(.white)
+                            .frame(maxWidth: 300)
                             .frame(height: 60)
                             .padding(.top)
                     })

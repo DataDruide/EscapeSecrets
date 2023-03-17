@@ -10,46 +10,45 @@ import SwiftUI
 struct SplashView: View {
     
     @State private var isActive = false
-    @State private var size = 0.8
-    @State private var opacity = 0.05
-    
-    @State var show = false
+    @State private var scale: CGFloat = 0.8
+    @State private var opacity: Double = 0.05
+    @State private var isZoomed = false
 
+    @State var show = false
+    
     var body: some View {
         if isActive {
             ContentView(show: $show)
         } else {
             ZStack {
-                Image("willcomebild")
-                    .ignoresSafeArea()
+                Image("planes")
+                    .resizable()
+                    .scaledToFill()
+                    .ignoresSafeArea(.all)
+                    .animation(.easeInOut(duration: 1.9))
+                    .transition(.scale)
+               
+                
                 VStack {
-                    VStack {
-                        Text("Take Off\nand find Out.....")
-                            .font(Font.custom("Baskerville-Bold",
-                                              size: 40))
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(Color.orange)
-                        
-                        // Aufruf GifImage 
-                        
-                        GifImage("logo")
-                                       .frame(width: 200, height: 200)
-                                       .opacity(0.1)
-                                       .cornerRadius(100)
-                                       
-                    }
-                    .scaleEffect(size)
-                    .opacity(opacity)
-                    .onAppear {
-                        withAnimation(.easeIn(duration: 1.2)) {
-                            self.size = 0.9
-                            self.opacity = 0.8
-                        }
-                    }
+                    Text("Study\nAirline")
+                        .font(Font.custom("Baskerville-Bold",
+                                          size: 40))
+                        .multilineTextAlignment(.center)
+                        .foregroundColor(Color.orange)
+                    Spacer()
+                    Spacer()
                 }
+                .foregroundColor(.white)
+                .scaleEffect(scale)
+                .opacity(opacity)
+                .animation(.easeInOut(duration: 1.2))
                 .onAppear {
+                    self.scale = 1.0
+                    self.opacity = 1.0
                     DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-                        self.isActive = true
+                        withAnimation {
+                            self.isActive = true
+                        }
                     }
                 }
             }

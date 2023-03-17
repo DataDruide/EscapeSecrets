@@ -23,7 +23,7 @@ struct YourWayView: View {
     
     var body: some View {
         ZStack {
-            Image("neuHinter").opacity(0.65)
+            Image("neuHinter").opacity(0.85)
                 .ignoresSafeArea()
             
             VStack(spacing: 20) {

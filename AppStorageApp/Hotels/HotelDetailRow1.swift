@@ -242,7 +242,7 @@ struct HotelDetailRow2: View {
             Image("schild")
                 .resizable()
                 .frame(width: 290, height: 65)
-                .position(x: 200, y:196)
+                .position(x: 200, y:180)
         }
         VStack{
             HStack(spacing: 10) {

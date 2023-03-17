@@ -274,21 +274,21 @@ struct FlightTicketDetailView: View {
                 .frame(width: 390, height: 150)
             VStack(alignment: .leading) {
                 
-                Text("Startflughafen: \(ticket.startAirport)")
+                Text("Airport of departure: \(ticket.startAirport)")
                     .font(.system(size: 12))
                     .foregroundColor(.black)
                 
-                Text("Zielflughafen: \(ticket.destinationAirport)")
-                    .font(.system(size: 12))
-                    .foregroundColor(.black)
-
-                
-                Text("Reisedatum: \(ticket.travelDate, formatter: dateFormatter)")
+                Text("Destination airport: \(ticket.destinationAirport)")
                     .font(.system(size: 12))
                     .foregroundColor(.black)
 
                 
-                Text("Hin- und Rückflug: \(ticket.isRoundTrip ? "Ja" : "Nein")")
+                Text("Date to Travel: \(ticket.travelDate, formatter: dateFormatter)")
+                    .font(.system(size: 12))
+                    .foregroundColor(.black)
+
+                
+                Text("Outward and return flights: \(ticket.isRoundTrip ? "Yes" : "No")")
                     .font(.system(size: 12))
                     .foregroundColor(.black)
 

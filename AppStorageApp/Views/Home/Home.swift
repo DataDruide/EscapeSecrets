@@ -39,7 +39,7 @@ struct Home: View {
                         VStack {
                             VStack {
                                 Image(systemName: "airplane.departure")
-                                Text("Abflug")
+                                Text("Flightsearch")
                             }
                             
                         }
@@ -54,7 +54,7 @@ struct Home: View {
                             
                         }
                     }.tag(3)
-                ProfileRow()
+                CreateProfilView()
                     .tabItem {
                         VStack {
                             VStack {

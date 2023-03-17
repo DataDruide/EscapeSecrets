@@ -22,23 +22,12 @@ struct OnBoardingPageOne: View {
                 HStack {
                         
                     VStack() {
-                        ScrollView(.horizontal) {
-                            HStack {
-                                Image("1img")
-                                    .resizable()
-                                    .frame(maxWidth: .infinity,maxHeight: 210)
-                                Image("2img")
-                                    .resizable()
-                                    .frame(maxWidth: .infinity,maxHeight: 210)
-                                Image("3img")
-                                    .resizable()
-                                    .frame(maxWidth: .infinity,maxHeight: 210)
-                            }
-                            
-                        }
                         
-                            
-                        Text("Hier haben wir euch ein paar Bilder zusammen gestellt\nwo wir denken wir haben vielleicht ihr Interesse wecken können.")
+                        Image("passi")
+                            .resizable()
+                            .frame(maxWidth: 420,maxHeight: 410)
+                         
+                        Text("Denken Sie in der heutigen Zeit\ndaran sich rechtzeitig um\nihren Reisepass zu kümmern")
                             .padding(.top)
                                 .multilineTextAlignment(.center)
                                 .font(.system(size: 18))
@@ -49,11 +38,11 @@ struct OnBoardingPageOne: View {
                         
                         VStack() {
                             // Bild2 einfügen
-                            Image("morePicture")
+                            Image("bookingplane")
                                 .resizable()
-                                .frame(maxWidth: .infinity,maxHeight: 210)
+                                .frame(maxWidth: .infinity,maxHeight: 410)
 
-                            Text("Das sind unsere Big Pictures\nund das wollen wir euch\nnatürlich nicht vorenthalten\nwollen")
+                            Text("Hier bei uns können\nsie ganz entspannt ihre Reise\n und den dazugehörigen\n Auslandsjob buchen")
                                 .multilineTextAlignment(.center)
                                 .fontWeight(.thin)
                                 .font(.system(size: 18))
@@ -66,14 +55,13 @@ struct OnBoardingPageOne: View {
                         
                         
                         VStack() {
-                            // Bild3 einfügen
-                            GifImage("fullstuff")
-                                           .frame(width: 200, height: 210)
-                                           .opacity(0.9)
-                                           .cornerRadius(100)
-                            
+                           
+                            Image("Destination")
+                                .resizable()
+                                .frame(maxWidth: .infinity,maxHeight: 410)
 
-                            Text("Vergessen Sie vor der Abreise\nnicht sich über die Länder spezifischen\n Gesundheitsrichtlinien zu erkunden und\n ihre vollständigen Pass und\n Gesundheitszeugnisse")
+
+                            Text("Vergessen Sie vor der Abreise\nnicht sich über die Länder spezifischen\n Gesundheitsrichtlinien zu erkunden")
                                 .fontWeight(.thin)
                                 .multilineTextAlignment(.center)
                                 .font(.system(size: 18))

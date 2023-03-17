@@ -15,10 +15,12 @@ struct FlightTicketFormView: View {
     
     var body: some View {
         Form {
-            TextField("Startflughafen", text: $startAirport)
-            TextField("Zielflughafen", text: $destinationAirport)
-            DatePicker("Reisedatum", selection: $travelDate, displayedComponents: [.date])
-            Toggle("Hin- und Rückflug", isOn: $isRoundTrip)
+            TextField("Airport of departure", text: $startAirport)
+            TextField("Destination airport", text: $destinationAirport)
+            DatePicker("Date of travel", selection: $travelDate, displayedComponents: [.date])
+            Toggle("Outward and return flights", isOn: $isRoundTrip)
         }
+        .background(Image("innenraum2"))
+        
     }
 }

@@ -1,10 +1,3 @@
-//
-//  HomeRow.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 01.03.23.
-//
-
 import SwiftUI
 
 struct HomeRow: View {
@@ -14,127 +7,66 @@ struct HomeRow: View {
     @State private var searchText = ""
     @State private var showMenu = false
     var body: some View {
-        NavigationView {
-            VStack(spacing: 0) {
-                ZStack {
-                    Image("BG")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .opacity(0.75)
-                        .frame(height: 250)
-                        .ignoresSafeArea()
-                        .padding(.top)
-                        .position(x:196,y:50)
-                    
-                    
-                    
+        ZStack {
+            Image("Background_gradient")
+                .resizable()
+                .scaledToFill()
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Text("Dein Dashboard")
+                    .font(.system(size: 34))
+                    .position(x:200,y:80)
+              //  Spacer(minLength: 50)
+                HStack {
                     Image("airbus")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 350, height: 350)
-                        .position(x:100,y:150)
-                    
-                    
-                   
-                    
-                    NavigationLink(destination: MultiBookingView()) {
-                                        Image("createticket") // Bild aus Assets.xcassets
-                                            .resizable()
-                                            .frame(width: 80, height: 80)
-                                            .position(x:100,y:300)
-
-                        
-                                    }
-                                    .buttonStyle(BorderlessButtonStyle()) // Ändern des Stils des Buttons
-                    NavigationLink(destination: YourWayView(show: $showMenu)) {
-                        HStack {
-                            Button("LogOut"){
-                                
-                                authService.signOut()
-                            }
-                            .padding()
-                            .multilineTextAlignment(.leading)
-                            .foregroundColor(.white)
-                            .bold()
-                            .background(.orange)
-                            .cornerRadius(15)
-                            Text("Hi schön dich wiederzusehen ... \(authService.user?.email ?? "")!")
-                                .padding().padding()
-                                .multilineTextAlignment(.leading)
-                        }
-                        .padding(.top)
-                        .position(x:200,y:50)
-
-                        
-                                    }
-                                    .buttonStyle(BorderlessButtonStyle()) // Ändern des Stils des Buttons
-                                    
-                    
-                }
-                
-                // Search bar
-                HStack {
-                    TextField("Search hotels...", text: $searchText)
-                        .padding(8)
-                        .background(Color(.white))
+                        .frame(width: 170, height: 170)
                         .opacity(0.3)
-                        .cornerRadius(8)
-                        .padding(.horizontal, 16)
+                        .position(x:50, y:-170)
                     
-                    Button(action: {
-                        // Filter action
-                    }) {
-                        Image(systemName: "slider.horizontal.3")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20, height: 20)
-                            .foregroundColor(.orange)
+                    Button("LogOut"){
+                        authService.signOut()
                     }
-                    .padding(.trailing, 16)
+                    .multilineTextAlignment(.leading)
+                    .foregroundColor(.black)
+                    .bold()
+                    .font(.system(size: 12))
+                    .position(x:80, y:-170)
+                    
+                    Text("Hi nice to see you again ... \(authService.user?.email ?? "")!")
+                        .padding()
+                        .multilineTextAlignment(.leading)
+                        .font(.system(size: 10))
+                        .foregroundColor(.black)
+                        .position(x:80, y:-170)
+                    
+                    
+                    
+                    
                 }
-                .padding(.top)
                 
-                
-                List {
+                ScrollView {
                     NavigationLink(destination: HotelDetailRow1().environmentObject(ReiseAuswahlViewModel())) {
-                        CountryDetailView(imageName: "hotel1", hotelName:  "Rom",stars: "star.fill" ,price: 650)
+                        CountryDetailView(imageName: "grand_canyon", hotelName:  "Rom",stars: "star.fill" ,price: 650)
                     }
                     NavigationLink(destination: HotelDetailRow2()) {
-                        CountryDetailView(imageName: "hotel2", hotelName:  "St.Bernandino",stars: "star.fill" ,price: 450)
+                        CountryDetailView(imageName: "New York", hotelName:  "New York",stars: "star.fill" ,price: 450)
                     }
-                    .padding(.top)
                     NavigationLink(destination: HotelDetailRow3()) {
-                        CountryDetailView(imageName: "hotel3", hotelName:  "Schöne Wohnung mit spektakulärem Meerblick",stars: "star.fill" ,price: 250)
+                        CountryDetailView(imageName: "Rome", hotelName:  "Schöne Wohnung mit spektakulärem Meerblick",stars: "star.fill" ,price: 250)
                     }
-                    
+                }
+        
                     
                 }
-                
             }
         }
-         .navigationBarItems(trailing:
-             Button(action: {
-                 self.showMenu.toggle()
-             }) {
-                 Image(systemName: "line.horizontal.3")
-                     .resizable()
-                     .aspectRatio(contentMode: .fit)
-                     .frame(width: 20, height: 20)
-                     .foregroundColor(.orange)
-             }
-             .popover(isPresented: $showMenu, content: {
-                 // Menu dropdown content
-                 Text("Menu")
-                     .padding()
-             })
-         )
-     }
-     
- }
-    struct HomeRow_Previews: PreviewProvider {
-        static var previews: some View {
-            HomeRow().environmentObject(AuthService())
-        }
     }
-    
 
+struct HomeRow_Previews: PreviewProvider {
+static var previews: some View {
+HomeRow().environmentObject(AuthService())
+}
+}
