@@ -34,7 +34,7 @@ struct Home: View {
                         }
                     }.tag(1)
                 
-                PlaneRow(viewModel: FlightSearchViewModel())
+                MultiBookingView(viewModel: FlightSearchViewModel())
                     .tabItem {
                         VStack {
                             VStack {
@@ -48,7 +48,7 @@ struct Home: View {
                     .tabItem {
                         VStack {
                             VStack {
-                                Image(systemName: "book")
+                                Image(systemName: "graduationcap.fill")
                                 Text("Job")
                             }
                             

@@ -23,15 +23,22 @@ struct YourWayView: View {
     
     var body: some View {
         ZStack {
-            Image("neuHinter").opacity(0.85)
+            Image("Background_gradient").opacity(0.85)
                 .ignoresSafeArea()
             
             VStack(spacing: 20) {
                 
+                Image("mountain")
+                    .resizable()
+                    .frame(width: 225, height: 225)
+                    .opacity(0.7)
+                    .padding(.top, 35)
+                    .cornerRadius(110)
+                
                 Text("Plan your next\nStep")
-                    .font(.system(size: 44))
+                    .font(.system(size: 55))
                     .multilineTextAlignment(.center)
-                    .foregroundColor(.orange)
+                    .foregroundColor(.black)
                     .padding()
                 
                 
@@ -42,11 +49,11 @@ struct YourWayView: View {
                     Text("zum Login")
                     
                 }.padding()
-                    .accentColor(Color.orange)
+                    .accentColor(Color.purple)
                     .foregroundColor(.black)
                     .frame(maxWidth: 200)
                     .frame(height: 60)
-                    .background(Color.orange).opacity(0.8)
+                    .background(Color.purple).opacity(0.8)
                     .cornerRadius(8)
                     .padding(.bottom, 15)
                 
@@ -65,7 +72,7 @@ struct YourWayView: View {
                 .foregroundColor(.black)
                 .frame(maxWidth: 200)
                 .frame(height: 60)
-                .background(Color.orange).opacity(0.8)
+                .background(Color.purple).opacity(0.8)
                 .cornerRadius(8)
                 .padding(.bottom, 15)
                 

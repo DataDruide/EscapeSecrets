@@ -23,6 +23,11 @@
 		E721333929ADE8B50062D3FF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333829ADE8B50062D3FF /* SplashView.swift */; };
 		E7321A2829B16D83003BA60D /* OfferCard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7321A2729B16D83003BA60D /* OfferCard2.swift */; };
 		E7321A2A29B17C70003BA60D /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7321A2929B17C70003BA60D /* GifImage.swift */; };
+		E74092DB29C6C2BB005104CF /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74092DA29C6C2BB005104CF /* JobDetailView.swift */; };
+		E74092DD29C6C963005104CF /* BookingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74092DC29C6C963005104CF /* BookingRow.swift */; };
+		E74092DF29C6C9AB005104CF /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74092DE29C6C9AB005104CF /* ImageSelectionView.swift */; };
+		E74092E129C6CA19005104CF /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74092E029C6CA19005104CF /* Checkbox.swift */; };
+		E74092E329C6CA99005104CF /* Seat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74092E229C6CA99005104CF /* Seat.swift */; };
 		E74C7B5929BA6F5900993EFC /* FlightTicketFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C7B5829BA6F5900993EFC /* FlightTicketFormView.swift */; };
 		E74C7B5C29BA711500993EFC /* MultiBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C7B5B29BA711500993EFC /* MultiBookingView.swift */; };
 		E74C7B5E29BA716B00993EFC /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C7B5D29BA716B00993EFC /* Flight.swift */; };
@@ -43,7 +48,6 @@
 		E7B3A18C29C20BA40047F02D /* MemberContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E7B3A18A29C20BA40047F02D /* MemberContainer.xcdatamodeld */; };
 		E7D48B8029ADEECB008C6B41 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48B7F29ADEECB008C6B41 /* LoginView.swift */; };
 		E7D48B8329AE1821008C6B41 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48B8229AE1821008C6B41 /* RoundedButton.swift */; };
-		E7D48B8629AE2A06008C6B41 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48B8529AE2A06008C6B41 /* SignUp.swift */; };
 		E7D48B8929AE2A51008C6B41 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48B8829AE2A51008C6B41 /* Home.swift */; };
 		E7D48B8C29AE2EDB008C6B41 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D48B8B29AE2EDB008C6B41 /* AuthService.swift */; };
 		E7D48BBD29AE50E0008C6B41 /* Amadeus in Frameworks */ = {isa = PBXBuildFile; productRef = E7D48BBC29AE50E0008C6B41 /* Amadeus */; };
@@ -101,6 +105,11 @@
 		E721333829ADE8B50062D3FF /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		E7321A2729B16D83003BA60D /* OfferCard2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCard2.swift; sourceTree = "<group>"; };
 		E7321A2929B17C70003BA60D /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+		E74092DA29C6C2BB005104CF /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
+		E74092DC29C6C963005104CF /* BookingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRow.swift; sourceTree = "<group>"; };
+		E74092DE29C6C9AB005104CF /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
+		E74092E029C6CA19005104CF /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		E74092E229C6CA99005104CF /* Seat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seat.swift; sourceTree = "<group>"; };
 		E74C7B5829BA6F5900993EFC /* FlightTicketFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightTicketFormView.swift; sourceTree = "<group>"; };
 		E74C7B5B29BA711500993EFC /* MultiBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiBookingView.swift; sourceTree = "<group>"; };
 		E74C7B5D29BA716B00993EFC /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
@@ -117,7 +126,6 @@
 		E7B3A18B29C20BA40047F02D /* MemberContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MemberContainer.xcdatamodel; sourceTree = "<group>"; };
 		E7D48B7F29ADEECB008C6B41 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		E7D48B8229AE1821008C6B41 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
-		E7D48B8529AE2A06008C6B41 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		E7D48B8829AE2A51008C6B41 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		E7D48B8B29AE2EDB008C6B41 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		E7D48BBF29AE5114008C6B41 /* FlightSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchViewModel.swift; sourceTree = "<group>"; };
@@ -265,6 +273,9 @@
 			isa = PBXGroup;
 			children = (
 				E74C7B5B29BA711500993EFC /* MultiBookingView.swift */,
+				E74092DC29C6C963005104CF /* BookingRow.swift */,
+				E74092DE29C6C9AB005104CF /* ImageSelectionView.swift */,
+				E74092E029C6CA19005104CF /* Checkbox.swift */,
 			);
 			path = BookingCreator;
 			sourceTree = "<group>";
@@ -288,7 +299,6 @@
 			isa = PBXGroup;
 			children = (
 				E7D48B7E29ADEEB8008C6B41 /* Anmelden */,
-				E7D48B8429AE29F1008C6B41 /* Registrieren */,
 			);
 			path = Auth_Login;
 			sourceTree = "<group>";
@@ -307,14 +317,6 @@
 				E7D48B8229AE1821008C6B41 /* RoundedButton.swift */,
 			);
 			path = RoundedButton;
-			sourceTree = "<group>";
-		};
-		E7D48B8429AE29F1008C6B41 /* Registrieren */ = {
-			isa = PBXGroup;
-			children = (
-				E7D48B8529AE2A06008C6B41 /* SignUp.swift */,
-			);
-			path = Registrieren;
 			sourceTree = "<group>";
 		};
 		E7D48B8729AE2A46008C6B41 /* Home */ = {
@@ -361,6 +363,7 @@
 			isa = PBXGroup;
 			children = (
 				E7F47BF829AED49C000D9CA4 /* JobRow.swift */,
+				E74092DA29C6C2BB005104CF /* JobDetailView.swift */,
 			);
 			path = Jobs;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				E75EF24529BA1E1100D61D02 /* Feedback.swift */,
 				E74C7B5D29BA716B00993EFC /* Flight.swift */,
 				E74C7B5F29BA71B300993EFC /* CustomerFlightTicket.swift */,
+				E74092E229C6CA99005104CF /* Seat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -556,6 +560,7 @@
 			files = (
 				E721333129ADB5440062D3FF /* YourWayView.swift in Sources */,
 				E75EF24629BA1E1100D61D02 /* Feedback.swift in Sources */,
+				E74092E329C6CA99005104CF /* Seat.swift in Sources */,
 				E7B3A18929C20B6A0047F02D /* MemberDataViewModel.swift in Sources */,
 				E7D48BCF29AE5353008C6B41 /* JobListViewModel.swift in Sources */,
 				E7F47BED29AEC384000D9CA4 /* ShowHomeView.swift in Sources */,
@@ -569,6 +574,8 @@
 				E7863AA729B238F6004B991F /* LandMark.swift in Sources */,
 				E74C7B6029BA71B300993EFC /* CustomerFlightTicket.swift in Sources */,
 				E7D48B8C29AE2EDB008C6B41 /* AuthService.swift in Sources */,
+				E74092DB29C6C2BB005104CF /* JobDetailView.swift in Sources */,
+				E74092DD29C6C963005104CF /* BookingRow.swift in Sources */,
 				E71B3D3129C3638D00AAB7C0 /* Shape1.swift in Sources */,
 				E7D48B8929AE2A51008C6B41 /* Home.swift in Sources */,
 				E7D48BD629AE53C4008C6B41 /* ModelData.swift in Sources */,
@@ -581,7 +588,9 @@
 				E793FA9329AF8078000B0B15 /* InfoAlertView.swift in Sources */,
 				E7F47BF729AED439000D9CA4 /* PlaneRow.swift in Sources */,
 				E74C7B5929BA6F5900993EFC /* FlightTicketFormView.swift in Sources */,
+				E74092E129C6CA19005104CF /* Checkbox.swift in Sources */,
 				E7D48BD229AE538F008C6B41 /* Model.swift in Sources */,
+				E74092DF29C6C9AB005104CF /* ImageSelectionView.swift in Sources */,
 				E721330429ADABA30062D3FF /* AppStorageAppApp.swift in Sources */,
 				E7F47BF929AED49C000D9CA4 /* JobRow.swift in Sources */,
 				E7F47BE929AEC1FB000D9CA4 /* ReiseAuswahlViewModel.swift in Sources */,
@@ -593,7 +602,6 @@
 				E7F47BFB29AED4E6000D9CA4 /* CreateProfilView.swift in Sources */,
 				E721333929ADE8B50062D3FF /* SplashView.swift in Sources */,
 				E7D48BD929AE5426008C6B41 /* HotelView.swift in Sources */,
-				E7D48B8629AE2A06008C6B41 /* SignUp.swift in Sources */,
 				E7F47BEB29AEC249000D9CA4 /* ReiseAuswahlModel.swift in Sources */,
 				E7D48BC029AE5114008C6B41 /* FlightSearchViewModel.swift in Sources */,
 			);

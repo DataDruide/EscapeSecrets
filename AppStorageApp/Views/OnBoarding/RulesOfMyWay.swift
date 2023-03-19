@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+// Hier regeln wir die Onboardregeln 
 struct RulesOfMyWay: View {
     
     @EnvironmentObject var authService : AuthService

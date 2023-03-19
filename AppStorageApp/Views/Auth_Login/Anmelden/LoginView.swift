@@ -1,18 +1,10 @@
-//
-//  LoginView.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 28.02.23.
-//
 import SwiftUI
 
 struct LoginView: View {
     
-    @EnvironmentObject var authService : AuthService
-    @State var email : String = ""
-    @State var password : String = ""
-    
-    
+    @EnvironmentObject var authService: AuthService
+    @State var email: String = ""
+    @State var password: String = ""
     
     var body: some View {
         ZStack {
@@ -24,69 +16,71 @@ struct LoginView: View {
             VStack{
                 Image("mountain")
                     .resizable()
-                    .frame(width :300, height :300)
+                    .frame(width: 300, height: 300)
                     .opacity(0.7)
-                    .padding(.top,35)
+                    .padding(.top, 35)
                     .cornerRadius(110)
 
                 Text("Create a Account")
-                    .font(.title)
-                    .fontWeight(.bold)
-                    .foregroundColor(.orange)
+                    .font(.system(size: 44, weight: .semibold))                    .fontWeight(.bold)
+                    .foregroundColor(.purple)
                 Spacer()
 
                 TextField("Email", text: $email)
                     .foregroundColor(.white)
-                    .frame(width :370, height :45)
-                    .background(.black).opacity(0.4)
+                    .frame(width: 370, height: 45)
+                    .background(Color.black.opacity(0.4))
                     .cornerRadius(8)
+                   
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.white, lineWidth: 1)
+                    )
+                    .onAppear {
+                        UITextField.appearance().tintColor = .white // Hier wird die Farbe des Cursors gesetzt
+                    }
+                    
                 SecureField("Password", text: $password)
                     .foregroundColor(.white)
-                    .frame(width :360, height :45)
-                    .background(.black).opacity(0.4)
+                    .frame(width: 360, height: 45)
+                    .background(Color.black.opacity(0.4))
                     .cornerRadius(8)
-                    .padding(.top)
                     
-                // ******************************************+
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(Color.white, lineWidth: 1)
+                    )
+                    .onAppear {
+                        UITextField.appearance().tintColor = .white // Hier wird die Farbe des Cursors gesetzt
+                    }
+                // Register button
+                Button(action: {
+                    authService.signUp(email: email, password: password)
+                }, label: {
+                    Text("Register")
+                        .font(.system(size: 26, weight: .semibold))
+                        .foregroundColor(.orange)
+                        .bold()
+                        .frame(maxWidth: 300)
+                        .frame(height: 60)
+                        .padding()
+                        .padding(.bottom)
+                        .cornerRadius(25)
+                })
+                .disabled(!isButtonEnabled)
                 
-                // Registrieren Überprüfung
-               
-                    Button(action: {
-                        
-                        authService.signUp(email: email, password: password)
-                        
-                    }, label: {
-                        
-                        Text("Register")
-                            .font(.system(size: 26, weight: .semibold))
-                            .foregroundColor(.orange)
-                            .bold()
-                            .frame(maxWidth: 300)
-                            .frame(height: 60)
-                            .padding()
-                            .padding(.bottom)
-                            .cornerRadius(25)
-                    })
-                    .disabled(!isButtonEnabled)
-                    
-                    
-                    // ******************************************+
-                    // Login Überprüfung
-                    
-                    Button(action: {
-                        
-                        authService.signIn(email: email, password: password)
-                        
-                    }, label: {
-                        
-                        Text("Login")
-                            .font(.system(size: 23, weight: .bold))
-                            .foregroundColor(.white)
-                            .frame(maxWidth: 300)
-                            .frame(height: 60)
-                            .padding(.top)
-                    })
-                    .disabled(!isButtonEnabled)
+                // Login button
+                Button(action: {
+                    authService.signIn(email: email, password: password)
+                }, label: {
+                    Text("Login")
+                        .font(.system(size: 23, weight: .bold))
+                        .foregroundColor(.white)
+                        .frame(maxWidth: 300)
+                        .frame(height: 60)
+                        .padding(.top)
+                })
+                .disabled(!isButtonEnabled)
 
                 Spacer(minLength: 50)
                 

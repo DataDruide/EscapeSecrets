@@ -1,4 +1,6 @@
+
 import SwiftUI
+
 
 struct HomeRow: View {
     @EnvironmentObject var authService : AuthService
@@ -6,67 +8,69 @@ struct HomeRow: View {
     
     @State private var searchText = ""
     @State private var showMenu = false
+    @State private var showNextView = false
+
+
     var body: some View {
         ZStack {
             Image("Background_gradient")
                 .resizable()
-                .scaledToFill()
-                .edgesIgnoringSafeArea(.all)
+                .ignoresSafeArea(.all)
             
             VStack {
                 Text("Dein Dashboard")
                     .font(.system(size: 34))
-                    .position(x:200,y:80)
-              //  Spacer(minLength: 50)
+                    .frame(maxWidth: .infinity)
+                
                 HStack {
                     Image("airbus")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 170, height: 170)
                         .opacity(0.3)
-                        .position(x:50, y:-170)
                     
-                    Button("LogOut"){
+                    Button("LogOut") {
+                        self.showNextView = true
+
                         authService.signOut()
                     }
-                    .multilineTextAlignment(.leading)
                     .foregroundColor(.black)
                     .bold()
-                    .font(.system(size: 12))
-                    .position(x:80, y:-170)
+                    .font(.system(size: 8))
+                    .multilineTextAlignment(.leading)
+                    .padding()
+                    
+                    .sheet(isPresented: $showNextView) {
+                        YourWayView( show: $showNextView)
+                    }
                     
                     Text("Hi nice to see you again ... \(authService.user?.email ?? "")!")
-                        .padding()
-                        .multilineTextAlignment(.leading)
-                        .font(.system(size: 10))
                         .foregroundColor(.black)
-                        .position(x:80, y:-170)
-                    
-                    
-                    
-                    
+                        .font(.system(size: 8))
+                        .padding()
                 }
                 
-                ScrollView {
-                    NavigationLink(destination: HotelDetailRow1().environmentObject(ReiseAuswahlViewModel())) {
-                        CountryDetailView(imageName: "grand_canyon", hotelName:  "Rom",stars: "star.fill" ,price: 650)
-                    }
-                    NavigationLink(destination: HotelDetailRow2()) {
-                        CountryDetailView(imageName: "New York", hotelName:  "New York",stars: "star.fill" ,price: 450)
-                    }
-                    NavigationLink(destination: HotelDetailRow3()) {
-                        CountryDetailView(imageName: "Rome", hotelName:  "Schöne Wohnung mit spektakulärem Meerblick",stars: "star.fill" ,price: 250)
+                NavigationView {
+                    List() {
+                        NavigationLink(destination: HotelDetailRow1().environmentObject(ReiseAuswahlViewModel())) {
+                            CountryDetailView(imageName: "grand_canyon", hotelName:  "Rom",stars: "star.fill" ,price: 650)
+                        }
+                        NavigationLink(destination: HotelDetailRow2()) {
+                            CountryDetailView(imageName: "New York", hotelName:  "New York",stars: "star.fill" ,price: 450)
+                        }
+                        NavigationLink(destination: HotelDetailRow3()) {
+                            CountryDetailView(imageName: "Rome", hotelName:  "Schöne Wohnung mit spektakulärem Meerblick",stars: "star.fill" ,price: 250)
+                        }
                     }
                 }
-        
-                    
-                }
+                
+                
             }
         }
     }
+}
 
 struct HomeRow_Previews: PreviewProvider {
-static var previews: some View {
-HomeRow().environmentObject(AuthService())
-}
+    static var previews: some View {
+        HomeRow().environmentObject(AuthService())
+    }
 }

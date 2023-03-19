@@ -21,7 +21,7 @@ struct SplashView: View {
             ContentView(show: $show)
         } else {
             ZStack {
-                Image("planes")
+                Image("willcomebild")
                     .resizable()
                     .scaledToFill()
                     .ignoresSafeArea(.all)
@@ -35,8 +35,7 @@ struct SplashView: View {
                                           size: 40))
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color.orange)
-                    Spacer()
-                    Spacer()
+                   
                 }
                 .foregroundColor(.white)
                 .scaleEffect(scale)
