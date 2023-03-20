@@ -23,7 +23,7 @@ struct YourWayView: View {
     
     var body: some View {
         ZStack {
-            Image("Background_gradient").opacity(0.85)
+            Image("Background_gradient").opacity(0.55)
                 .ignoresSafeArea()
             
             VStack(spacing: 20) {

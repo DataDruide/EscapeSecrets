@@ -10,45 +10,42 @@ struct MultiBookingView: View {
     @ObservedObject var viewModel = FlightSearchViewModel()
     
     var body: some View {
-        ZStack {
-            Image("Background_gradient")
-                .resizable()
-                .ignoresSafeArea(.all)
-            
-            VStack {
-                Text("Ihr Buchungsnavigator")
-                    .foregroundColor(.orange)
-                    .bold()
-                
-                NavigationView {
-                    
-                    // Hotel cards
-                    VStack(spacing: 40) {
+        
+            ZStack {
+                Image("Background_gradient")
+                    .resizable()
+                    .ignoresSafeArea(.all)
+                VStack(spacing: 50) {
+                    NavigationStack {
+                        
                         NavigationLink(destination: PlaneRow()) {
-                            Image("flugsuche")
+                            Image("flightcard")
                                 .resizable()
+
+                            
                         }
                         .foregroundColor(.orange)
                         NavigationLink(destination: BookingRow()) {
-                            Image("reisebuchung")
+                            Image("seatbording")
                                 .resizable()
+
                         }
                         .foregroundColor(.orange)
                         
                         NavigationLink(destination: ErgebnisRow()) {
-                            Image("ticketbooking")
+                            Image("tickets")
                                 .resizable()
                         }
                         .foregroundColor(.orange)
                         
+                        
                     }
+                    
                 }
-                .background(.black).opacity(0.75)
+                .padding()
             }
-            .padding()
-        }
+        
     }
-    
     struct MultiBookingView_Previews: PreviewProvider {
         static var previews: some View {
             MultiBookingView()
@@ -91,8 +88,7 @@ struct MultiBookingView: View {
                 
                 Text(seat.seatNumber)
                     .font(.title)
-                
-                // Hier können weitere relevante Details zum ausgewählten Sitzplatz hinzugefügt werden...
+           
             }
         }
     }
@@ -136,10 +132,14 @@ struct MultiBookingView: View {
         
         var body: some View {
             ZStack {
-                Image("ticketblanko")
+                Image("BG 1")
                     .resizable()
-                    .frame(width: 390, height: 150)
+                    .ignoresSafeArea(.all)
+                Image("ticketneeeeee")
+                    .resizable()
+                    .frame(width: 300, height: 550)
                 VStack(alignment: .leading) {
+                    
                     
                     Text("Airport of departure: \(ticket.startAirport)")
                         .font(.system(size: 12))
@@ -157,7 +157,7 @@ struct MultiBookingView: View {
                     
                     Text("Outward and return flights: \(ticket.isRoundTrip ? "Yes" : "No")")
                         .font(.system(size: 12))
-                        .foregroundColor(.black)
+                        .foregroundColor(.purple)
                     
                     
                 }

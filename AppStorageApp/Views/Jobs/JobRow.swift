@@ -29,7 +29,7 @@ struct JobRow: View {
                     Image("flexibel")
                         .resizable()
                     HStack {
-                        Text("hier ist für jeden\ndas richtige dabei ...")
+                        Text("Ihr Jobfinder für jede Reiselage")
                             .multilineTextAlignment(.leading)
                             .foregroundColor(.gray)
                             .font(.system(size: 14))
@@ -40,8 +40,7 @@ struct JobRow: View {
                         .alert(isPresented: $showAlert) {
                             Alert(
                                 title: Text("Here can you search Jobs"),
-                                message: Text("Your current location can’t be " +
-                                              "determined at this time.")
+                                message: Text("Hello dear travelers we have you in app another exciting feature packed.And that you can no matter where you are right now, and the travel budget is running out, or you have already agreed to work abroad before travel we thought that this feature you another point on your ToDo list where you no longer have to worry")
                             )
                             
                         }
@@ -84,39 +83,44 @@ struct JobRow: View {
         }
 }
 
-    
 import SwiftUI
 
 struct JobView2: View {
   @ObservedObject var job: JobViewModel
+  @State var liked: Bool = false
+  
   var body: some View {
-      
-          VStack {
-              HStack {
-                  VStack() {
-                      HStack {
-                          Text(job.title)
-                              .font(.title2)
-                              .foregroundColor(Color(.black))
-                      }
-                      HStack {
-                          Text((job.salary == "") ? "Salary: N/A" :"Salary: \(job.salary)")
-                              .font(.footnote)
-                              .foregroundColor(Color(.black))
-                          Spacer()
-                          Text((job.location == "") ? "Location: N/A" :"Location: \(job.location)")
-                              .font(.footnote)
-                              .foregroundColor(Color(.black))
-                          Spacer()
-                          Text((job.jobType == "") ? "Job Type: N/A" :"Job Type: \(job.jobType)")
-                              .font(.footnote)
-                              .foregroundColor(Color(.black))
-                      }
-                  }
-                  .background(Color.purple)
-                 
-              
+    VStack {
+      HStack {
+        VStack() {
+          HStack {
+            Text(job.title)
+              .font(.title2)
+              .foregroundColor(Color(.black))
           }
+          HStack {
+            Text((job.salary == "") ? "Salary: N/A" :"Salary: \(job.salary)")
+              .font(.footnote)
+              .foregroundColor(Color(.black))
+            Spacer()
+            Text((job.location == "") ? "Location: N/A" :"Location: \(job.location)")
+              .font(.footnote)
+              .foregroundColor(Color(.black))
+            Spacer()
+            Text((job.jobType == "") ? "Job Type: N/A" :"Job Type: \(job.jobType)")
+              .font(.footnote)
+              .foregroundColor(Color(.black))
+          }
+        }
+        .background(Color.purple).opacity(0.25)
+        
+        Button(action: {
+          liked.toggle()
+        }) {
+          Image(systemName: liked ? "heart.fill" : "heart")
+            .foregroundColor(Color.red)
+        }
+      }
     }
   }
 }

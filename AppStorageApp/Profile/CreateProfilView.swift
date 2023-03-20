@@ -19,10 +19,14 @@ struct CreateProfilView: View {
     @State var lastNameText: String = ""
     @State var emailText: String = ""
     @State var ageText: String = ""
+    @State private var selectedImage: UIImage?
+    @State private var isShowingImagePicker = false
     
     // Definition der Ansichtsstruktur
     var body: some View {
         
+        Image("person.fill.badge.plus")
+    
             NavigationStack {
               
                 VStack(spacing:20) {
@@ -82,5 +86,6 @@ struct CreateProfilView: View {
             .background(Image("Background_gradient"))
         }
     }
+
     
 

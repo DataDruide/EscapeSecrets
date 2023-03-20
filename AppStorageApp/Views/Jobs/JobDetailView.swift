@@ -12,7 +12,7 @@ struct JobDetailView: View {
     
     var body: some View {
         ZStack {
-            Image("Background_gradient")
+            Image("BG 1")
                 .resizable()
                 .ignoresSafeArea(.all)
             

@@ -18,6 +18,7 @@ struct OnBoardingPageOne: View {
             Image("Background_gradient")
                 .resizable()
                 .ignoresSafeArea(.all)
+                .opacity(1.0)
             
             VStack() {
                 
@@ -26,30 +27,46 @@ struct OnBoardingPageOne: View {
                     HStack {
                         
                         VStack() {
-                            
-                            Image("passi")
+                            Image("pliii")
                                 .resizable()
-                                .frame(maxWidth: 420,maxHeight: 410)
+                                .frame(maxWidth: 500,maxHeight: 410)
+                                .cornerRadius(205)
+                                .opacity(0.5)
                             
-                            Text("Denken Sie in der heutigen Zeit\ndaran sich rechtzeitig um\nihren Reisepass zu kümmern")
+                            Text("Plan your Trip")
                                 .padding(.top)
                                 .multilineTextAlignment(.center)
-                                .font(.system(size: 18))
-                                .fontWeight(.thin)
-                                .foregroundColor(.white)
+                                .font(.system(size: 34))
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
                                 .animation(Animation.interpolatingSpring(stiffness: 40, damping: 7).delay(0.1))
+                            
+                            
+                            Text("Plan your trip without the hustle and\n bustle of wherever you are online")
+                                .multilineTextAlignment(.center)
+                                .font(.system(size: 16))
+                                .fontWeight(.thin)
+                                .foregroundColor(.black)
+                            
                         }.frame(width: gp.frame(in: .global).width)
                         
                         VStack() {
-                            // Bild2 einfügen
-                            Image("bookingplane")
+                            Image("perfect2")
                                 .resizable()
-                                .frame(maxWidth: .infinity,maxHeight: 410)
+                                .frame(maxWidth: 500,maxHeight: 410)
+                                .cornerRadius(205)
+                                .opacity(0.5)
                             
-                            Text("Hier bei uns können\nsie ganz entspannt ihre Reise\n und den dazugehörigen\n Auslandsjob buchen")
+                            Text("Book your Flight")
+                                .multilineTextAlignment(.center)
+                                .fontWeight(.bold)
+                                .font(.system(size: 34))
+                                .foregroundColor(.black)
+                            Text("There are already several complete\noffers available for you")
                                 .multilineTextAlignment(.center)
                                 .fontWeight(.thin)
-                                .font(.system(size: 18))
+                                .font(.system(size: 16))
+                                .foregroundColor(.black)
                             
                                 .padding()
                                 .foregroundColor(.white)
@@ -60,17 +77,24 @@ struct OnBoardingPageOne: View {
                         
                         VStack() {
                             
-                            Image("Destination")
+                            Image("perfect3")
                                 .resizable()
-                                .frame(maxWidth: .infinity,maxHeight: 410)
+                                .frame(maxWidth: 500,maxHeight: 410)
+                                .cornerRadius(205)
+                                .opacity(0.5)
                             
-                            
-                            Text("Vergessen Sie vor der Abreise\nnicht sich über die Länder spezifischen\n Gesundheitsrichtlinien zu erkunden")
+                            Text("Enjoy Travel")
+                                .multilineTextAlignment(.center)
+                                .fontWeight(.bold)
+                                .font(.system(size: 34))
+                                .foregroundColor(.black)
+
+                            Text("Enjoy your holiday without any problems and\n should still be something Contact us\n via the app or one\n of our service hotlines")
                                 .fontWeight(.thin)
                                 .multilineTextAlignment(.center)
                                 .font(.system(size: 18))
                                 .padding()
-                                .foregroundColor(.white)
+                                .foregroundColor(.black)
                                 .fixedSize(horizontal: true, vertical: true)
                                 .animation(Animation.interpolatingSpring(stiffness: 40, damping: 7).delay(0.1))
                         }.frame(width: gp.frame(in: .global).width)
@@ -94,6 +118,9 @@ struct OnBoardingPageOne: View {
                             .background(Circle().shadow(radius: 10))
                             .scaleEffect(step == 1 ? 1 : 0.65)
                     }
+                    .background(Color.purple).opacity(0.45)
+                    .cornerRadius(10)
+                   
                     
                     Button(action: { self.step = 2 }) {
                         Text("2")
@@ -102,6 +129,8 @@ struct OnBoardingPageOne: View {
                             .background(Circle().shadow(radius: 10))
                             .scaleEffect(step == 1 ? 1 : 0.65)
                     }
+                    .background(Color.purple).opacity(0.45)
+                    .cornerRadius(10)
                     
                     Button(action: { self.step = 3 }) {
                         Text("3")
@@ -110,6 +139,8 @@ struct OnBoardingPageOne: View {
                             .background(Circle().shadow(radius: 10))
                             .scaleEffect(step == 1 ? 1 : 0.65)
                     }
+                    .background(Color.purple).opacity(0.45)
+                    .cornerRadius(10)
                     
                 }
                 .animation(.spring(response: 0.4, dampingFraction: 0.5))

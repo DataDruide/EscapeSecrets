@@ -17,7 +17,7 @@ struct CountryDetailView: View {
         ZStack() {
             Image(imageName)
                 .resizable()
-                .frame(height: 300)
+                .frame(height: 500)
                 .cornerRadius(8)
                 .shadow(radius: 4)
            
@@ -33,8 +33,10 @@ struct CountryDetailView: View {
                         .font(.subheadline)
                         .foregroundColor(.orange)
                 }
-                .background(Color.black.opacity(0.6))
-                .frame(maxWidth: .infinity)
+                .background(Color.black.opacity(0.8))
+                .frame(width: 250,height: 90)
+                .cornerRadius(45)
+                
                
             }
         }

@@ -30,9 +30,9 @@ struct SplashView: View {
                
                 
                 VStack {
-                    Text("Study\nAirline")
+                    Text("Travel\nwith us")
                         .font(Font.custom("Baskerville-Bold",
-                                          size: 40))
+                                          size: 60))
                         .multilineTextAlignment(.center)
                         .foregroundColor(Color.orange)
                    

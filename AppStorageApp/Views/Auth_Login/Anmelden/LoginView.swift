@@ -42,7 +42,7 @@ struct LoginView: View {
                     
                 SecureField("Password", text: $password)
                     .foregroundColor(.white)
-                    .frame(width: 360, height: 45)
+                    .frame(width: 370, height: 45)
                     .background(Color.black.opacity(0.4))
                     .cornerRadius(8)
                     
@@ -82,7 +82,7 @@ struct LoginView: View {
                 })
                 .disabled(!isButtonEnabled)
 
-                Spacer(minLength: 50)
+                Spacer(minLength: 150)
                 
                 Text("forget your Password")
             }

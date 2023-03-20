@@ -59,7 +59,7 @@ struct Home: View {
                         VStack {
                             VStack {
                                 Image(systemName: "person.crop.circle")
-                                Text("Account")
+                                Text("MyProfil")
                             }
                             
                             

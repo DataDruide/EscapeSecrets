@@ -20,11 +20,11 @@ struct BookingRow: View {
             Spacer()
            
                 VStack {
-                    Text("Anzahl der aufgegebenen Gepäckstücke:")
+                    Text("Number of Bags:")
                         .font(.headline)
                     
                     Stepper(value: $checkedBags, in: 0...10) {
-                        Text("\(checkedBags) \(checkedBags == 1 ? "Gepäckstück" : "Gepäckstücke")")
+                        Text("\(checkedBags) \(checkedBags == 1 ? "Bag" : "Bags")")
                     }
                     .padding()
                     .foregroundColor(.white)
@@ -34,7 +34,7 @@ struct BookingRow: View {
                 if selectedFlight != nil && selectedSeat != nil && checkedBags > 0 {
                     //  PaymentView
                 } else {
-                    Text("Bitte wählen Sie einen Sitzplatz und geben Sie die Anzahl der aufgegebenen Gepäckstücke an, um fortzufahren.")
+                    Text("Please watch for a Seat and bording them")
                 }
             }
             ImageSelectionView()
