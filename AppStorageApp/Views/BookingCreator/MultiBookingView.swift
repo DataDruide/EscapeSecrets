@@ -39,7 +39,7 @@ struct MultiBookingView: View {
                         .foregroundColor(.orange)
                         
                         
-                    }
+                    }.navigationTitle("Booking")
                     
                 }
                 .padding()

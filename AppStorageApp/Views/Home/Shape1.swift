@@ -29,7 +29,6 @@ struct Shape1: View {
                     .foregroundColor(.black)
 
             }
-            .position(x:90,y:90)
         }
         .buttonStyle(BorderlessButtonStyle()) // Ändern des Stils des Buttons
     }

@@ -12,10 +12,15 @@ struct ContentView: View {
     @Binding var show : Bool
 
     var body: some View {
-        VStack {
-            RulesOfMyWay(show: $show)
+        ZStack {
+           Image("BG 1")
+                .resizable()
+                .ignoresSafeArea(.all)
+            
+            VStack {
+                RulesOfMyWay(show: $show)
+            }
         }
-       
     }
 }
     

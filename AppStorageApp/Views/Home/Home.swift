@@ -17,8 +17,10 @@ struct Home: View {
     @StateObject var reiseZieleModel: ReiseAuswahlViewModel = ReiseAuswahlViewModel()
     var body: some View {
         ZStack{
-            Color.orange.opacity(0.35)
+            Image("BG 1")
+                .resizable()
                 .ignoresSafeArea()
+                .frame(maxHeight: .infinity)
             TabView {
                 
                 HomeRow(reiseViewModel: ReiseAuswahlViewModel())
@@ -66,9 +68,12 @@ struct Home: View {
                         }
                     }.tag(4)
             }
-            .background(.thinMaterial)
+            .background(Color(#colorLiteral(red: 0.2370265722, green: 0.2096630931, blue: 0.5778520703, alpha: 1)))
+            
         }
+
     }
+    
         struct Home_Previews: PreviewProvider {
             static var previews: some View {
                 Home().environmentObject(AuthService())

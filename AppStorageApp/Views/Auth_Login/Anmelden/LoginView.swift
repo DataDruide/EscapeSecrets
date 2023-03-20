@@ -27,10 +27,13 @@ struct LoginView: View {
                 Spacer()
 
                 TextField("Email", text: $email)
+                    .padding(.horizontal, 10)
                     .foregroundColor(.white)
                     .frame(width: 370, height: 45)
                     .background(Color.black.opacity(0.4))
                     .cornerRadius(8)
+                    
+
                    
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
@@ -45,6 +48,9 @@ struct LoginView: View {
                     .frame(width: 370, height: 45)
                     .background(Color.black.opacity(0.4))
                     .cornerRadius(8)
+                    .padding(.horizontal, 10)
+
+                    
                     
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
