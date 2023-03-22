@@ -12,6 +12,8 @@ struct HomeRow: View {
     @State private var showDetail1 = false
     @State private var showDetail2 = false
     @State private var showDetail3 = false
+    @State private var showYourWayView = false
+
     private let screenWidth: CGFloat = UIScreen.main.bounds.width
     var body: some View {
         ZStack {
@@ -19,14 +21,13 @@ struct HomeRow: View {
                 .resizable()
                 .ignoresSafeArea()
                 .frame(maxHeight: .infinity)
+            Shape1()
 
          
             VStack {
                 HeaderView()
                 
-                
                 PromotionView()
-                
             }
             
         }

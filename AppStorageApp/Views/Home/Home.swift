@@ -16,13 +16,7 @@ struct Home: View {
     @StateObject var flightViewModel: FlightSearchViewModel = FlightSearchViewModel()
     @StateObject var reiseZieleModel: ReiseAuswahlViewModel = ReiseAuswahlViewModel()
     var body: some View {
-        ZStack{
-            Image("BG 1")
-                .resizable()
-                .ignoresSafeArea()
-                .frame(maxHeight: .infinity)
             TabView {
-                
                 HomeRow(reiseViewModel: ReiseAuswahlViewModel())
                     .tabItem {
                         VStack {
@@ -31,8 +25,7 @@ struct Home: View {
                                 Text("Home")
                                 
                             }
-                            
-                            
+         
                         }
                     }.tag(1)
                 
@@ -68,7 +61,9 @@ struct Home: View {
                         }
                     }.tag(4)
             }
-            .background(Color(#colorLiteral(red: 0.2370265722, green: 0.2096630931, blue: 0.5778520703, alpha: 1)))
+            .frame(width: nil, height: nil)
+            .background(.thinMaterial)
+            
             
         }
 
@@ -82,5 +77,5 @@ struct Home: View {
             }
         }
         
-    }
+    
 

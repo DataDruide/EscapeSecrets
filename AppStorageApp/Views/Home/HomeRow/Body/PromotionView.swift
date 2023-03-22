@@ -68,16 +68,16 @@ struct PromotionItemView: View {
                 .cornerRadius(10)
 
             Text(header)
-                .font(.system(size: 20, weight: .bold))
+                .font(.system(size: 16, weight: .bold))
                 .foregroundColor(.black)
                 .padding(.top, 10)
 
             Text(title)
-                .font(.system(size: 20, weight: .medium))
+                .font(.system(size: 14, weight: .medium))
                 .foregroundColor(.black)
 
             Text(subtitle)
-                .font(.system(size: 16, weight: .regular))
+                .font(.system(size: 12, weight: .regular))
                 .foregroundColor(.gray)
                 .padding(.top, 5)
 
