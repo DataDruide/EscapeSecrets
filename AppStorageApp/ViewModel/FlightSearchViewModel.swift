@@ -14,8 +14,8 @@ class FlightSearchViewModel: ObservableObject {
     
     // Amadeus-Objekt wird instanziert für den API-Zugriff und API KEY und SecretKey abgelegt
     private let amadeus = Amadeus(
-        client_id: "g4gunmgnvuKLaySpLoAu4OdCHoZnImAe",
-        client_secret: "PQmHmLkPycz5ohBH"
+        client_id: ApiKeys().client_id,
+        client_secret: ApiKeys().client_secret
     )
     
     // Die Flugziele, die aus der API-Anfrage zurückgegeben werden, werden hier gespeichert

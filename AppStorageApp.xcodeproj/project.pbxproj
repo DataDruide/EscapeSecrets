@@ -22,6 +22,8 @@
 		E721333929ADE8B50062D3FF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333829ADE8B50062D3FF /* SplashView.swift */; };
 		E7321A2829B16D83003BA60D /* OfferCard2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7321A2729B16D83003BA60D /* OfferCard2.swift */; };
 		E7321A2A29B17C70003BA60D /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7321A2929B17C70003BA60D /* GifImage.swift */; };
+		E732BE3829CC6FAB0067BFC2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E732BE3729CC6FAB0067BFC2 /* .gitignore */; };
+		E732BE3A29CC6FFC0067BFC2 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732BE3929CC6FFC0067BFC2 /* APIKeys.swift */; };
 		E74092DB29C6C2BB005104CF /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74092DA29C6C2BB005104CF /* JobDetailView.swift */; };
 		E74092DD29C6C963005104CF /* BookingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74092DC29C6C963005104CF /* BookingRow.swift */; };
 		E74092DF29C6C9AB005104CF /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74092DE29C6C9AB005104CF /* ImageSelectionView.swift */; };
@@ -108,6 +110,8 @@
 		E721333829ADE8B50062D3FF /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		E7321A2729B16D83003BA60D /* OfferCard2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfferCard2.swift; sourceTree = "<group>"; };
 		E7321A2929B17C70003BA60D /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
+		E732BE3729CC6FAB0067BFC2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		E732BE3929CC6FFC0067BFC2 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		E74092DA29C6C2BB005104CF /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
 		E74092DC29C6C963005104CF /* BookingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRow.swift; sourceTree = "<group>"; };
 		E74092DE29C6C9AB005104CF /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 		E72132F729ADABA30062D3FF = {
 			isa = PBXGroup;
 			children = (
+				E732BE3729CC6FAB0067BFC2 /* .gitignore */,
 				E721330229ADABA30062D3FF /* AppStorageApp */,
 				E721331329ADABA40062D3FF /* AppStorageAppTests */,
 				E721331D29ADABA40062D3FF /* AppStorageAppUITests */,
@@ -206,6 +211,7 @@
 		E721330229ADABA30062D3FF /* AppStorageApp */ = {
 			isa = PBXGroup;
 			children = (
+				E732BE3429CC6E410067BFC2 /* APIKeys */,
 				E785BB8B29C7B3C500C74F82 /* ImagePicker */,
 				E793FA9429AF8723000B0B15 /* GoogleService-Info.plist */,
 				E793FA5829AF55F4000B0B15 /* Views */,
@@ -268,6 +274,14 @@
 				E7321A2929B17C70003BA60D /* GifImage.swift */,
 			);
 			path = Splash;
+			sourceTree = "<group>";
+		};
+		E732BE3429CC6E410067BFC2 /* APIKeys */ = {
+			isa = PBXGroup;
+			children = (
+				E732BE3929CC6FFC0067BFC2 /* APIKeys.swift */,
+			);
+			path = APIKeys;
 			sourceTree = "<group>";
 		};
 		E74C7B5729BA6F2E00993EFC /* FlightTicketCreator */ = {
@@ -566,6 +580,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E732BE3829CC6FAB0067BFC2 /* .gitignore in Resources */,
 				E75EF24229BA100300D61D02 /* fullstuff.gif in Resources */,
 				E721330B29ADABA40062D3FF /* Preview Assets.xcassets in Resources */,
 				E721330829ADABA40062D3FF /* Assets.xcassets in Resources */,
@@ -618,6 +633,7 @@
 				E71B3D3129C3638D00AAB7C0 /* Shape1.swift in Sources */,
 				E7D48B8929AE2A51008C6B41 /* Home.swift in Sources */,
 				E7D48BD629AE53C4008C6B41 /* ModelData.swift in Sources */,
+				E732BE3A29CC6FFC0067BFC2 /* APIKeys.swift in Sources */,
 				E721330629ADABA30062D3FF /* ContentView.swift in Sources */,
 				E7863AA529B2388C004B991F /* HotelDetailView.swift in Sources */,
 				E75EF24429BA1D3700D61D02 /* HotelDetailRow1.swift in Sources */,
