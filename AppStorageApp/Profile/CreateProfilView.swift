@@ -24,9 +24,7 @@ struct CreateProfilView: View {
     
     // Definition der Ansichtsstruktur
     var body: some View {
-        
-        Image("person.fill.badge.plus")
-    
+            
             NavigationStack {
               
                 VStack(spacing:20) {

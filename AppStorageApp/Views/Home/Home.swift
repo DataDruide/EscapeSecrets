@@ -11,7 +11,7 @@ import SwiftUI
 
 struct Home: View {
     
-    @State var selectedTab = 1
+    @State var selectedTab = 0
     @StateObject var jobViewModel: JobListViewModel = JobListViewModel()
     @StateObject var flightViewModel: FlightSearchViewModel = FlightSearchViewModel()
     @StateObject var reiseZieleModel: ReiseAuswahlViewModel = ReiseAuswahlViewModel()
@@ -27,7 +27,7 @@ struct Home: View {
                             }
          
                         }
-                    }.tag(1)
+                    }.tag(0)
                 
                 MultiBookingView(viewModel: FlightSearchViewModel())
                     .tabItem {
@@ -38,7 +38,7 @@ struct Home: View {
                             }
                             
                         }
-                    }.tag(2)
+                    }.tag(1)
                 JobRow(viewModel: JobListViewModel())
                     .tabItem {
                         VStack {
@@ -48,18 +48,17 @@ struct Home: View {
                             }
                             
                         }
-                    }.tag(3)
+                    }.tag(2)
                 CreateProfilView()
                     .tabItem {
-                        VStack {
                             VStack {
                                 Image(systemName: "person.crop.circle")
                                 Text("MyProfil")
                             }
                             
                             
-                        }
-                    }.tag(4)
+                        
+                    }.tag(3)
             }
             .frame(width: nil, height: nil)
             .background(.thinMaterial)
