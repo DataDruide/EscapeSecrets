@@ -17,17 +17,23 @@ struct BookingRow: View {
     var body: some View {
         VStack {
             Text("Step One of your Booking Process")
+                .foregroundColor(.black)
+
             Spacer()
            
                 VStack {
                     Text("Number of Bags:")
                         .font(.headline)
+                        .foregroundColor(.black)
+
                     
                     Stepper(value: $checkedBags, in: 0...10) {
                         Text("\(checkedBags) \(checkedBags == 1 ? "Bag" : "Bags")")
+                            .foregroundColor(.black)
+
                     }
                     .padding()
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                 }
                 
                 
@@ -35,6 +41,8 @@ struct BookingRow: View {
                     //  PaymentView
                 } else {
                     Text("Please watch for a Seat and bording them")
+                        .foregroundColor(.black)
+
                 }
             }
             ImageSelectionView()

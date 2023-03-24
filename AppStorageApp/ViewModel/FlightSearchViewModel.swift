@@ -48,6 +48,8 @@ class FlightSearchViewModel: ObservableObject {
     }
 }
 
+
+
 // Das FlightDestination-Struct wird verwendet, um die aus der API-Anfrage zurückgegebenen Flugziele zu decodieren
 struct FlightDestination: Codable, Identifiable {
     let id = UUID()

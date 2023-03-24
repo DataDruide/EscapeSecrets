@@ -58,7 +58,7 @@ struct CreateProfilView: View {
                         .foregroundColor(.white)
                         .frame(height: 60)
                         .frame(maxWidth: .infinity)
-                        .background(Color.orange)
+                        .background(Color.purple)
                         .cornerRadius(10)
                         .padding(.horizontal)
                 }
@@ -70,7 +70,7 @@ struct CreateProfilView: View {
                             Image(systemName: memberData.done ? "checkmark.circle.fill": "checkmark.circle")
                             Text(memberData.desc ?? "no desc.")
                         }
-                        .listRowBackground(memberData.done ? Color.gray : Color.orange)
+                        .listRowBackground(memberData.done ? Color.gray : Color.purple)
                         .onTapGesture {
                             memberDataViewModel.updateMemberData(MemberData: memberData)
                         }

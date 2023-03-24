@@ -13,3 +13,4 @@ struct Landmark: Identifiable {
     let name: String
     let imageName: String
 }
+
