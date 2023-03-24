@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22D68" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="UserEntity" representedClassName="UserEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="address" optional="YES" attributeType="String"/>
         <attribute name="age" optional="YES" attributeType="String"/>
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="done" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="firstname" optional="YES" attributeType="String"/>
         <attribute name="lastname" optional="YES" attributeType="String"/>
+        <attribute name="passportExpirationDate" optional="YES" attributeType="String"/>
+        <attribute name="passportNumber" optional="YES" attributeType="String"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String"/>
+        <attribute name="zipCode" optional="YES" attributeType="String"/>
     </entity>
 </model>

@@ -34,7 +34,7 @@ struct Home: View {
                         VStack {
                             VStack {
                                 Image(systemName: "airplane.departure")
-                                Text("Flightsearch")
+                                Text("My Booking")
                             }
                             
                         }

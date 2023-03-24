@@ -60,18 +60,24 @@ struct ImageSelectionView: View {
                     .padding(.horizontal)
                 Spacer()
                 Checkbox(isChecked: $isSelected1)
+                    .padding()
+
             }
             HStack {
                 Text("Mitte")
                     .padding(.horizontal)
                 Spacer()
                 Checkbox(isChecked: $isSelected2)
+                    .padding()
+
             }
             HStack {
                 Text("Fenster")
                     .padding(.horizontal)
                 Spacer()
                 Checkbox(isChecked: $isSelected3)
+                    .padding()
+
             }
             Spacer()
         }

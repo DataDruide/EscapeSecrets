@@ -20,12 +20,30 @@ class FlightSearchViewModel: ObservableObject {
     
     // Die Flugziele, die aus der API-Anfrage zurückgegeben werden, werden hier gespeichert
     @Published var flightDestinations = [FlightDestination]()
-    @Published var destinationCode: String = "" // Neues @Published property hinzufügen
-    @Published var originCode: String = "" // Neues @Published property hinzufügen
+    @Published var destinationCode: String = ""
+    @Published var originCode: String = ""
+    @Published var startDate: Date = Date()
+    @Published var endDate: Date = Date()
+    @Published var passengers: Int = 1
+    @Published var isOneWay: Bool = true
 
     // Methode zum Abrufen der Flugziele aus der Amadeus-API
     func fetchFlightDestinations(completion: @escaping () -> Void) {
-        amadeus.shopping.flightDestinations.get(params: ["origin": "MAD", "oneWay": "false", "nonStop": "false"]) { result in
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let start = dateFormatter.string(from: startDate)
+        let end = dateFormatter.string(from: endDate)
+        var params: [String: String] = ["origin": originCode, "oneWay": String(isOneWay), "nonStop": "false"]
+        if !destinationCode.isEmpty {
+            params["destination"] = destinationCode
+        }
+        if isOneWay {
+            params["departureDate"] = start
+        } else {
+            params["departureDate"] = start + " -- " + end
+        }
+        params["adults"] = String(passengers)
+        amadeus.shopping.flightDestinations.get(params: params) { result in
             switch result {
             case .success(let response):
                 DispatchQueue.main.async {
@@ -46,9 +64,16 @@ class FlightSearchViewModel: ObservableObject {
             }
         }
     }
+    
+    func save(from: String, to: String, startDate: Date, endDate: Date, passengers: Int, isOneWay: Bool) {
+        self.originCode = from
+        self.destinationCode = to
+        self.startDate = startDate
+        self.endDate = endDate
+        self.passengers = passengers
+        self.isOneWay = isOneWay
+    }
 }
-
-
 
 // Das FlightDestination-Struct wird verwendet, um die aus der API-Anfrage zurückgegebenen Flugziele zu decodieren
 struct FlightDestination: Codable, Identifiable {
@@ -60,6 +85,7 @@ struct FlightDestination: Codable, Identifiable {
     let returnDate: String
     let price: Price
 }
+
 
 // Das Price-Struct wird verwendet, um die Preisinformationen für ein Flugziel zu decodieren
 struct Price: Codable {
@@ -82,3 +108,4 @@ struct Flights: Decodable {
         case travelers = "travelers_distribution"
     }
 }
+
