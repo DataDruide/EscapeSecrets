@@ -26,17 +26,17 @@ struct Shape1: View {
                 }
                 .multilineTextAlignment(.leading)
                 .padding(10)
-                .foregroundColor(.black)
+                .foregroundColor(.red)
                 .bold()
-                .font(.system(size: 22))
+                .font(.system(size: 24))
                 
                 
                 
-                Text("Hi nice to see you again ... \(authService.user?.email ?? "")!")
+                Text("Hi \(authService.user?.email ?? "")!")
                     .padding()
                     .multilineTextAlignment(.leading)
-                    .font(.system(size: 14))
-                    .foregroundColor(.black)
+                    .font(.system(size: 16))
+                    .foregroundColor(.white)
                 
                     .sheet(isPresented: $showYourWayView) {
                         YourWayView(show: $showYourWayView)

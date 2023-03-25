@@ -72,7 +72,6 @@
 		E7D48BDC29AE5459008C6B41 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E7D48BDB29AE5459008C6B41 /* Alamofire */; };
 		E7F47BE929AEC1FB000D9CA4 /* ReiseAuswahlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BE829AEC1FB000D9CA4 /* ReiseAuswahlViewModel.swift */; };
 		E7F47BEB29AEC249000D9CA4 /* ReiseAuswahlModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BEA29AEC249000D9CA4 /* ReiseAuswahlModel.swift */; };
-		E7F47BED29AEC384000D9CA4 /* ShowHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BEC29AEC384000D9CA4 /* ShowHomeView.swift */; };
 		E7F47BF529AED238000D9CA4 /* HomeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BF429AED238000D9CA4 /* HomeRow.swift */; };
 		E7F47BF729AED439000D9CA4 /* PlaneRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BF629AED439000D9CA4 /* PlaneRow.swift */; };
 		E7F47BF929AED49C000D9CA4 /* JobRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F47BF829AED49C000D9CA4 /* JobRow.swift */; };
@@ -159,7 +158,6 @@
 		E7D48BD829AE5426008C6B41 /* HotelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelView.swift; sourceTree = "<group>"; };
 		E7F47BE829AEC1FB000D9CA4 /* ReiseAuswahlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReiseAuswahlViewModel.swift; sourceTree = "<group>"; };
 		E7F47BEA29AEC249000D9CA4 /* ReiseAuswahlModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReiseAuswahlModel.swift; sourceTree = "<group>"; };
-		E7F47BEC29AEC384000D9CA4 /* ShowHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowHomeView.swift; sourceTree = "<group>"; };
 		E7F47BF429AED238000D9CA4 /* HomeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRow.swift; sourceTree = "<group>"; };
 		E7F47BF629AED439000D9CA4 /* PlaneRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaneRow.swift; sourceTree = "<group>"; };
 		E7F47BF829AED49C000D9CA4 /* JobRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobRow.swift; sourceTree = "<group>"; };
@@ -380,9 +378,9 @@
 		E7D48B8729AE2A46008C6B41 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				E780AD2729C88B12005BAB8A /* DetailView.swift */,
 				E7D48B8829AE2A51008C6B41 /* Home.swift */,
 				E7F47BF329AED21A000D9CA4 /* HomeRow */,
-				E7F47BEC29AEC384000D9CA4 /* ShowHomeView.swift */,
 				E71B3D3029C3638D00AAB7C0 /* Shape1.swift */,
 			);
 			path = Home;
@@ -440,7 +438,6 @@
 				E74C7B5D29BA716B00993EFC /* Flight.swift */,
 				E74C7B5F29BA71B300993EFC /* CustomerFlightTicket.swift */,
 				E74092E229C6CA99005104CF /* Seat.swift */,
-				E780AD2729C88B12005BAB8A /* DetailView.swift */,
 				E732BE4A29CD400F0067BFC2 /* BookingModel.swift */,
 			);
 			path = Models;
@@ -631,7 +628,6 @@
 				E7B3A18929C20B6A0047F02D /* MemberDataViewModel.swift in Sources */,
 				E7D48BCF29AE5353008C6B41 /* JobListViewModel.swift in Sources */,
 				E780AD2629C887EE005BAB8A /* BookingViewModel.swift in Sources */,
-				E7F47BED29AEC384000D9CA4 /* ShowHomeView.swift in Sources */,
 				E70F67D429B0ED350041B808 /* OfferCard.swift in Sources */,
 				E7D48BD429AE53AB008C6B41 /* JobModel.swift in Sources */,
 				E732BE4929CD3F7F0067BFC2 /* TicketView.swift in Sources */,
