@@ -18,11 +18,16 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct AppStorageAppApp: App {
+    @StateObject private var tripTide = TripTypeViewModel()
+    @StateObject private var hotelTide = HotelTypeViewModel()
+
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
             SplashView()
                 .environmentObject(AuthService())
+                .environmentObject(tripTide)
+                .environmentObject(hotelTide)
 
         }
     }
