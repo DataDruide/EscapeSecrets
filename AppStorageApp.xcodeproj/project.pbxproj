@@ -58,6 +58,7 @@
 		E74BF58F29E8C496005A9961 /* JobView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74BF58E29E8C496005A9961 /* JobView2.swift */; };
 		E74BF59129E8C6A9005A9961 /* EmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74BF59029E8C6A9005A9961 /* EmptyStateView.swift */; };
 		E74BF59429E8C902005A9961 /* SearchBarHomeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74BF59329E8C902005A9961 /* SearchBarHomeRow.swift */; };
+		E74BF59729E946AD005A9961 /* OnboardItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74BF59629E946AD005A9961 /* OnboardItem.swift */; };
 		E74C7B5C29BA711500993EFC /* MultiBookingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C7B5B29BA711500993EFC /* MultiBookingView.swift */; };
 		E74C7B6029BA71B300993EFC /* CustomerFlightTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74C7B5F29BA71B300993EFC /* CustomerFlightTicket.swift */; };
 		E74EC15529DCD6AF007585E0 /* HeaderShape1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74EC15429DCD6AF007585E0 /* HeaderShape1.swift */; };
@@ -209,6 +210,7 @@
 		E74BF58E29E8C496005A9961 /* JobView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobView2.swift; sourceTree = "<group>"; };
 		E74BF59029E8C6A9005A9961 /* EmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyStateView.swift; sourceTree = "<group>"; };
 		E74BF59329E8C902005A9961 /* SearchBarHomeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarHomeRow.swift; sourceTree = "<group>"; };
+		E74BF59629E946AD005A9961 /* OnboardItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardItem.swift; sourceTree = "<group>"; };
 		E74C7B5B29BA711500993EFC /* MultiBookingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiBookingView.swift; sourceTree = "<group>"; };
 		E74C7B5F29BA71B300993EFC /* CustomerFlightTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerFlightTicket.swift; sourceTree = "<group>"; };
 		E74EC15429DCD6AF007585E0 /* HeaderShape1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderShape1.swift; sourceTree = "<group>"; };
@@ -747,6 +749,7 @@
 				E721333029ADB5440062D3FF /* AfterOnBoarding.swift */,
 				E721332E29ADB5300062D3FF /* OnboardingView.swift */,
 				E753501529E7676700F7A7E0 /* OnboardingRules.swift */,
+				E74BF59629E946AD005A9961 /* OnboardItem.swift */,
 			);
 			path = OnBoarding;
 			sourceTree = "<group>";
@@ -1328,6 +1331,7 @@
 				E74F203F29D30A2300AF9C40 /* SearchBarView.swift in Sources */,
 				E739635D29E6F675009A7B5A /* RestaurantCardView.swift in Sources */,
 				E74F205029D30FCF00AF9C40 /* RoundViews.swift in Sources */,
+				E74BF59729E946AD005A9961 /* OnboardItem.swift in Sources */,
 				E70EC75229D4C04100AB0B8C /* MemberInfoView.swift in Sources */,
 				E74F203829D3092700AF9C40 /* Cart.swift in Sources */,
 				E74F205429D3947800AF9C40 /* DetailActivityRow.swift in Sources */,
