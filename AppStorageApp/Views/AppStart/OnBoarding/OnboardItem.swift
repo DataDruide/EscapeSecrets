@@ -22,6 +22,7 @@ struct OnboardItem: View {
                 .resizable()
                 .padding(20)
                 .scaledToFit()
+                .cornerRadius(30)
             
             Spacer()
             

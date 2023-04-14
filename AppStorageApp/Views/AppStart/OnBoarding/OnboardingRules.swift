@@ -11,13 +11,14 @@ import SwiftUI
 struct OnboardingRules: View {
     
     @EnvironmentObject var authService : AuthService
-  @AppStorage("onBoarding")  var onBoarding = true
-    
+    @AppStorage("onBoarding")  var onBoarding = true
+    @State private var showLoginView = false
+    @State private var RestartOnboarding = false
 
     var body: some View {
         VStack {
             if onBoarding {
-                OnBoardingPageOne()
+                OnBoardingView()
             } else {
                 Group{
                     if authService.user != nil{

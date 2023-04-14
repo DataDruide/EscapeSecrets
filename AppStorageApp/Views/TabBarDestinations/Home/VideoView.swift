@@ -24,9 +24,6 @@ struct VideoView: View {
     
     var body: some View {
       
-            
-           
-            
                 ZStack {
                     VideoPlayer(player: player)
                         .onAppear() {

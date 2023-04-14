@@ -13,7 +13,7 @@ struct HomeRow: View {
         
         let favoriteTarget : [FavoriteTargets] = [
             .init(name: "Malediven", imageName: "Malediven"),
-            .init(name: "thailand", imageName: "thailand"),
+            .init(name: "thailand", imageName: "Bali 1"),
             .init(name: "spain", imageName: "spain")
             
         ]
@@ -27,24 +27,28 @@ struct HomeRow: View {
                     .position(x:196,y:250)
                 
                 // Button
-                    Button(action: {
-                        self.showShapeOne = true
-                    }, label: {
+                Button(action: {
+                    self.showShapeOne = true
+                }) {
+                    HStack {
                         Image(systemName: "figure.walk.arrival")
                             .font(.headline)
                             .foregroundColor(.orange)
                             .blur(radius: 0.5)
                             .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
-                            .padding(.horizontal, 50)
-                            .padding(.vertical, 16)
-                        
-                    })
-                    .shadow(radius: 10)
-                    .offset(x: -150, y: -345) // Position des Buttons auf der Z-Ebene
-                    .sheet(isPresented: $showShapeOne) {
-                        Shape1(username: "authService")
+                       
                     }
-               
+                    .padding()
+                    .background(Circle())
+                   // Color.green
+                    .cornerRadius(10)
+                    .shadow(radius: 10)
+                }
+                .offset(x: -150, y: -345) // Position des Buttons auf der Z-Ebene
+                .sheet(isPresented: $showShapeOne) {
+                    Shape1(username: "authService")
+                }
+
                 
                 VStack(alignment: .center) {
               
@@ -119,17 +123,17 @@ struct HomeRow: View {
                     // Setze den Hintergrund mit einer Kapselform und einem Farbverlauf.
                     .background(LinearGradient(colors: [.green, .clear], startPoint: .topLeading, endPoint: .bottomTrailing), in: Capsule())
                     .shadow(color: .black.opacity(0.6), radius: 5, x:15, y: 50)
-                    .position(x:80, y:79) // hier stellt man den grünen Rahmen auf ihre richtige Position
+                    .position(x:80, y:50) // hier stellt man den grünen Rahmen auf ihre richtige Position
                     
                     VStack(alignment: .center) {
                         ScrollView(.horizontal) {
-                            HStack(spacing: 55) {
+                            HStack() {
                                 ForEach(favoriteTarget) { target in
                                     NavigationLink(destination: DetailPopularDestinationView(name: target.name, imageName: target.imageName)) {
                                         Image(target.imageName)
                                             .resizable()
                                             .aspectRatio(contentMode: .fill)
-                                            .frame(width: 100, height: 240)
+                                            
                                     }
                                 }
                             }
@@ -141,7 +145,6 @@ struct HomeRow: View {
                 }
             }
             .background(Color.black.opacity(0.75))
-            .ignoresSafeArea()
         }
     }
     

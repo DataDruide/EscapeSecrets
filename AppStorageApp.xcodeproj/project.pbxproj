@@ -35,7 +35,6 @@
 		E721332F29ADB5300062D3FF /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721332E29ADB5300062D3FF /* OnboardingView.swift */; };
 		E721333129ADB5440062D3FF /* AfterOnBoarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333029ADB5440062D3FF /* AfterOnBoarding.swift */; };
 		E721333929ADE8B50062D3FF /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721333829ADE8B50062D3FF /* SplashView.swift */; };
-		E7225D3529D7FDFB001978F2 /* JobShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7225D3429D7FDFB001978F2 /* JobShape.swift */; };
 		E7321A2A29B17C70003BA60D /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7321A2929B17C70003BA60D /* GifImage.swift */; };
 		E732BE3829CC6FAB0067BFC2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E732BE3729CC6FAB0067BFC2 /* .gitignore */; };
 		E732BE3A29CC6FFC0067BFC2 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732BE3929CC6FFC0067BFC2 /* APIKeys.swift */; };
@@ -187,7 +186,6 @@
 		E721332E29ADB5300062D3FF /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		E721333029ADB5440062D3FF /* AfterOnBoarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AfterOnBoarding.swift; sourceTree = "<group>"; };
 		E721333829ADE8B50062D3FF /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		E7225D3429D7FDFB001978F2 /* JobShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobShape.swift; sourceTree = "<group>"; };
 		E7321A2929B17C70003BA60D /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		E732BE3729CC6FAB0067BFC2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E732BE3929CC6FFC0067BFC2 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
@@ -394,7 +392,6 @@
 			isa = PBXGroup;
 			children = (
 				E7B32CE629DA928E0032A478 /* DetailViews */,
-				E7225D3429D7FDFB001978F2 /* JobShape.swift */,
 				E7B32CD629DA909B0032A478 /* TravelDiscoveryView.swift */,
 				E7B32CD829DA90D00032A478 /* PopularDestinationView.swift */,
 				E7B32CDA29DA90E90032A478 /* PopularRestaurantsView.swift */,
@@ -1369,7 +1366,6 @@
 				E74F203429D308A100AF9C40 /* HotelListView.swift in Sources */,
 				E7B32CEC29DA9A450032A478 /* SeatsDestinationDetailView.swift in Sources */,
 				E7F47BFB29AED4E6000D9CA4 /* CreateProfilView.swift in Sources */,
-				E7225D3529D7FDFB001978F2 /* JobShape.swift in Sources */,
 				E74EC15529DCD6AF007585E0 /* HeaderShape1.swift in Sources */,
 				E721333929ADE8B50062D3FF /* SplashView.swift in Sources */,
 				E7F47BEB29AEC249000D9CA4 /* ReiseAuswahlModel.swift in Sources */,

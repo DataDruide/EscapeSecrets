@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AfterOnBoarding: View {
     
-    @AppStorage("onBoarding")  var onBoarding = true
+    @AppStorage("onBoarding")  var onBoarding = false
     
     
     @State private var showLoginView = false
