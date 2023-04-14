@@ -50,8 +50,9 @@ struct Places : Identifiable {
 var gorgesDuVerdon = Places(name: "gorges du verdon", description: "kayak", image: "activityimage4")
 var hossegor = Places(name: "hossegor", description: "surf", image: "activityimage1")
 var mercantour = Places(name: "Mercantour", description: "hiking", image: "activityimage2")
+var guide = Places(name: "Guide", description: "visit Interest Locations", image: "activityimage3")
 
-var places : [Places]  = [gorgesDuVerdon,hossegor,mercantour]
+var places : [Places]  = [gorgesDuVerdon,hossegor,mercantour,guide]
 
 // Erstellen weiterer Instanzen der Aktivitäten-Struct und Speichern in Variablen
 var surfing = Activities(name: "SURFEN", image: "activityimage1",description: "You won't forget that, here are the best and the biggest waves that any adventure surfer will dream to jump in.Make your kid interior have fun by booking this amazing experince right now !", price: 90, latitude: 33.8915, longitude: 151.2767)

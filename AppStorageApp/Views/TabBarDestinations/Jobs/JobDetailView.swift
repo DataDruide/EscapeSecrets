@@ -12,11 +12,9 @@ struct JobDetailView: View {
     
     var body: some View {
         ZStack {
-            Image("BG 1")
-                .resizable()
-                .ignoresSafeArea(.all)
-            
-            
+            // Ein Farbverlauf wird als Hintergrund festgelegt
+            LinearGradient(colors: [.black,.gray,.black], startPoint: .topLeading, endPoint: .bottomLeading)
+                .edgesIgnoringSafeArea(.all)
             List {
                 VStack(alignment: .center) {
                     Text(job.title)
@@ -45,11 +43,21 @@ struct JobDetailView: View {
                                 .fontWeight(.semibold)
                                 .font(.title)
                         }
-                        .frame(minWidth: 0, maxWidth: .infinity)
-                        .padding(.vertical, 15)
-                        .foregroundColor(.black)
-                        .background(Color.purple).opacity(0.55)
-                        .cornerRadius(40)
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 40)
+                        .padding(.vertical, 16)
+                        .background(
+                            RoundedRectangle(cornerRadius: 20)
+                                .foregroundColor(
+                                    Color(
+                                        red: 55 / 255,
+                                        green: 200 / 255,
+                                        blue: 80 / 255
+                                    )
+                                )
+                        )
+                }
                     }
                     Spacer()
                     Divider()
@@ -61,8 +69,7 @@ struct JobDetailView: View {
             }
             .navigationTitle(job.title)
             .navigationBarTitleDisplayMode(.inline)
-            .background(Color.purple)
         }
     }
     
-}
+

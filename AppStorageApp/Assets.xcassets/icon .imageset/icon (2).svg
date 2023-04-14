@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 354 371" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;">
+    <g transform="matrix(1,0,0,1,-842,-756)">
+        <g id="icon">
+            <g transform="matrix(1,0,0,1,690.574,307.844)">
+                <circle cx="322.237" cy="648.128" r="170.781" style="fill:rgb(95,58,0);"/>
+            </g>
+            <g transform="matrix(1,0,0,1,702.665,279.535)">
+                <circle cx="322.237" cy="648.128" r="170.781" style="fill:rgb(255,156,0);"/>
+                <clipPath id="_clip1">
+                    <circle cx="322.237" cy="648.128" r="170.781"/>
+                </clipPath>
+                <g clip-path="url(#_clip1)">
+                    <g id="volume-up.svg" transform="matrix(10.8049,0,0,10.8049,192.578,518.468)">
+                        <path d="M15.536,8.464C16.474,9.401 17.001,10.674 17.001,12C17.001,13.326 16.474,14.599 15.536,15.536M18.364,5.636C20.051,7.323 21,9.614 21,12C21,14.386 20.051,16.677 18.364,18.364M5.586,15L4,15C3.451,15 3,14.549 3,14L3,10C3,9.451 3.451,9 4,9L5.586,9L10.293,4.293C10.923,3.663 12,4.109 12,5L12,19C12,19.891 10.923,20.337 10.293,19.707L5.586,15Z" style="fill:none;fill-rule:nonzero;stroke:white;stroke-width:2px;"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

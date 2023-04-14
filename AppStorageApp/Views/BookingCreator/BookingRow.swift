@@ -1,64 +1,55 @@
-//
-//  BookingRow.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 19.03.23.
-//
-//import SwiftUI
-//
-//struct BookingRow: View {
-//    
-//    @State var selectedFlight: Flight?
-//    @State var selectedSeat: Seat?
-//    @State var checkedBags: Int = 0
-//    
-//    var body: some View {
-//        VStack {
-//            Text("Step Two")
-//                .foregroundColor(.black)
-//            
-//            Text("Here you can enter\nyour luggage and choose your seat")
-//                .foregroundColor(.black)
-//                .multilineTextAlignment(.center)
-//
-//           
-//            VStack {
-//                Text("Number of Bags:")
-//                    .font(.headline)
-//                    .foregroundColor(.black)
-//
-//                
-//                Stepper(value: $checkedBags, in: 0...10) {
-//                    Text("\(checkedBags) \(checkedBags == 1 ? "Bag" : "Bags")")
-//                        .foregroundColor(.black)
-//
-//                }
-//                .padding()
-//                .foregroundColor(.black)
-//            }
-//            
-//            
-//            if selectedFlight != nil && selectedSeat != nil && checkedBags > 0 {
-//                // PaymentView
-//            } else {
-//                Text("Please watch for a Seat and bording them")
-//                    .foregroundColor(.black)
-//
-//            }
-//            
-//            ImageSelectionView()
-//            
-//            Button(action: {
-//                // Logic to save the data
-//            }) {
-//                Text("Save Booking Data")
-//                    .font(.headline)
-//                    .foregroundColor(.white)
-//            }
-//            .padding()
-//            .background(Color.purple)
-//            .cornerRadius(10)
-//            .shadow(radius: 5)
-//        }
-//    }
-//}
+
+
+import SwiftUI
+
+struct BookingRow: View {
+    @State private var fn = ""
+         @State private var departure = Date()
+         @State private var pin = "1234"
+         @State private var checked = true
+         @State private var smoker = false
+         @State private var pets = false
+         @State private var checkin  = Date()
+         @State private var checkout = Date()
+         @State private var rating: Double = 4
+         var body: some View {
+             Form {
+                 Section(header: Text("Flight")) {
+                     TextField("Flight No", text: self.$fn)
+                     Toggle(isOn: self.$checked) {
+                         Text("Luggage")
+                         Image(systemName: "briefcase.fill")
+                     }
+                     DatePicker(selection: self.$departure) {
+                         HStack {
+                             Text("Departure")
+                             Image(systemName: "airplane")
+                         }
+                     }
+                     HStack {
+                         Spacer()
+                         Button("Send") { print("edit hotel") }
+                     }
+                 }
+                 Section(header: Text("Accomodation")) {
+                     Toggle(isOn: self.$smoker) {
+                         Text("Smoking Room")
+                         Image(systemName: "nosign")
+                     }
+                     Toggle(isOn: self.$pets) {
+                         Text("Pets")
+                         Image(systemName: "tortoise.fill")
+                     }
+                     HStack {
+                         Spacer()
+                         Button("Send") { print("edit hotel") }
+                     }
+                 }
+                 Section(header: Text("Booking")) {
+                     Text("Rating \(Int(self.rating)) out of 5 :stern:️")
+                     Slider(value: self.$rating, in: 1...5, step: 1)
+                     SecureField("Pin", text: self.$pin)
+                 }
+             }
+         }
+     }

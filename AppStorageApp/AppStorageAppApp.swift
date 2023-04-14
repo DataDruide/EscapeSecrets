@@ -18,8 +18,11 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct AppStorageAppApp: App {
+    @EnvironmentObject var authService : AuthService
+
     @StateObject private var tripTide = TripTypeViewModel()
     @StateObject private var hotelTide = HotelTypeViewModel()
+    @StateObject private var flightTide = FlightTypeViewModel()
 
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
@@ -28,6 +31,7 @@ struct AppStorageAppApp: App {
                 .environmentObject(AuthService())
                 .environmentObject(tripTide)
                 .environmentObject(hotelTide)
+                .environmentObject(flightTide)
 
         }
     }

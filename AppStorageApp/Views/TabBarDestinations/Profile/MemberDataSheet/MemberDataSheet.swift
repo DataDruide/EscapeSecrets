@@ -1,47 +1,52 @@
-//
-//  MemberDataSheet.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 24.03.23.
-//
+
 
 import SwiftUI
 
 // Sheet zur Anzeige der Benutzerdaten
 struct MemberDataSheet: View {
-@Binding var isShowingMemberDataSheet: Bool
-@ObservedObject var memberDataViewModel: MemberDataViewModel
-
-
-var body: some View {
-    NavigationView {
-        List {
-            // Anzeige aller gespeicherten Benutzerdaten
-            ForEach(memberDataViewModel.savedUserDaten) { data in
-                HStack {
-                    Image(systemName: data.done ? "checkmark.circle.fill" : "checkmark.circle")
-                    Text(data.desc ?? "No description")
-                        .strikethrough(data.done)
-                    Spacer()
-                    Button(action: {
-                        memberDataViewModel.updateMemberData(MemberData: data)
-                    }) {
-                        Text(data.done ? "Undo" : "Done")
+    @Binding var isShowingMemberDataSheet: Bool
+    @ObservedObject var memberDataViewModel: MemberDataViewModel
+    
+    
+    var body: some View {
+        ZStack {
+            
+            // Ein Farbverlauf wird als Hintergrund festgelegt
+            
+            LinearGradient(colors: [.black.opacity(0.97),.black.opacity(0.97)], startPoint: .topLeading, endPoint: .bottomLeading)
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack(alignment: .center, spacing:10){
+                NavigationView {
+                    List {
+                        // Anzeige aller gespeicherten Benutzerdaten
+                        ForEach(memberDataViewModel.savedUserDaten) { data in
+                            HStack {
+                                Image(systemName: data.done ? "checkmark.circle.fill" : "checkmark.circle")
+                                Text(data.desc ?? "No description")
+                                    .strikethrough(data.done)
+                                Spacer()
+                                Button(action: {
+                                    memberDataViewModel.updateMemberData(MemberData: data)
+                                }) {
+                                    Text(data.done ? "Undo" : "Done")
+                                }
+                                .buttonStyle(BorderlessButtonStyle())
+                            }
+                        }
                     }
-                    .buttonStyle(BorderlessButtonStyle())
-                }
-            }
-        }
-        .navigationTitle("Member Data")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button(action: {
-                    isShowingMemberDataSheet = false
-                }) {
-                    Text("Close")
+                    .navigationTitle("Member Data")
+                    .toolbar {
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button(action: {
+                                isShowingMemberDataSheet = false
+                            }) {
+                                Text("Close")
+                            }
+                        }
+                    }
                 }
             }
         }
     }
-}
 }

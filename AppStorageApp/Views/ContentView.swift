@@ -11,16 +11,19 @@ struct ContentView: View {
     @EnvironmentObject var authService : AuthService
   
 
-    @Binding var show : Bool
 
     var body: some View {
-        ZStack {
-           Image("BG 1")
-                .resizable()
-                .ignoresSafeArea(.all)
+        NavigationStack {
             
-            VStack {
-                RulesOfMyWay(show: $show)
+            
+            ZStack {
+                // Ein Farbverlauf wird als Hintergrund festgelegt
+                LinearGradient(colors: [.black,.black,.black], startPoint: .topLeading, endPoint: .bottomLeading)
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    OnboardingRules()
+                }
             }
         }
     }

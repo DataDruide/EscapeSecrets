@@ -22,25 +22,33 @@ struct JobRow: View {
     
     
     var body: some View {
-        NavigationView {
-           
+       
+            NavigationStack {
                 
-                VStack {
+                ZStack {
+                    // Hintergrundbildansicht
+                    Color.black
+                        .ignoresSafeArea()
+                    
+                    VStack(alignment: HorizontalAlignment.center) {
                     Image("flexibel")
                         .resizable()
+                        .frame(maxWidth: 400, maxHeight: 600)
+                        .shadow(color: .gray, radius: 0.5, x: 1.00, y: 1)
+                        .multilineTextAlignment(.center)
                     HStack {
                         Text("Ihr Jobfinder für jede Reiselage")
                             .multilineTextAlignment(.leading)
-                            .foregroundColor(.gray)
-                            .font(.system(size: 14))
+                            .foregroundColor(.white)
+                            .font(.system(size: 18))
                         
                         Button("Info") {
                             showAlert = true
                         }
                         .alert(isPresented: $showAlert) {
                             Alert(
-                                title: Text("Here can you search Jobs"),
-                                message: Text("Hello dear travelers we have you in app another exciting feature packed.And that you can no matter where you are right now, and the travel budget is running out, or you have already agreed to work abroad before travel we thought that this feature you another point on your ToDo list where you no longer have to worry")
+                                title: Text("You need a Job"),
+                                message: Text("..... you need a Job than come in and find out....")
                             )
                             
                         }
@@ -60,96 +68,31 @@ struct JobRow: View {
                             .padding()
                             .background(
                                 RoundedRectangle(cornerRadius: 10)
-                                    .stroke(Color.orange, lineWidth: 1)).opacity(0.6)
-                        .offset(y: offsetY)
-                        .gesture(DragGesture().onChanged({ value in
-                            self.offsetY = value.translation.height
-                        }).onEnded({ value in
-                            withAnimation(.spring()) {
-                                if offsetY > 50 {
-                                    offsetY = UIScreen.main.bounds.height
-                                } else if offsetY < -50 {
-                                    offsetY = -UIScreen.main.bounds.height
-                                } else {
-                                    offsetY = 0
+                                    .stroke(Color.orange, lineWidth: 1)).opacity(0.8)
+                            .offset(y: offsetY)
+                            .gesture(DragGesture().onChanged({ value in
+                                self.offsetY = value.translation.height
+                            }).onEnded({ value in
+                                withAnimation(.spring()) {
+                                    if offsetY > 50 {
+                                        offsetY = UIScreen.main.bounds.height
+                                    } else if offsetY < -50 {
+                                        offsetY = -UIScreen.main.bounds.height
+                                    } else {
+                                        offsetY = 0
+                                    }
                                 }
-                            }
-                        }))
+                            }))
                     }
                 }
             }
-        
             
-        }
-}
-
-import SwiftUI
-
-struct JobView2: View {
-  @ObservedObject var job: JobViewModel
-  @State var liked: Bool = false
-  
-  var body: some View {
-    VStack {
-      HStack {
-        VStack() {
-          HStack {
-            Text(job.title)
-              .font(.title2)
-              .foregroundColor(Color(.black))
-          }
-          HStack {
-            Text((job.salary == "") ? "Salary: N/A" :"Salary: \(job.salary)")
-              .font(.footnote)
-              .foregroundColor(Color(.black))
-            Spacer()
-            Text((job.location == "") ? "Location: N/A" :"Location: \(job.location)")
-              .font(.footnote)
-              .foregroundColor(Color(.black))
-            Spacer()
-            Text((job.jobType == "") ? "Job Type: N/A" :"Job Type: \(job.jobType)")
-              .font(.footnote)
-              .foregroundColor(Color(.black))
-          }
-        }
-        .background(Color.purple).opacity(0.25)
-        
-        Button(action: {
-          liked.toggle()
-        }) {
-          Image(systemName: liked ? "heart.fill" : "heart")
-            .foregroundColor(Color.red)
-        }
-      }
-    }
-  }
-}
-
-import SwiftUI
-
-struct EmptyStateView: View {
-  var body: some View {
-    VStack {
-      Spacer()
-      Image(systemName: "graduationcap.circle")
-        .font(.system(size: 85))
-        .padding(.bottom)
-      Text("you are looking for a travel and work\n job then you are right here")
-            .font(.headline)
-                .multilineTextAlignment(.center)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-      Spacer()
-    }
-    .padding()
-    .foregroundColor(Color(.purple))
-  }
-}
-
-struct EmptyStateView_Previews: PreviewProvider {
-    static var previews: some View {
-        EmptyStateView()
+            
+       }.background(Color.black)
     }
 }
+
+
 
 import SwiftUI
 

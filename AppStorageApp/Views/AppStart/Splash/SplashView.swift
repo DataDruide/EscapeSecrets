@@ -10,15 +10,10 @@ import SwiftUI
 struct SplashView: View {
     
     @State private var isActive = false
-    @State private var scale: CGFloat = 0.8
-    @State private var opacity: Double = 0.05
-    @State private var isZoomed = false
-
-    @State var show = false
     
     var body: some View {
         if isActive {
-            ContentView(show: $show)
+            ContentView()
         } else {
             ZStack {
                 Image("willcomebild")
@@ -27,28 +22,24 @@ struct SplashView: View {
                     .ignoresSafeArea(.all)
                     .animation(.easeInOut(duration: 1.9))
                     .transition(.scale)
-               
                 
                 VStack {
-                    Text("Travel\nwith us")
-                        .font(Font.custom("Baskerville-Bold",
-                                          size: 60))
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(Color.orange)
-                   
-                }
-                .foregroundColor(.white)
-                .scaleEffect(scale)
-                .opacity(opacity)
-                .animation(.easeInOut(duration: 1.2))
-                .onAppear {
-                    self.scale = 1.0
-                    self.opacity = 1.0
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
-                        withAnimation {
-                            self.isActive = true
-                        }
-                    }
+                    Spacer()
+                    Image("neuMap")
+                        .resizable()
+                           .scaledToFit()
+                           .frame(width: 150, height: 150)
+                           .foregroundColor(.blue)
+                           .scaleEffect(isActive ? 1.2 : 0.6)
+                           .animation(Animation.easeInOut(duration: 1.2).repeatForever(autoreverses: true))
+                           .onAppear {
+                               DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+                                   withAnimation {
+                                       self.isActive = true
+                                   }
+                               }
+                           }
+                    Spacer()
                 }
             }
         }
