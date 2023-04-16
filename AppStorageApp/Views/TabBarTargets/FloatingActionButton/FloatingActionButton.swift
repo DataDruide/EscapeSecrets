@@ -11,8 +11,12 @@ struct FloatingActionButton: View {
                         MenuItem(icon: "person.crop.circle")
                     }
                     
-                    NavigationLink(destination: MultiBookingView()) {
+                    NavigationLink(destination: BookingRow()) {
                         MenuItem(icon: "ticket")
+                    }
+                    
+                    NavigationLink(destination: VideoAssistentView()) {
+                        MenuItem(icon: "video")
                     }
                    
                 }
@@ -21,7 +25,7 @@ struct FloatingActionButton: View {
                 self.showMenu.toggle()
             }) {
                 Image(systemName: "pencil.tip.crop.circle.badge.plus")
-                    .frame(width: 60, height: 60)
+                    .frame(width: 45, height: 45)
                     .aspectRatio(contentMode: .fill)
                     .foregroundColor(Color(red: 1/255, green: 1/255, blue: 1/255))
                     .background(Circle())

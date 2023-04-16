@@ -106,7 +106,7 @@ struct HomeRow: View {
                     }
                         
                         FloatingActionButton()
-                        .position(x:40,y:30)
+                        .position(x:350,y:40)
 //                            .padding(.trailing, 16)
 //                            .padding(.bottom, 60)
                    // Spacer()
