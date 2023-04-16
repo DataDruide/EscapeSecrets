@@ -18,7 +18,7 @@ struct TicketRow: View {
     var body: some View {
         
         ZStack {
-            LinearGradient(colors: [.white,.mint,.black], startPoint: .topLeading, endPoint: .bottomLeading)
+            LinearGradient(colors: [.black,.black,.black], startPoint: .topLeading, endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
             
             HStack {
@@ -26,17 +26,17 @@ struct TicketRow: View {
                     Section(header: Text("Origin")) {
                         
                         Text(ticket.origin)
-                            .foregroundColor(.secondary)
+                            .foregroundColor(.white)
                         
                             .padding()
                         Section(header: Text("Destination")) {
                             Text(ticket.destination)
-                                .foregroundColor(.secondary)
+                                .foregroundColor(.white)
                             
                                 .padding()
                             Section(header: Text("Flightdate")) {
                                 Text("\(ticket.date, formatter: dateFormatter)")
-                                    .foregroundColor(.secondary)
+                                    .foregroundColor(.white)
                                     .padding()
                                 
                             }
@@ -60,5 +60,18 @@ struct TicketRow: View {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium
         return formatter
+    }
+}
+
+
+
+struct TicketRow_Previews: PreviewProvider {
+    static var previews: some View {
+        let sampleTicket = TravelTicket(origin: "Stuttgart", destination: "Paris", date: Date(), price: 499.99)
+        
+        TicketRow(ticket: sampleTicket) { ticket in
+            // This closure could be used to add the ticket to a shopping cart or perform some other action
+            print("Ticket added to cart: \(ticket.destination)")
+        }
     }
 }

@@ -35,7 +35,7 @@ struct FlightDetailView: View {
                     HStack(alignment: .top){
                         // Bild der Aktivität
                         Image(flight.image)
-                            .aspectRatio(contentMode: .fit)
+                            .aspectRatio(contentMode: .fill)
                             .cornerRadius(5)
                     }
                     
@@ -96,6 +96,6 @@ struct FlightDetailView: View {
 
 struct FlightDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        FlightDetailView(flight: Flights(name: "flight1", image: "Türkiye", description: "Türkisch Airline", price: 299))
+        FlightDetailView(flight: Flights(name: "flight1", image: "Turkish Airlines", description: "Türkisch Airline", price: 399))
     }
 }

@@ -5,7 +5,6 @@
 //  Created by Marcel Zimmermann on 30.03.23.
 //
 
-import SwiftUI
 
 
 import SwiftUI
@@ -13,29 +12,44 @@ import SwiftUI
 struct FlightListView: View {
     @StateObject var flightType = FlightTypeViewModel()
     @Binding var flightListViewIsShowing: Bool
-    @State private var searchText = ""
-    
+  //  @State private var searchText = ""
+    @State var text: String = ""
     var body: some View {
         ZStack {
-          
-            
-            LinearGradient(colors: [.black.opacity(0.90), .black.opacity(0.80)], startPoint: .topLeading, endPoint: .bottomLeading)
+            // Ein Farbverlauf wird als Hintergrund festgelegt
+            LinearGradient(colors: [.black.opacity(0.97),.black.opacity(0.97)], startPoint: .topLeading, endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
+            
+            Image("flightsearchbg")
+                .resizable()
+                .ignoresSafeArea(.all)
+                .opacity(0.33)
 
             VStack {
-                SearchBarView1(searchTerm:  $searchText)
-                    .padding(.horizontal)
-                
+                SearchBarHomeRow(text: $text)
+                    .padding(.horizontal, 10)
+                    .padding(.vertical, 30)
+
                 ScrollView(showsIndicators: false) {
-                    VStack() {
-                        ForEach(flightType.flightList.filter({ searchText.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(searchText) })) { flight in
+                    VStack(spacing: 10) {
+                        ForEach(flightType.flightList.filter({ text.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(text) })) { flight in
                             NavigationLink(destination: FlightDetailView(flight: flight).environmentObject(Cart1())) {
                                 FlightButton(name: flight.name, image: flight.image)
-                                    .aspectRatio(contentMode: .fit)
-                                    .cornerRadius(5)
+                                    .frame(height: 60)
+                                    .foregroundColor(.white)
+                                    .cornerRadius(6)
+                                    .padding(.vertical, 5)
+                                    .padding(.horizontal, 5)
+
                             }
+
                         }
+
                     }
+                    .padding(.horizontal, 20)
+                    .padding(.vertical, 10)
+                    .background(Color.gray)
+
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .cornerRadius(30)
@@ -50,34 +64,6 @@ struct FlightListView: View {
 struct FlightListView_Previews: PreviewProvider {
     static var previews: some View {
         FlightListView(flightListViewIsShowing: .constant(true))
-    }
-}
-
-struct SearchBarView1: View {
-    @Binding var searchTerm: String
-    
-    var body: some View {
-        HStack {
-            
-            
-            Button(action: {
-                self.searchTerm = ""
-            }) {
-                Image(systemName: "xmark.circle.fill")
-                    .foregroundColor(.black)
-
-            }
-            
-            
-            TextField("Search", text: $searchTerm)
-                .padding(.vertical, 10)
-                .padding(.horizontal, 25)
-                .background(Color(.systemGray6))
-                .cornerRadius(8)
-                .padding(.horizontal)
-            
-        }
-
     }
 }
 

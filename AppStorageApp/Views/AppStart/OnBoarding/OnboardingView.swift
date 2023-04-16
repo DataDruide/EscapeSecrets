@@ -45,14 +45,14 @@ struct OnBoardingView: View {
                 
                 if current == 1 {
                     
-                    OnboardItem(image: "banner", title: "Connect with \nCompany", description: "Connect with Companys and lot of different Peoples locally & globally. ")
+                    OnboardItem(image: "onboardingNeu1", title: "Connect with \nCompany", description: "Connect with Companys and lot of different Peoples locally & globally. ")
                         .transition(AnyTransition.slide.animation(.spring()))
                         .animation(.default)
                 }
                 
                 if current == 2 {
                     
-                    OnboardItem(image: "bookingplane", title: "Discover new \nLocations", description: "Explore new Locations and booking easyier your Holidays. ")
+                    OnboardItem(image: "onboardingNeu2", title: "Discover new \nLocations", description: "Explore new Locations and booking easyier your Holidays. ")
                         .transition(AnyTransition.slide.animation(.spring()))
                         .animation(.default)
                 }

@@ -25,7 +25,7 @@ struct TicketView: View {
                 
                 // Farbenverlauf
                 
-                LinearGradient(colors: [.yellow,.yellow,.orange], startPoint: .topLeading, endPoint: .bottomLeading)
+                LinearGradient(colors: [.black,.black,.black], startPoint: .topLeading, endPoint: .bottomLeading)
                     .edgesIgnoringSafeArea(.all)
                 
                 // einzelne Textfelder zur Usereingabe
@@ -34,29 +34,46 @@ struct TicketView: View {
                 VStack {
                     Section(header: Text("Origin")) {
                         TextField("Enter Origin", text: $ticketViewModel.origin)
+                            .background(Color.gray)
+                            .cornerRadius(5)
                     }
                     
                     VStack {
                         Section(header: Text("Destination")) {
                             TextField("Enter destination", text: $ticketViewModel.destination)
+                                .background(Color.gray)
+                                .cornerRadius(5)
                         }
                         Section(header: Text("Date")) {
                             DatePicker(selection: $ticketViewModel.date, in: Date()..., displayedComponents: [.date]) {
                                 Text("Select a date")
+                                    .foregroundColor(Color.gray)
                             }
                         }
                         Section(header: Text("Price")) {
                             TextField("Enter price", value: $ticketViewModel.price, formatter: NumberFormatter())
                                 .keyboardType(.decimalPad)
+                                .background(Color.gray)
+                                .cornerRadius(5)
+                                .foregroundColor(.black)
                         }
                         NavigationLink(destination: TicketRow(ticket: TravelTicket(origin: ticketViewModel.origin, destination: ticketViewModel.destination, date: ticketViewModel.date, price: ticketViewModel.price), addToCart: { _ in })) {
-                            Text("Add to cart")
+                            Text("Create Ticket")
                         }
                     }
                 }
-                .navigationTitle("Your Flight Ticket")
                 .foregroundColor(.gray)
             }
         }
     }
 }
+
+
+
+
+struct TicketView_Previews: PreviewProvider {
+    static var previews: some View {
+        TicketView(ticketViewModel: TicketTypeViewModel())
+    }
+}
+

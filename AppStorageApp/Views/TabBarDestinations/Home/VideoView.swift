@@ -9,12 +9,18 @@ import SwiftUI
 import AVKit
 
 struct VideoView: View {
+    
     @Environment(\.presentationMode) var presentationMode
+    
     private let player: AVPlayer
+    
     init() {
+        
         if let videoURL = Bundle.main.url(forResource: "bookingvideo", withExtension: "mp4") {
             self.player = AVPlayer(url: videoURL)
+            
         } else {
+            
             fatalError("Video URL not found")
         }
         
@@ -24,15 +30,16 @@ struct VideoView: View {
     
     var body: some View {
       
-                ZStack {
-                    VideoPlayer(player: player)
-                        .onAppear() {
-                            player.play()
-                        }
-                }
-                .ignoresSafeArea()
-                .onDisappear() {
-                    player.pause()
+        ZStack {
+            VideoPlayer(player: player)
+                .onAppear() {
+                    player.play()
+                    
                 }
             }
+            .ignoresSafeArea()
+            .onDisappear() {
+                player.pause()
         }
+    }
+}

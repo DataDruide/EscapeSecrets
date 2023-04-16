@@ -44,7 +44,7 @@ struct LoginView: View {
                 
                     .overlay(
                         RoundedRectangle(cornerRadius: 18)
-                            .stroke(Color.orange, lineWidth: 1)
+                            .stroke(Color.black, lineWidth: 1)
                     )
                     .onAppear {
                         UITextField.appearance().tintColor = .white
@@ -59,7 +59,7 @@ struct LoginView: View {
                 
                     .overlay(
                         RoundedRectangle(cornerRadius: 18)
-                            .stroke(Color.orange, lineWidth: 1)
+                            .stroke(Color.black, lineWidth: 1)
                     )
                     .onAppear {
                         UITextField.appearance().tintColor = .white

@@ -12,7 +12,8 @@ import SwiftUI
 struct IconView: View {
     @Binding var IconViewIsShowing : Bool
     @ObservedObject var memberDataViewModel: MemberDataViewModel
-    
+    @State var isShowing: Bool = false
+
     @State private var showingImagePicker = false
         @State private var selectedImage: UIImage?
         
@@ -70,4 +71,3 @@ struct IconView: View {
         }
     }
 }
-

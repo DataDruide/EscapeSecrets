@@ -6,17 +6,17 @@ struct HomeRow: View {
     
     @State private var showDetailPlaceView = false
     @State private var showShapeOne = false
-
-
+    
+    
     
     var body: some View {
         
-        let favoriteTarget : [FavoriteTargets] = [
-            .init(name: "Malediven", imageName: "Malediven"),
-            .init(name: "thailand", imageName: "Bali 1"),
-            .init(name: "spain", imageName: "spain")
-            
-        ]
+        let favoriteTargets = [
+                FavoriteTargets(name: "Malediven", imageName: "malediven"),
+                FavoriteTargets(name: "Spain", imageName: "spain"),
+                FavoriteTargets(name: "Thailand", imageName: "thailand")
+            ]
+        
         
         NavigationStack {
             ZStack {
@@ -29,36 +29,31 @@ struct HomeRow: View {
                 // Button
                 Button(action: {
                     self.showShapeOne = true
-                }) {
-                    HStack {
-                        Image(systemName: "figure.walk.arrival")
-                            .font(.headline)
-                            .foregroundColor(.orange)
-                            .blur(radius: 0.5)
-                            .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
-                       
-                    }
-                    .padding()
-                    .background(Circle())
-                   // Color.green
-                    .cornerRadius(10)
-                    .shadow(radius: 10)
-                }
+                }, label: {
+                    Image(systemName: "figure.walk.arrival")
+                        .font(.headline)
+                        .foregroundColor(.red)
+                        .blur(radius: 0.5)
+                        .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
+                        .padding(.horizontal, 50)
+                        .padding(.vertical, 16)
+                    
+                })
+                .shadow(radius: 10)
                 .offset(x: -150, y: -345) // Position des Buttons auf der Z-Ebene
                 .sheet(isPresented: $showShapeOne) {
                     Shape1(username: "authService")
                 }
-
-                
-                VStack(alignment: .center) {
               
-                        SearchBarHomeRow(text: $text)
-                            .position(x:250, y:30)
-                            .opacity(1.05)
-                            .blur(radius: 0.8)
-                            .shadow(color: .gray, radius: 0.65, x: 0.35, y: 0.35)
-                            .foregroundColor(.white)
-                            .padding(50)
+                VStack(alignment: .center) {
+                    
+                    SearchBarHomeRow(text: $text)
+                        .position(x:250, y:30)
+                        .opacity(1.05)
+                        .blur(radius: 0.8)
+                        .shadow(color: .gray, radius: 0.65, x: 0.35, y: 0.35)
+                        .foregroundColor(.white)
+                        .padding(50)
                     Text("La Italia")
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.center)
@@ -69,7 +64,7 @@ struct HomeRow: View {
                         .blur(radius: 0.5)
                         .shadow(color: .gray, radius: 0.65, x: 0.35, y: 0.35)
                     
-                    Text("Explore the beautiful sides of Italy and take a closer look at the country and its people")
+                    Text("Explore the beautiful sides of Italy\n and take a closer look at the\n country and its people")
                         .foregroundColor(Color.white)
                         .multilineTextAlignment(.center)
                         .font(.system(size: 18))
@@ -97,7 +92,7 @@ struct HomeRow: View {
                                     RoundedRectangle(cornerRadius: 20)
                                         .foregroundColor(
                                             Color(
-                                                red: 255 / 255,
+                                                red: 75 / 255,
                                                 green: 115 / 255,
                                                 blue: 115 / 255
                                             )
@@ -109,7 +104,12 @@ struct HomeRow: View {
                             DetailPlaceView()
                         }
                     }
-                    Spacer()
+                        
+                        FloatingActionButton()
+                        .position(x:40,y:30)
+//                            .padding(.trailing, 16)
+//                            .padding(.bottom, 60)
+                   // Spacer()
                     Spacer()
                     
                     VStack {
@@ -123,32 +123,33 @@ struct HomeRow: View {
                     // Setze den Hintergrund mit einer Kapselform und einem Farbverlauf.
                     .background(LinearGradient(colors: [.green, .clear], startPoint: .topLeading, endPoint: .bottomTrailing), in: Capsule())
                     .shadow(color: .black.opacity(0.6), radius: 5, x:15, y: 50)
-                    .position(x:80, y:50) // hier stellt man den grünen Rahmen auf ihre richtige Position
+                    .position(x:80, y:78) // hier stellt man den grünen Rahmen auf ihre richtige Position
                     
                     VStack(alignment: .center) {
-                        ScrollView(.horizontal) {
-                            HStack() {
-                                ForEach(favoriteTarget) { target in
-                                    NavigationLink(destination: DetailPopularDestinationView(name: target.name, imageName: target.imageName)) {
-                                        Image(target.imageName)
+                        ScrollView(.horizontal, showsIndicators: true) {
+                            HStack(spacing: 16) {
+                                ForEach(favoriteTargets, id: \.self) { favoriteTargets in
+                                    NavigationLink(destination: DetailPopularDestinationView(name: "Malediven", imageName: "malediven")) {
+                                        Image(favoriteTargets.imageName)
                                             .resizable()
-                                            .aspectRatio(contentMode: .fill)
-                                            
+                                            .frame(width: 150, height: 210)
+                                            .cornerRadius(10)
                                     }
                                 }
                             }
+                            .padding(.bottom)
                         }
-                        .padding(.bottom, 0)// Set the bottom padding to 0
-                        
+                        .padding(.bottom, 0)
                     }
                     
                 }
             }
             .background(Color.black.opacity(0.75))
+            .ignoresSafeArea()
         }
     }
-    
 }
+
     struct HomeRow_Previews: PreviewProvider {
         static var previews: some View {
             HomeRow()
