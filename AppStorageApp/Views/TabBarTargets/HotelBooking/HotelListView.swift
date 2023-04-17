@@ -21,7 +21,12 @@ struct HotelListView: View {
     var body: some View {
         //  NavigationView {
         ZStack {
-            // Ein Farbverlauf wird als Hintergrund festgelegt
+            
+            Image("santorini")
+                .resizable()
+                .ignoresSafeArea(.all)
+            
+                        // Ein Farbverlauf wird als Hintergrund festgelegt
             LinearGradient(colors: [.black.opacity(0.97),.black.opacity(0.97)], startPoint: .topLeading, endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
             
@@ -41,6 +46,9 @@ struct HotelListView: View {
                 .cornerRadius(15)
                 .padding(20)
                 .searchable(text: $searchText, prompt: "find here your Secret Hotels...")
+                .padding(.horizontal, 20)
+                .padding(.vertical, 10)
+                .background(Color.gray)
                 .toolbar {
                     ToolbarItemGroup(placement: .automatic){
                         Button(action: { self.HotelListViewisShowing.toggle() }) {

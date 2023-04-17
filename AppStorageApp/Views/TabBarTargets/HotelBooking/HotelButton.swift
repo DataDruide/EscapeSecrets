@@ -19,7 +19,7 @@ struct HotelButton: View {
         
             // Ein skalierbares Bild, das das Symbol darstellt
             Image(image)
-                .frame(width: 300, height: 200)
+                .frame(width: 200, height: 200)
                 .aspectRatio(contentMode: .fit)
                 //
                 .clipShape(RoundedRectangle(cornerRadius: 20))
@@ -27,24 +27,23 @@ struct HotelButton: View {
                 .shadow(color: .gray, radius: 5, x: 1, y: 5)
                // .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.orange)))
                 
-//
-//            // Ein Rechteck, um den Text zu überlagern
-//            RoundedRectangle(cornerRadius: 20)
-//                .frame(width: 240, height: 50)
-//                .background(Color.gray)
-//               // .overlay(
-                    // Der Name der Hotels in fett gedruckter Schrift
+
+            // Ein Rechteck, um den Text zu überlagern
+            RoundedRectangle(cornerRadius: 20)
+                .frame(width: 150, height: 50)
+                .background(Color.gray)
+                .cornerRadius(40)
+                .overlay(
                     Text(name)
                        .foregroundColor(.white)
                        .bold()
                        .blur(radius: 0.5)
-                       .shadow(color: .gray, radius: 5, x: 1, y: 5)
                       
 
                        // .font(.caption)
                        // .fontWeight(.bold)
                 
-        }
+        )}
     }
 }
 

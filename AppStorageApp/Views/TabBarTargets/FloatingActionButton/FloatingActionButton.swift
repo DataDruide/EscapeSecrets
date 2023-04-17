@@ -27,7 +27,7 @@ struct FloatingActionButton: View {
                 Image(systemName: "pencil.tip.crop.circle.badge.plus")
                     .frame(width: 45, height: 45)
                     .aspectRatio(contentMode: .fill)
-                    .foregroundColor(Color(red: 1/255, green: 1/255, blue: 1/255))
+                    .foregroundColor(Color(red: 75/255, green: 115/255, blue: 115/255))
                     .background(Circle())
                     .shadow(color: .gray, radius: 0.5, x: 1, y: 1)
             }

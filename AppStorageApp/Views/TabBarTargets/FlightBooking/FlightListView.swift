@@ -38,16 +38,12 @@ struct FlightListView: View {
                                     .frame(height: 60)
                                     .foregroundColor(.white)
                                     .cornerRadius(6)
-                                    .padding(.vertical, 5)
-                                    .padding(.horizontal, 5)
-
+                                   
                             }
 
                         }
 
                     }
-                    .padding(.horizontal, 20)
-                    .padding(.vertical, 10)
                     .background(Color.gray)
 
                 }

@@ -20,9 +20,9 @@ struct OnBoardingView: View {
                 .foregroundColor(.black.opacity(0.55))
                 .contrast(0.7)
 
-            VStack(alignment: .leading) {
+            VStack(alignment: .center) {
                 HStack {
-                    Spacer()
+               //     Spacer()
                     Button(action: {
                         onBoarding = false
                     }) {
@@ -40,26 +40,26 @@ struct OnBoardingView: View {
                             .fill(Color(.gray).opacity(0.2))
                             .frame(width: 60, height: 30)
                     )
-                    .padding(.trailing, 20)
-                }.padding()
+                   // .padding(.trailing, 20)
+                }//.padding()
                 
                 if current == 1 {
                     
-                    OnboardItem(image: "onboardingNeu1", title: "Connect with \nCompany", description: "Connect with Companys and lot of different Peoples locally & globally. ")
+                    OnboardItem(image: "hotel7", title: "Get your Inspiration", description: "find new Locations\nand lot of different Peoples\nlocally & globally of the World. ")
                         .transition(AnyTransition.slide.animation(.spring()))
                         .animation(.default)
                 }
                 
                 if current == 2 {
                     
-                    OnboardItem(image: "onboardingNeu2", title: "Discover new \nLocations", description: "Explore new Locations and booking easyier your Holidays. ")
+                    OnboardItem(image: "grand_canyon", title: "Discover new \nLocations", description: "Explore new Locations\nand booking easyier your Holidays. ")
                         .transition(AnyTransition.slide.animation(.spring()))
                         .animation(.default)
                 }
                 
                 if current == 3 {
                     
-                    OnboardItem(image: "familiebackground", title: "Share your \nMoments", description: "Share you trip with your Family and Friends. Let’s make the travel fun & and full of exciting adventures")
+                    OnboardItem(image: "familiebackground", title: "Share your \nMoments", description: "Share you trip\nwith your Family and Friends.\nLet’s make the travel fun & and full\nof exciting adventures")
                         .transition(AnyTransition.slide.animation(.spring()))
                         .animation(.default)
                 }
@@ -69,22 +69,22 @@ struct OnBoardingView: View {
                         
                         Capsule()
                             .frame(width: 18, height: 4)
-                            .foregroundColor(current == 1 ? Color("Purple") : Color("Purple").opacity(0.3))
+                            .foregroundColor(current == 1 ? Color("green") : Color("green").opacity(0.3))
                         
                         Capsule()
                             .frame(width: 18, height: 4)
-                            .foregroundColor(current == 2 ? Color("Purple") : Color("Purple").opacity(0.3))
+                            .foregroundColor(current == 2 ? Color("green") : Color("green").opacity(0.3))
                         
                         Capsule()
                             .frame(width: 18, height: 4)
-                            .foregroundColor(current == 3 ? Color("Purple") : Color("Purple").opacity(0.3))
+                            .foregroundColor(current == 3 ? Color("green") : Color("green").opacity(0.3))
                     }
                     
-                    Spacer()
+                  //  Spacer()
                     
                     Circle()
                         .frame(width: 56, height: 56)
-                        .foregroundColor(Color("Purple"))
+                        .foregroundColor(Color("green"))
                         .overlay(
                             Image(systemName: current == 3 ? "checkmark" : "arrow.right")
                                 .font(.system(size: 20, weight: .bold))
@@ -101,9 +101,16 @@ struct OnBoardingView: View {
                         }
                     
                 }
-                .padding(20)
+               // .padding(20)
             }
         }
     }
     
+}
+
+
+struct OnboardingView_Previews: PreviewProvider {
+    static var previews: some View {
+        OnBoardingView()
+    }
 }

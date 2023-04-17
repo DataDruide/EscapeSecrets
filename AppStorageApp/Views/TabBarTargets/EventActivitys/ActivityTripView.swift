@@ -1,18 +1,10 @@
-//
-//  PlanActivityTripView.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 28.03.23.
-//
 
 import SwiftUI
 
+
 struct ActivityTripView: View {
     
-    // Zustandsobjekt für den TripType
     @StateObject var tripType = TripTypeViewModel()
-    
-    // Suchtext für die Filterung der Aktivitäten
     @State private var searchText = ""
         
     var filteredMessages: [Activities] {
@@ -24,58 +16,48 @@ struct ActivityTripView: View {
     }
         
     var body: some View {
-        
         NavigationStack {
-              
             ZStack {
-                // Ein Farbverlauf wird als Hintergrund festgelegt
-                LinearGradient(colors: [.black.opacity(0.97),.black.opacity(0.97)], startPoint: .topLeading, endPoint: .bottomLeading)
+                
+                Image("studentonroad")
+                    .resizable()
+                    .scaledToFill()
+                    .overlay(Rectangle())
                     .edgesIgnoringSafeArea(.all)
-                  
-                VStack(alignment: .center){
-                    
-                    Text("Our Event Program")
-                        .foregroundColor(.orange)
-                        .padding()
-                        .font(.system(size: 34))
-                        .bold()
+                    .foregroundColor(.black.opacity(0.55))
+                    .contrast(0.7)
+                    .offset(x: -110)
+                    .opacity(01.05)
 
-                    
-                    
-                    // Grid für die Anordnung der ActivityButtons
-                    LazyVGrid(
-                        columns: [
-                            GridItem(.flexible(minimum: 100, maximum: 260)),
-                            GridItem(.flexible(minimum: 100, maximum: 260))
-                        ], spacing: 30
-                    ) {
+                LinearGradient(colors: [.black.opacity(0.37), .black.opacity(0.67)], startPoint: .topLeading, endPoint: .bottomLeading)
+                    .edgesIgnoringSafeArea(.all)
+                VStack(alignment: .center) {
+                    LazyVGrid(columns: [
+                        GridItem(.adaptive(minimum: 170))
+                    ], spacing: 30) {
                         ForEach(filteredMessages, id: \.id) { activity in
                             NavigationLink(destination: DetailActivityView(activity: activity)) {
-                                // ActivityButton für die Anzeige der Aktivität
                                 ActivityButton(name: activity.name, image: activity.image)
                             }
                             .padding()
                         }
-
                     }
-
+                    .padding(.horizontal)
+                    Spacer()
                 }
-                
-                
+            }
+            .navigationTitle("Our Event Program")
+            .searchable(text: $searchText, prompt: "Find your perfect event...")
+            .searchable(text: $searchText) { // Änderung 2
+                Text("Find your perfect event...")
+                    .foregroundColor(.gray) // Änderung 2
             }
         }
-        // Suchleiste für die Filterung der Aktivitäten
-        .searchable(text: $searchText, prompt: "find here your perfect Event...")
     }
 }
 
-
 struct ActivityTripView_Previews: PreviewProvider {
-    // Vorschau mit einem TripType-Objekt
-    private static var ActivityTripViewIsShowing = Binding.constant(false)
     static var previews: some View {
         ActivityTripView()
-            .environmentObject(TripTypeViewModel())
-            .previewInterfaceOrientation(.portrait)
     }
 }

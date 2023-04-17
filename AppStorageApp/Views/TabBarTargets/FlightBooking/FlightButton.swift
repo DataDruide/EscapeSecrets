@@ -18,8 +18,8 @@ struct FlightButton: View {
         ZStack(alignment: .leading){
                 // Ein skalierbares Bild, das das Symbol darstellt
                 Image(image)
-                .aspectRatio(contentMode: .fill)
-                    .frame(width: 300, height: 200)
+                .aspectRatio(contentMode: .fit)
+                    .frame(width: 350, height: 200)
                            .foregroundColor(.white)
             }
         }
