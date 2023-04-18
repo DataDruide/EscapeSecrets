@@ -22,7 +22,7 @@ struct ImageSelectionView: View {
                     .onTapGesture {
                         isSelected1.toggle()
                     }
-                    .background(isSelected1 ? Color.orange : Color.white)
+                    .background(isSelected1 ? Color.green : Color.white)
                 Image("sitzplatz")
                     .resizable()
                     .frame(width: 40, height: 40)
@@ -48,7 +48,7 @@ struct ImageSelectionView: View {
                     .onTapGesture {
                         isSelected3.toggle()
                     }
-                    .background(isSelected3 ? Color.orange : Color.white)
+                    .background(isSelected3 ? Color.green : Color.white)
             }
             HStack {
                 Text("Flurseite")

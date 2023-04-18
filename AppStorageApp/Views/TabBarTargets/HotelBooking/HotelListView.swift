@@ -26,8 +26,8 @@ struct HotelListView: View {
                 .resizable()
                 .ignoresSafeArea(.all)
             
-                        // Ein Farbverlauf wird als Hintergrund festgelegt
-            LinearGradient(colors: [.black.opacity(0.97),.black.opacity(0.97)], startPoint: .topLeading, endPoint: .bottomLeading)
+            // Ein Farbverlauf wird als Hintergrund festgelegt
+            LinearGradient(colors: [.black.opacity(0.67),.black.opacity(0.97)], startPoint: .topLeading, endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
@@ -35,33 +35,43 @@ struct HotelListView: View {
                     .padding(.horizontal)
                     .background(Color.black.opacity(0.75))
                 
-                List(hotelType.hotelsList.filter({ searchText.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(searchText) }))  { hotel in
-                    NavigationLink(destination: HotelDetailView(hotel: hotel)) {
-                        HotelButton(name: hotel.name, image: hotel.image)
-                            .padding(15)
-                    }
-                    .environmentObject(Cart())
-                }
-                .navigationBarTitle("Hotels")
-                .cornerRadius(15)
-                .padding(20)
-                .searchable(text: $searchText, prompt: "find here your Secret Hotels...")
-                .padding(.horizontal, 20)
-                .padding(.vertical, 10)
-                .background(Color.gray)
-                .toolbar {
-                    ToolbarItemGroup(placement: .automatic){
-                        Button(action: { self.HotelListViewisShowing.toggle() }) {
-                            Image(systemName: "xmark")
-                                .foregroundColor(.gray)
+                ScrollView(showsIndicators: false) {
+                    VStack(spacing: 10) {
+                        ForEach(hotelType.hotelsList.filter({ searchText.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(searchText) })) { hotel in
+                            NavigationLink(destination: HotelDetailView(hotel: hotel).environmentObject(Cart1())) {
+                                HStack {
+                                    HotelButton(name: hotel.name, image: hotel.image, description: hotel.description, price: hotel.price, amenities: hotel.amenities)
+
+
+
+                                        .frame(height: 80)
+                                        .foregroundColor(.white)
+                                        .cornerRadius(6)
+                                    
+                                    VStack(alignment: .leading, spacing: 5) {
+                                       
+                                        
+                                        HStack {
+                                            // Display stars based on rating
+                                            ForEach(0..<hotel.rating) { _ in
+                                                Image(systemName: "star.fill")
+                                                    .foregroundColor(.yellow)
+                                            }
+                                            // Display other hotel information
+                                            Text("\(hotel.rating) Stars")
+                                        }
+                                        
+                                       
+                                    }
+                                }
+                            }
                         }
                     }
                 }
             }
-            
         }
     }
-    
+}
     struct HotelListView_Previews: PreviewProvider {
         private static var HotelListViewisShowing =
         Binding.constant(false)
@@ -70,4 +80,7 @@ struct HotelListView: View {
         }
     }
     
-}
+
+
+
+

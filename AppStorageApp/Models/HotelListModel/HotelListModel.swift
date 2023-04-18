@@ -17,58 +17,27 @@ struct Hotels : Identifiable {
     let name : String
     let title: String
     let image : String
+    var rating: Int
     let description : String
     let price : Int
+    let amenities: [String]
+
    
     
 }
+// Fake Hoteldaten
+
+private var hotel1 = Hotels(name: "Italien",title: "Schloss · Gastgeber:in ist Nicola", image: "Italien",  rating: 3, description: "Tolles Panorama-Schloss mit großem Pool. Die Unterkunft ist von Weinbergen und Olivenhainen umgeben! Das Hotel liegt im Herzen der Toskana zwischen Florenz und Siena! Ein Bahnhof ist nur 1 km entfernt! WLAN funktioniert immer im gesamten Anwesen. Klimaanlage. 5 Doppelzimmer, 6 Badezimmer. Ein sehr großer Wohnbereich, ideal für Veranstaltungen! Viele Terrassen mit Aussicht und ein erstaunlicher großer Innenhof, von dem aus du direkten Zugang zur kleinen privaten Kirche des Schlosses hast",price: 900, amenities: ["Kamin", "Küche", "Terrasse", "WLAN"])
+private var hotel2 = Hotels(name: "Kanada",title: "Gesamte Unterkunft: Cottage, Gastgeber ist David", image: "Kanada", rating: 4, description: "Willkommen in Muskoka A-Rahmen, dem perfekten Pärchenausflug oder Solo-Retreat, eingebettet in das wunderschöne Hidden Valley. Dieser klassische A-Rahmen aus den 70er Jahren wurde für die moderne Welt neu gestaltet. Wache mit schwankenden Baumkronen auf, mache Gourmet-Mahlzeiten zu und entspanne dich am Feuer mit zweistöckigem Waldblick.",price: 345, amenities: ["Kamin", "Rustikale Küche", "Terrasse mit Garten", "WLAN Standleitung"])
+private var hotel3 = Hotels(name: "Tokio",title:"Gesamte Unterkunft: Privatunterkunft · Gastgeber:in ist Seadiners", image: "Tokio", rating: 3, description: "3 Minuten zu Fuß zum Sunrise Beach. Zu den Aktivitäten gehören ein Außenpool, ein Grill auf dem Char-Broil-Grill, eine Fass-Sauna mit Harvia-Saunaheizung, ein Innen-Whirlpool im Freien mit LED-Licht, Hundeabfahrten mit Ihrem Hund und Surfen im Meer vor Ihnen.",price: 326, amenities: ["offenes Feuer", "küche", "Wald", "Kabel"])
+private var hotel4 = Hotels(name: "Finnland",title:"Gesamte Unterkunft: Chalet · Gastgeber:in ist Tanja", image: "Finnland", rating: 5, description: "Dies ist ein hochwertiges und gut ausgestattetes Chalet mit 4 Schlafzimmern im schönen Lappland.Es ist 200 m zu den Pisten, Skibushaltestelle nebenan und Levi Dorf 10min entfernt.Das Chalet verfügt über eine geräumige, offene Küche/Lounge mit großen Fenstern",price: 141, amenities: ["Kamin", "Küche", "Terrasse", "WLAN"])
+private var hotel5 = Hotels(name: "Suedkorea",title:"Privater Gastgeber", image: "Suedkorea", rating: 4, description: "Hanok Stay Emotional Day befindet sich im Zentrum von Taejo-ro, Jeonju Hanok Village. Nahe gelegene Sehenswürdigkeiten (Concubine, Jeonjeon-Kathedrale, Gyeonggi Pre-Gyeonggi, Hyanggyo usw.) sind 5 Minuten entfernt.Es befindet sich neben der Hauptstraße mit vielen Essensbügeln, und es ist ein sauberer und ziemlich Einfamilien-Hangok-Aufenthalt.",price: 188, amenities: ["Kamin", "Küche", "Terrasse", "WLAN"])
+private var hotel6 = Hotels(name: "CostaRica",title:"Gesamte Unterkunft: Villa · Gastgeber:in ist Petra", image: "CostaRica", rating: 5, description: "Überschreiten Sie die Grenzen zwischen Innen und Außen. Schieben Sie die Wände auf, rutschen Sie durch und sehen Sie die markante Weite der Außenwelt. Direkt über dem schönen Strand mit Meerblick und Dschungel. Gerade in Wall Paper, Dezeen usw. veröffentlicht.",price: 755, amenities: ["Bungalow", "Einheimische", "Garten", "WLAN"])
 
 
-private var hotel1 = Hotels(name: "Nizza",title: "Hotel Aqualaris Deluxe", image: "Nice", description: "The Hotel Aqualaris Deluxe is an hotel located on the promenade des anglais. it was named by Henri Negresco, its frontopened on the opposite side of Mediterranean Sea and is wonderfull for Kids and Parents",price: 250)
-private var hotel2 = Hotels(name: "LasVegas",title: "Hotel RoyalEduard", image: "LasVegas", description: "This chic casino hotel is 4 miles from McCarran international Airport, 1 mile from the Las Vegas Convention Center and 3 miles from the Fremont Street Experience Shopping",price: 345)
-private var hotel3 = Hotels(name: "Tokyo",title:"", image: "Tokyo", description: "Minimalist Hotel ",price: 495)
-private var hotel4 = Hotels(name: "Sydney",title:"Hotel Austrian Outback Comfort", image: "Sydney", description: "Wonderful Hotel",price: 555)
-private var hotel5 = Hotels(name: "Kenya",title:"Hotel Real Africa", image: "Kenya", description: "Piece of paradise Hotel ",price: 245)
-private var hotel6 = Hotels(name: "Bali",title:"Hotel Paradiso", image: "Bali", description: "Surrended by nature\n Bali is a very nice Location who you can Relaxing of the Work Days, or with your Family can very anything Things in and out of Hotel Complex ",price: 269)
-
+// gefüllte HotelListe mit den oben aufgeführten Hotels
 struct HotelModel {
     
     var hotelsList : [Hotels] = [hotel1,hotel2,hotel3,hotel4,hotel5,hotel6]
     
 }
-
-//var hotelList : [Hotels] = [hotel1,hotel2,hotel3,hotel4,hotel5,hotel6]
-
-
-//func addHotels (newItem: Hotels ) {
-//
-//    hotelsList.append(newItem)
-//
-//}
-//
-//func hotelSetup () {
-//
-//    addHotels(newItem: hotel1)
-//    addHotels(newItem: hotel2)
-//    addHotels(newItem: hotel3)
-//    addHotels(newItem: hotel4)
-//    addHotels(newItem: hotel5)
-//    addHotels(newItem: hotel6)
-//
-//
-//}
-
-//func displayItemList ( hotelList: [Hotels]) {
-//    
-//    var withOutOptionls = [Hotels]()
-//    
-//    for hotel in hotelList {
-//        if hotel.suitRoom != nil {
-//            withOutOptionls.append(hotel)
-//        } else {
-//        continue
-//        }
-//    }
-//    print(withOutOptionls)
-//}
-//

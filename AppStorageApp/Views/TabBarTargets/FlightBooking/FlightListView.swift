@@ -35,7 +35,7 @@ struct FlightListView: View {
                         ForEach(flightType.flightList.filter({ text.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(text) })) { flight in
                             NavigationLink(destination: FlightDetailView(flight: flight).environmentObject(Cart1())) {
                                 FlightButton(name: flight.name, image: flight.image)
-                                    .frame(height: 60)
+                                    .frame(height: 80)
                                     .foregroundColor(.white)
                                     .cornerRadius(6)
                                    
@@ -44,12 +44,14 @@ struct FlightListView: View {
                         }
 
                     }
+                    .padding(.horizontal, 20)
                     .background(Color.gray)
-
                 }
                 .navigationBarTitleDisplayMode(.inline)
                 .cornerRadius(30)
                 .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity)
+
             }
             .cornerRadius(30)
         }

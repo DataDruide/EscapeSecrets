@@ -7,12 +7,13 @@ struct HomeRow: View {
     @State private var showDetailPlaceView = false
     @State private var showShapeOne = false
     
-    
+    @State private var selectedImage: String = "" // stores the name of the selected image
+
     
     var body: some View {
         
         let favoriteTargets = [
-                FavoriteTargets(name: "Malediven", imageName: "malediven"),
+                FavoriteTargets(name: "Eifelturm", imageName: "eiffel_tower"),
                 FavoriteTargets(name: "Spain", imageName: "spain"),
                 FavoriteTargets(name: "Thailand", imageName: "thailand")
             ]
@@ -32,7 +33,7 @@ struct HomeRow: View {
                 }, label: {
                     Image(systemName: "figure.walk.arrival")
                         .font(.headline)
-                        .foregroundColor(.red)
+                        .foregroundColor(.green.opacity(0.3))
                         .blur(radius: 0.5)
                         .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
                         .padding(.horizontal, 50)
@@ -125,12 +126,12 @@ struct HomeRow: View {
                     .shadow(color: .black.opacity(0.6), radius: 5, x:15, y: 50)
                     .position(x:80, y:78) // hier stellt man den grünen Rahmen auf ihre richtige Position
                     
-                    VStack(alignment: .center) {
-                        ScrollView(.horizontal, showsIndicators: true) {
+                    VStack {
+                        ScrollView(.horizontal, showsIndicators: true) { // add a ScrollView for the images
                             HStack(spacing: 16) {
-                                ForEach(favoriteTargets, id: \.self) { favoriteTargets in
-                                    NavigationLink(destination: DetailPopularDestinationView(name: "Malediven", imageName: "malediven")) {
-                                        Image(favoriteTargets.imageName)
+                                ForEach(favoriteTargets, id: \.self) { favoriteTarget in
+                                    NavigationLink(destination: DetailPopularDestinationView(name: favoriteTarget.name, imageName: favoriteTarget.imageName)) {
+                                        Image(favoriteTarget.imageName)
                                             .resizable()
                                             .frame(width: 150, height: 210)
                                             .cornerRadius(10)
@@ -141,6 +142,7 @@ struct HomeRow: View {
                         }
                         .padding(.bottom, 0)
                     }
+
                     
                 }
             }

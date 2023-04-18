@@ -32,10 +32,10 @@ struct Activities : Identifiable {
 }
 
 // Erstellen von Instanzen der Aktivitäten-Struct und Speichern in einem Array
-var activities = [Activities(name: "SURFEN", image: "activityimage1",description: "You won't forget that, here are the best and the biggest waves that any adventure surfer will dream to jump in.Make your kid interior have fun by booking this amazing experince right now !",price: 100,latitude: -33.8923671, longitude: 151.2737011),
-                       Activities(name: "Hill HIKING", image: "activityimage3",description: "This is the way! Climb this huge mountain and accomplish what just couples of human being are able to do, pass thought your mental and physical obstacle to unlock your potential.",price: 70, latitude: 36.1949524, longitude: -112.9778795),
-                       Activities(name: "KAYAK BOAT", image: "activityimage4",description: "Jump into this massive river in high speed your decision is important, you will be in the flow of the life surrended by the cliffs. Here you are small and become big after this ",price: 80,latitude: 43.7614, longitude: 6.3788),
-                       Activities(name: "GUIDE-TOUR", image: "activityimage2",description: "Visit a beautiful and pittoresque city home to century of history , accompagned by the best and passionate local guide. You will visit, learn and eat like never.", price: 200,latitude: 35.6773648, longitude: 139.6961693)]
+var activities = [Activities(name: "SURFEN", image: "activityimage1",description: "You won't forget that, here are the best and the biggest\nwaves that any adventure surfer will dream to jump in\n.Make your kid interior have fun\nby booking this amazing experince right now !\n",price: 100,latitude: -33.8923671, longitude: 151.2737011),
+                       Activities(name: "Hill HIKING", image: "activityimage3",description: "This is the way! Climb this huge mountain and accomplish\nwhat just couples of human being are able to do,\npass thought your mental and physical obstacle to unlock your potential.",price: 70, latitude: 36.1949524, longitude: -112.9778795),
+                       Activities(name: "KAYAK BOAT", image: "activityimage4",description: "Jump into this massive river in high speed\nyour decision is important, you will\nbe in the flow of the life surrended by the\ncliffs. Here you are small and become big\nafter this ",price: 80,latitude: 43.7614, longitude: 6.3788),
+                       Activities(name: "GUIDE-TOUR", image: "activityimage2",description: "Visit a beautiful and pittoresque city\nhome to century of history ,\naccompagned by the best and passionate local\nguide. You will visit, learn and eat like never.", price: 200,latitude: 35.6773648, longitude: 139.6961693)]
 
 // Definition der Struct "Places", die einen Ort beschreibt
 struct Places : Identifiable {

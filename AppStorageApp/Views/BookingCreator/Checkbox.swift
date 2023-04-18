@@ -3,7 +3,7 @@
 //  AppStorageApp
 //
 //  Created by Marcel Zimmermann on 19.03.23.
-//
+////
 import SwiftUI
 struct Checkbox: View {
     
@@ -16,7 +16,7 @@ struct Checkbox: View {
             Image(systemName: isChecked ? "checkmark.square.fill" : "square")
                 .resizable()
                 .frame(width: 25, height: 25)
-                .foregroundColor(isChecked ? Color.orange : Color.gray)
+                .foregroundColor(isChecked ? Color.green : Color.gray)
         }
     }
 }

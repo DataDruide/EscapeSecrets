@@ -38,8 +38,13 @@ struct BookingHotelsItemRows: View {
                     }
                     Spacer()
                     // Entfernen-Symbol, um Element aus dem Warenkorb zu entfernen
-                    Image(systemName: "trash")
-                        .foregroundColor(Color(hue: 1.0, saturation: 0.89, brightness: 0.835))
+                    Circle()
+                        .frame(width: 40, height: 40)
+                        .foregroundColor(.red)
+                        .overlay(
+                            Image(systemName: "trash")
+                                .foregroundColor(.white)
+                        )                        .foregroundColor(Color(hue: 1.0, saturation: 0.89, brightness: 0.835))
                         .onTapGesture {
                             hotelType.removeFromCart(newItem: hotel)
                         }

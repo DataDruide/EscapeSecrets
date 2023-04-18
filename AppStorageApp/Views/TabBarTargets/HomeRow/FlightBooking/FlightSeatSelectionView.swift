@@ -48,7 +48,7 @@ struct FlightSeatSelectionView: View {
                             RoundedRectangle(cornerRadius: 20)
                                 .foregroundColor(
                                     Color(
-                                        red: 255 / 255,
+                                        red: 75 / 255,
                                         green: 115 / 255,
                                         blue: 115 / 255
                                     )

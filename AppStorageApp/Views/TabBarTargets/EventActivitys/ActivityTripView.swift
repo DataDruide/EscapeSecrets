@@ -1,61 +1,80 @@
 
 import SwiftUI
 
+import SwiftUI
 
 struct ActivityTripView: View {
     
     @StateObject var tripType = TripTypeViewModel()
     @State private var searchText = ""
-        
-    var filteredMessages: [Activities] {
+    
+    var filteredActivities: [Activities] {
         if searchText.isEmpty {
             return activities
         } else {
             return activities.filter { $0.name.localizedCaseInsensitiveContains(searchText) }
         }
     }
-        
+    
     var body: some View {
         NavigationStack {
             ZStack {
+                // Ein Farbverlauf wird als Hintergrund festgelegt
+                LinearGradient(colors: [.black.opacity(0.97),.black.opacity(0.87)], startPoint: .topLeading, endPoint: .bottomLeading)
+                    .edgesIgnoringSafeArea(.all)
                 
-                Image("studentonroad")
-                    .resizable()
-                    .scaledToFill()
-                    .overlay(Rectangle())
-                    .edgesIgnoringSafeArea(.all)
-                    .foregroundColor(.black.opacity(0.55))
-                    .contrast(0.7)
-                    .offset(x: -110)
-                    .opacity(01.05)
-
-                LinearGradient(colors: [.black.opacity(0.37), .black.opacity(0.67)], startPoint: .topLeading, endPoint: .bottomLeading)
-                    .edgesIgnoringSafeArea(.all)
-                VStack(alignment: .center) {
-                    LazyVGrid(columns: [
-                        GridItem(.adaptive(minimum: 170))
-                    ], spacing: 30) {
-                        ForEach(filteredMessages, id: \.id) { activity in
-                            NavigationLink(destination: DetailActivityView(activity: activity)) {
-                                ActivityButton(name: activity.name, image: activity.image)
+                VStack(alignment: .leading) {
+                    Text("Trips")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding(.leading, 20)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        LazyHStack(spacing: 20) {
+                            ForEach(filteredActivities, id: \.id) { activity in
+                                NavigationLink(destination: DetailActivityView(activity: activity)) {
+                                    VStack(alignment: .leading) {
+                                        Image(activity.image)
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: 200, height: 200)
+                                            .cornerRadius(10)
+                                            .padding(.horizontal, 20)
+                                            .padding(.vertical, 10)
+                                        Text(activity.name)
+                                            .fontWeight(.semibold)
+                                            .padding(.leading, 20)
+                                            .padding(.bottom, 5)
+                                        Text("From $\(activity.price) per person")
+                                            .foregroundColor(.gray)
+                                            .padding(.leading, 20)
+                                            .padding(.bottom, 5)
+                                        Text(activity.description)
+                                            .font(.caption)
+                                            .foregroundColor(.gray)
+                                            .padding(.leading, 20)
+                                            .padding(.bottom, 5)
+                                    }
+                                    .background(Color.black).opacity(0.6)
+                                    .cornerRadius(10)
+                                    .shadow(radius: 5)
+                                    .padding(.bottom, 20)
+                                }
                             }
-                            .padding()
                         }
+                        .padding(.horizontal, 20)
                     }
-                    .padding(.horizontal)
+                    .padding(.top, 20)
                     Spacer()
                 }
+                .navigationTitle("Activities")
             }
-            .navigationTitle("Our Event Program")
-            .searchable(text: $searchText, prompt: "Find your perfect event...")
             .searchable(text: $searchText) { // Änderung 2
-                Text("Find your perfect event...")
+                Text("Find your perfect activity...")
                     .foregroundColor(.gray) // Änderung 2
             }
         }
     }
 }
-
 struct ActivityTripView_Previews: PreviewProvider {
     static var previews: some View {
         ActivityTripView()

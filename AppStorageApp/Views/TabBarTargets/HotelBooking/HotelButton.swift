@@ -8,48 +8,35 @@
 import SwiftUI
 
 struct HotelButton: View {
+    var name: String
+    var image: String
+    var description: String
+    var price: Int
+    var amenities: [String]  // include amenities as a parameter
     
-    var name : String
-    var image : String
     
     var body: some View {
-        
-        // Ein ZStack, um das Bild und den Text-Overlay zu stapeln
-        ZStack(alignment: .bottom){
-        
-            // Ein skalierbares Bild, das das Symbol darstellt
+        HStack {
             Image(image)
-                .frame(width: 200, height: 200)
-                .aspectRatio(contentMode: .fit)
-                //
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-                .blur(radius: 0.5)
-                .shadow(color: .gray, radius: 5, x: 1, y: 5)
-               // .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.orange)))
-                
-
-            // Ein Rechteck, um den Text zu überlagern
-            RoundedRectangle(cornerRadius: 20)
-                .frame(width: 150, height: 50)
-                .background(Color.gray)
-                .cornerRadius(40)
-                .overlay(
-                    Text(name)
-                       .foregroundColor(.white)
-                       .bold()
-                       .blur(radius: 0.5)
-                      
-
-                       // .font(.caption)
-                       // .fontWeight(.bold)
-                
-        )}
+                .resizable()
+                .frame(width: 80, height: 80)
+                .cornerRadius(6)
+            
+            VStack(alignment: .leading) {
+                Text(name)
+                    .font(.headline)
+                Text(description)
+                    .font(.subheadline)
+                    .foregroundColor(.gray)
+            }
+            Spacer()
+        }
+        .padding(.horizontal)
     }
 }
-
 struct HotelButton_Previews: PreviewProvider {
     static var previews: some View {
         // Beispiel-Vorschau des HotelButton
-        HotelButton(name: "hotel1", image: "hotel1")
+        HotelButton(name: "Italien", image: "Italien", description: "Tolles Panorama-Schloss mit großem Pool. Die Unterkunft ist von Weinbergen und Olivenhainen umgeben! Das Hotel liegt im Herzen der Toskana zwischen Florenz und Siena! Ein Bahnhof ist nur 1 km entfernt! WLAN funktioniert immer im gesamten Anwesen. Klimaanlage. 5 Doppelzimmer, 6 Badezimmer. Ein sehr großer Wohnbereich, ideal für Veranstaltungen! Viele Terrassen mit Aussicht und ein erstaunlicher großer Innenhof, von dem aus du direkten Zugang zur kleinen privaten Kirche des Schlosses hast",price: 900, amenities: ["Kamin", "Küche", "Terrasse", "WLAN"])
     }
 }
