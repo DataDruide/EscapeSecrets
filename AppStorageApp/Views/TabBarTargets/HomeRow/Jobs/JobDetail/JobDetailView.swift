@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import SwiftUI
 
 struct JobDetailView: View {
     @ObservedObject var job: JobViewModel
+    
+    @State private var isContactButtonPressed = false
     
     var body: some View {
         ZStack {
@@ -35,7 +38,9 @@ struct JobDetailView: View {
                     .font(.headline)
                     .foregroundColor(.black)
                     Spacer()
-                    Button(action: { }) {
+                    Button(action: {
+                        self.isContactButtonPressed = true
+                    }) {
                         HStack {
                             Image(systemName: "paperplane.fill")
                                 .font(.title)
@@ -51,25 +56,30 @@ struct JobDetailView: View {
                             RoundedRectangle(cornerRadius: 20)
                                 .foregroundColor(
                                     Color(
-                                        red: 55 / 255,
-                                        green: 200 / 255,
-                                        blue: 80 / 255
+                                        red: 75 / 255,
+                                        green: 115 / 255,
+                                        blue: 115 / 255
                                     )
                                 )
                         )
-                }
                     }
-                    Spacer()
-                    Divider()
-                    Text("This job was posted at \(job.postdate)")
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                    .alert(isPresented: $isContactButtonPressed) {
+                        Alert(
+                            title: Text("Danke für ihre Kontaktaufnahme"),
+                            message: Text("Wir werden uns schnellstmöglichst bei ihnen melden."),
+                            dismissButton: .default(Text("OK"))
+                        )
+                    }
                 }
-                .padding()
+                Spacer()
+                Divider()
+                Text("This job was posted at \(job.postdate)")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
             }
+            .padding()
             .navigationTitle(job.title)
             .navigationBarTitleDisplayMode(.inline)
         }
     }
-    
-
+}

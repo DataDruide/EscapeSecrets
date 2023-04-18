@@ -92,6 +92,7 @@ struct BookingCartView: View {
                     
                     // 1 Button
                     Button(action: {
+                        showAlert()
                     }, label: {
                         Text("Buy Now")
                             .font(.headline)
@@ -136,4 +137,11 @@ struct BookingCartView: View {
 
         }
     }
+}
+
+
+func showAlert() {
+    let alert = UIAlertController(title: "Buchung erfolgreich!", message: "Danke für Ihre Buchung.", preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+    UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
 }
