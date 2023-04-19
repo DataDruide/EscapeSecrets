@@ -17,3 +17,5 @@ The structure is according to MVVM
 ![HomeRow](https://user-images.githubusercontent.com/101304191/232926103-9068ca32-d99d-4311-a1e5-b3cf07462343.png)
 
 ![HomeDetailView](https://user-images.githubusercontent.com/101304191/232926111-047c953a-22d5-4745-9b24-fc051a354b9a.png)
+
+![ServiceSearch](https://user-images.githubusercontent.com/101304191/233080039-2f6edc9e-bf9b-4bad-b8da-1375141e1c81.png)
