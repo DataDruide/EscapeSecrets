@@ -19,49 +19,50 @@ struct HotelListView: View {
     
     
     var body: some View {
-        //  NavigationView {
-        ZStack {
-            
-            Image("santorini")
-                .resizable()
-                .ignoresSafeArea(.all)
-            
-            // Ein Farbverlauf wird als Hintergrund festgelegt
-            LinearGradient(colors: [.black.opacity(0.67),.black.opacity(0.97)], startPoint: .topLeading, endPoint: .bottomLeading)
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack {
-                SearchBarView2(searchTerm:  $searchText)
-                    .padding(.horizontal)
-                    .background(Color.black.opacity(0.75))
+        NavigationStack {
+            ZStack {
                 
-                ScrollView(showsIndicators: false) {
-                    VStack(spacing: 10) {
-                        ForEach(hotelType.hotelsList.filter({ searchText.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(searchText) })) { hotel in
-                            NavigationLink(destination: HotelDetailView(hotel: hotel).environmentObject(Cart1())) {
-                                HStack {
-                                    HotelButton(name: hotel.name, image: hotel.image, description: hotel.description, price: hotel.price, amenities: hotel.amenities)
-
-
-
-                                        .frame(height: 80)
-                                        .foregroundColor(.white)
-                                        .cornerRadius(6)
-                                    
-                                    VStack(alignment: .leading, spacing: 5) {
-                                       
+                Image("santorini")
+                    .resizable()
+                    .ignoresSafeArea(.all)
+                
+                // Ein Farbverlauf wird als Hintergrund festgelegt
+                LinearGradient(colors: [.black.opacity(0.67),.black.opacity(0.97)], startPoint: .topLeading, endPoint: .bottomLeading)
+                    .edgesIgnoringSafeArea(.all)
+                
+                VStack {
+                    SearchBarView2(searchTerm:  $searchText)
+                        .padding(.horizontal)
+                        .background(Color.black.opacity(0.75))
+                    
+                    ScrollView(showsIndicators: false) {
+                        VStack(spacing: 10) {
+                            ForEach(hotelType.hotelsList.filter({ searchText.isEmpty ? true : $0.name.localizedCaseInsensitiveContains(searchText) })) { hotel in
+                                NavigationLink(destination: HotelDetailView(hotel: hotel).environmentObject(Cart1())) {
+                                    HStack {
+                                        HotelButton(name: hotel.name, image: hotel.image, description: hotel.description, price: hotel.price, amenities: hotel.amenities)
                                         
-                                        HStack {
-                                            // Display stars based on rating
-                                            ForEach(0..<hotel.rating) { _ in
-                                                Image(systemName: "star.fill")
-                                                    .foregroundColor(.yellow)
+                                        
+                                        
+                                            .frame(height: 80)
+                                            .foregroundColor(.white)
+                                            .cornerRadius(6)
+                                        
+                                        VStack(alignment: .leading, spacing: 5) {
+                                            
+                                            
+                                            HStack {
+                                                // Display stars based on rating
+                                                ForEach(0..<hotel.rating) { _ in
+                                                    Image(systemName: "star.fill")
+                                                        .foregroundColor(.yellow)
+                                                }
+                                                // Display other hotel information
+                                                Text("\(hotel.rating) Stars")
                                             }
-                                            // Display other hotel information
-                                            Text("\(hotel.rating) Stars")
+                                            
+                                            
                                         }
-                                        
-                                       
                                     }
                                 }
                             }
@@ -70,7 +71,10 @@ struct HotelListView: View {
                 }
             }
         }
+        .navigationBarTitle("Hotels")
+        
     }
+    
 }
     struct HotelListView_Previews: PreviewProvider {
         private static var HotelListViewisShowing =

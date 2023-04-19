@@ -9,19 +9,19 @@
 
 import SwiftUI
 
-struct IconView: View {
-    @Binding var IconViewIsShowing : Bool
+struct CreatedMemberView: View {
+    @Binding var CreatedMemberViewIsShowing : Bool
     @ObservedObject var memberDataViewModel: MemberDataViewModel
     @State var isShowing: Bool = false
 
-    @State private var showingImagePicker = false
-        @State private var selectedImage: UIImage?
+//    @State private var showingImagePicker = false
+//        @State private var selectedImage: UIImage?
         
 
     var body: some View {
         ZStack {
             // Ein Farbverlauf wird als Hintergrund festgelegt
-            LinearGradient(colors: [.purple,.orange,.gray], startPoint: .topLeading, endPoint: .bottomLeading)
+            LinearGradient(colors: [.black,.black,.black], startPoint: .topLeading, endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
             
             // Hintergrundbildansicht
@@ -58,7 +58,7 @@ struct IconView: View {
                     .toolbar {
                         ToolbarItem(placement: .navigationBarTrailing) {
                             Button(action: {
-                                IconViewIsShowing = false
+                                CreatedMemberViewIsShowing = false
                             }) {
                                 Text("Close")
                                     .foregroundColor(.black)

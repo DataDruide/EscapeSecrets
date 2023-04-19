@@ -61,7 +61,18 @@ struct BookingCartView: View {
 
                     } else if tripType.activities.count == 0 && hotelType.hotels.count == 0 && flightType.flights.count == 0 {
                         // Wenn es keine Elemente im Warenkorb gibt
-                        Text("Your cart is empty!")    // Eine Nachricht, die anzeigt, dass der Warenkorb leer ist
+                        VStack(alignment: .center) {
+                            // Füge einen Text hinzu.
+                            Text("Your cart is empty")
+                                .bold()
+                                .foregroundColor(.white)
+                                .padding(.horizontal, 120 )
+                                .padding(.vertical, 16)
+                        }
+                        .background(LinearGradient(colors: [.green, .clear], startPoint: .topLeading, endPoint: .bottomTrailing), in: Capsule())
+                        .shadow(color: .black.opacity(0.6), radius: 5, x:15, y: 50)
+                        .position(x:160, y:78) // hier stellt man den grünen Rahmen auf ihre richtige Position
+                        
                             .padding()
                         
                     } else if tripType.activities.count > 0 && hotelType.hotels.count == 0 && flightType.flights.count == 0  {
@@ -77,19 +88,38 @@ struct BookingCartView: View {
                     }
                     
                     
-                    
-                    Text("Total price is")
-                        .foregroundColor(.white)
-                    Spacer()
-                    Text("$\(tripType.total)")
-                        .foregroundColor(.white)
-                    
-                    Text("$\(hotelType.total)")
-                        .foregroundColor(.white)
-                    
-                    Text("$\(flightType.total)")
-                        .foregroundColor(.white)
-                    
+                    VStack(alignment: .center) {
+                        HStack {
+                            Text("Totalprice of Trips:")
+                                .foregroundColor(.white)
+                            Spacer()
+                            Text("$\(tripType.total)")
+                                .foregroundColor(.white)
+                                .overlay(Rectangle().frame(height: 1).foregroundColor(.white), alignment: .bottom)
+                        }
+                        .padding(.bottom, 10)
+                        
+                        HStack {
+                            Text("Totalprice of Hotels:")
+                                .foregroundColor(.white)
+                            Spacer()
+                            Text("$\(hotelType.total)")
+                                .foregroundColor(.white)
+                                .overlay(Rectangle().frame(height: 1).foregroundColor(.white), alignment: .bottom)
+                        }
+                        .padding(.bottom, 10)
+                        
+                        HStack {
+                            Text("Totalprice of Flights:")
+                                .foregroundColor(.white)
+                            Spacer()
+                            Text("$\(flightType.total)")
+                                .foregroundColor(.white)
+                                .overlay(Rectangle().frame(height: 1).foregroundColor(.white), alignment: .bottom)
+                        }
+                    }
+                    .padding(40)
+
                     // 1 Button
                     Button(action: {
                         showAlert()
@@ -141,7 +171,7 @@ struct BookingCartView: View {
 
 
 func showAlert() {
-    let alert = UIAlertController(title: "Buchung erfolgreich!", message: "Danke für Ihre Buchung.", preferredStyle: .alert)
+    let alert = UIAlertController(title: "Booking successfull!", message: "Thank you for booking.", preferredStyle: .alert)
     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
     UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true, completion: nil)
 }

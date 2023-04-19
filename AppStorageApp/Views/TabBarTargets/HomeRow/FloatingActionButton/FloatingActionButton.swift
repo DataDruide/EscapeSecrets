@@ -1,7 +1,8 @@
 import SwiftUI
 struct FloatingActionButton: View {
     @State var showMenu = false
-    
+    @State var CreatedMemberViewIsShowing = false
+
     var body: some View {
         VStack {
             Spacer()
@@ -18,6 +19,10 @@ struct FloatingActionButton: View {
                     NavigationLink(destination: VideoAssistentView()) {
                         MenuItem(icon: "video")
                     }
+                    
+                    NavigationLink(destination: CreatedMemberView(CreatedMemberViewIsShowing: $CreatedMemberViewIsShowing, memberDataViewModel: MemberDataViewModel())) {
+                        MenuItem(icon: "person.fill.checkmark")
+                    }
                    
                 }
             }
@@ -27,8 +32,9 @@ struct FloatingActionButton: View {
                 Image(systemName: "pencil.tip.crop.circle.badge.plus")
                     .frame(width: 45, height: 45)
                     .aspectRatio(contentMode: .fill)
-                    .foregroundColor(Color(red: 75/255, green: 115/255, blue: 115/255))
+                    .foregroundColor(Color(red: 90/255, green: 125/255, blue: 115/255))
                     .background(Circle())
+                    .foregroundColor(.green.opacity(0.9))
                     .shadow(color: .gray, radius: 0.5, x: 1, y: 1)
             }
         }
@@ -42,7 +48,7 @@ struct MenuItem: View {
         ZStack {
             Circle()
                 .foregroundColor(Color(red: 75/255, green: 115/255, blue: 115/255))
-                .frame(width: 60, height: 60)
+                .frame(width: 45, height: 45)
             Image(systemName: icon)
                 .aspectRatio(contentMode: .fill)
                 .foregroundColor(.black)

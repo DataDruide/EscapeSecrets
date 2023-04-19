@@ -1,6 +1,5 @@
 
 import SwiftUI
-
 import SwiftUI
 
 struct ActivityTripView: View {
@@ -19,8 +18,18 @@ struct ActivityTripView: View {
     var body: some View {
         NavigationStack {
             ZStack {
+        
+                Image("urlaubsbild")
+                    .resizable()
+                    .scaledToFill()
+                    .overlay(Rectangle())
+                    .edgesIgnoringSafeArea(.all)
+                    .foregroundColor(.black.opacity(0.75))
+                    .contrast(0.7)
+                    .offset(x: -0)
+                    .opacity(01.05)
                 // Ein Farbverlauf wird als Hintergrund festgelegt
-                LinearGradient(colors: [.black.opacity(0.97),.black.opacity(0.87)], startPoint: .topLeading, endPoint: .bottomLeading)
+                LinearGradient(colors: [.black.opacity(0.47),.black.opacity(0.47)], startPoint: .topLeading, endPoint: .bottomLeading)
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack(alignment: .leading) {
@@ -54,7 +63,8 @@ struct ActivityTripView: View {
                                             .padding(.leading, 20)
                                             .padding(.bottom, 5)
                                     }
-                                    .background(Color.black).opacity(0.6)
+                                    .background(Color.black).opacity(0.8)
+                                    .padding(.all)
                                     .cornerRadius(10)
                                     .shadow(radius: 5)
                                     .padding(.bottom, 20)
@@ -70,7 +80,7 @@ struct ActivityTripView: View {
             }
             .searchable(text: $searchText) { // Änderung 2
                 Text("Find your perfect activity...")
-                    .foregroundColor(.gray) // Änderung 2
+                    .foregroundColor(.black) // Änderung 2
             }
         }
     }

@@ -1,10 +1,4 @@
-//
-//  PopularCompanysView.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 03.04.23.
-//
-//
+
 import SwiftUI
 
 struct PopularCompanysView: View {

@@ -81,12 +81,6 @@ struct ImageSelectionView: View {
             }
             Spacer()
         }
-//        .background(
-//            Image("innenraum2")
-//                .resizable()
-//                .aspectRatio(contentMode: .fill)
-//                .ignoresSafeArea()
-//                .opacity(0.25)
-//        )
+
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Marcel Zimmermann on 28.03.23.
 //
 import SwiftUI
-import MapKit
+import MapKit // Framework was es uns ermöglicht Karten anzuzeigen 
 
 // Die DetailActivityView repräsentiert die Ansicht einer bestimmten Aktivität, die näher beschrieben wird
 struct DetailActivityView: View {
@@ -54,16 +54,18 @@ var body: some View {
                     // Beschreibung der Aktivität
                     Text(activity.description)
                         .font(.headline)
-                        .foregroundColor(.white)
-                        .tracking(-1)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.secondary)
                         .multilineTextAlignment(.center)
-                        .shadow(color: .black, radius: 20, x: 0, y: 10)
                         .padding()
+                        .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
+                                           
                     
                     // Karte mit der angegebenen Region
                     Map(coordinateRegion:$mapRegion)
                         .cornerRadius(30)
-                        .shadow(color: .black, radius: 20, x: 0, y: 10)
+                        .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
+                        .frame(height: 250)
                 }
                 HStack(alignment: .top){
                     Spacer()
@@ -74,7 +76,7 @@ var body: some View {
                     })
                     {
                         RoundedRectangle(cornerRadius: 30)
-                            .fill(Color.orange)
+                            .fill(Color.green.opacity(0.4))
                             .shadow(color: .gray, radius: 20, x: 0, y: 10)
                             .blur(radius: 0.3)
                             .frame(width: 120, height: 60)

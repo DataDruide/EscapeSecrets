@@ -32,8 +32,10 @@ struct HomeRow: View {
                     self.showShapeOne = true
                 }, label: {
                     Image(systemName: "figure.walk.arrival")
-                        .font(.headline)
-                        .foregroundColor(.green.opacity(0.3))
+                        .padding()
+                        .background(Color.red.opacity(0.5))
+                        .clipShape(Circle())
+                        .foregroundColor(.black.opacity(1.3))
                         .blur(radius: 0.5)
                         .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
                         .padding(.horizontal, 50)
@@ -44,6 +46,7 @@ struct HomeRow: View {
                 .offset(x: -150, y: -345) // Position des Buttons auf der Z-Ebene
                 .sheet(isPresented: $showShapeOne) {
                     Shape1(username: "authService")
+                    
                 }
               
                 VStack(alignment: .center) {
@@ -107,7 +110,7 @@ struct HomeRow: View {
                     }
                         
                         FloatingActionButton()
-                        .position(x:350,y:40)
+                        .position(x:350,y:20)
 //                            .padding(.trailing, 16)
 //                            .padding(.bottom, 60)
                    // Spacer()

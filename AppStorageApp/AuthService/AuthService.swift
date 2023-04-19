@@ -8,50 +8,53 @@
 
 import Foundation
 import FirebaseAuth
+import Foundation
+import FirebaseAuth
 
-final class AuthService: ObservableObject{
-    var user :User?{
-        didSet{
+// Die Klasse AuthService ist eine ObservableObject-Klasse, die verschiedene Methoden zur Verwaltung der Authentifizierungsfunktionen enthält
+final class AuthService: ObservableObject {
+    
+    // Die Eigenschaft "user" ist ein optionaler User und wird aktualisiert, wenn sich der Authentifizierungszustand ändert
+    var user: User? {
+        didSet {
             objectWillChange.send()
         }
     }
     
-    func listenToAuthState(){
+    // Methode, um einen Listener für Änderungen des Authentifizierungszustands hinzuzufügen
+    func listenToAuthState() {
         Auth.auth().addStateDidChangeListener { [weak self] _, user in
-            guard let self = self else{
-                return
-            }
+            guard let self = self else { return }
             self.user = user
         }
     }
-    func signUp(email : String , password : String){
-        Auth.auth().createUser(withEmail: email, password: password){
-            result, error in
-            if let error = error{
+    
+    // Methode, um einen neuen Benutzer mit einer E-Mail-Adresse und einem Passwort zu registrieren
+    func signUp(email: String, password: String) {
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let error = error {
                 print("an error occured \(error)")
                 return
             }
         }
     }
     
-    func signIn(email : String , password : String){
-        Auth.auth().signIn(withEmail: email, password: password){
-            result, error in
-            if let error = error{
+    // Methode, um einen registrierten Benutzer mit einer E-Mail-Adresse und einem Passwort anzumelden
+    func signIn(email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
+            if let error = error {
                 print("an error occured \(error)")
                 return
             }
-            
         }
     }
     
-    func signOut(){
-        do{
+    // Methode, um einen angemeldeten Benutzer abzumelden
+    func signOut() {
+        do {
             try Auth.auth().signOut()
-        }catch let error{
+        } catch let error {
             print("an error occured \(error)")
         }
-        
     }
-    
 }

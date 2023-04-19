@@ -56,11 +56,11 @@ struct BookingHotelsItemRows: View {
                 .frame(maxWidth:.infinity,alignment: .leading)
             }
             .background(
-                LinearGradient(colors: [.black.opacity(0.97),.black.opacity(0.97)], startPoint: .topLeading, endPoint: .bottomLeading)
-                    .edgesIgnoringSafeArea(.all)
-                  )
-              
-        }
+                    // Ein Farbverlauf wird als Hintergrund festgelegt
+                    LinearGradient(colors: [.black.opacity(0.57), .black.opacity(0.47)], startPoint: .topLeading, endPoint: .bottomLeading)
+                        .edgesIgnoringSafeArea(.all)
+                    
+        )}
     
 }
 

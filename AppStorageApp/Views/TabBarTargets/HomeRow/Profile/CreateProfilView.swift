@@ -14,6 +14,8 @@ struct CreateProfilView: View {
     // Observable-Object-Klasse zur Verwaltung des App-Status
     @StateObject var memberDataViewModel = MemberDataViewModel()
     
+    // Variablen wo wir halten wollen den Wert
+    
     @State private var firstNameText: String = ""
     @State private var lastNameText: String = ""
     @State private var emailText: String = ""
@@ -27,7 +29,7 @@ struct CreateProfilView: View {
     @State private var passportNumberText: String = ""
     @State private var passportExpirationDateText: String = ""
     
-    @State private var IconViewIsShowing = false
+    @State private var CreatedMemberViewIsShowing = false
     
     var body: some View {
         ZStack {
@@ -37,10 +39,13 @@ struct CreateProfilView: View {
                 .scaledToFill()
                 .overlay(Rectangle())
                 .edgesIgnoringSafeArea(.all)
-                .foregroundColor(.black.opacity(0.85))
+                .foregroundColor(.black.opacity(0.75))
                 .contrast(0.7)
                 .offset(x: -0)
                 .opacity(01.05)
+            
+            // ScrollView mit Texteingabefeldern
+            
             ScrollView {
                 
                 VStack(alignment: .center, spacing: 16) {
@@ -95,7 +100,6 @@ struct CreateProfilView: View {
                                                 .foregroundColor(.black)
                                             TextField("Telefonnummer", text: $phoneNumberText)
                                                 .background(Color.gray.opacity(0.2))
-
                                         }
                                     }
                                     .padding([.leading, .trailing])
@@ -158,10 +162,9 @@ struct CreateProfilView: View {
 
                                             }
                                         }
-                                     //   Spacer()
                                         
                                         Button {
-                                            IconViewIsShowing = true
+                                            CreatedMemberViewIsShowing = true
                                             
                                             // Überprüfung, ob alle Felder ausgefüllt wurden
                                             guard !firstNameText.isEmpty, !lastNameText.isEmpty, !emailText.isEmpty, !ageText.isEmpty, !phoneNumberText.isEmpty, !addressText.isEmpty, !cityText.isEmpty, !zipCodeText.isEmpty, !countryText.isEmpty else { return }
@@ -185,13 +188,17 @@ struct CreateProfilView: View {
                                                 .foregroundColor(.white)
                                                 //.frame(height: 60)
                                                 .frame(width: 200, height: 45)
-                                                .background(Color.red.opacity(0.75))
+                                                .background(Color(
+                                                    red: 75 / 255,
+                                                    green: 115 / 255,
+                                                    blue: 115 / 255
+                                                ))
                                                 .cornerRadius(10)
                                                 .padding(.horizontal, 20)
                                         }
-                                    }.sheet(isPresented: $IconViewIsShowing) {
+                                    }.sheet(isPresented: $CreatedMemberViewIsShowing) {
                                         // Anzeige des MemberData-Sheets
-                                        IconView(IconViewIsShowing: $IconViewIsShowing, memberDataViewModel: memberDataViewModel)
+                                        CreatedMemberView(CreatedMemberViewIsShowing: $CreatedMemberViewIsShowing, memberDataViewModel: memberDataViewModel)
                                             .padding()
                                     }.padding()
                                     
@@ -207,16 +214,7 @@ struct CreateProfilView: View {
                 }
             }
         }
-    
-
-//import SwiftUI
-//
-//extension Color {
-//   static let graypurple = Color("graypurple")
-//}
-
-
-
+   
 struct CreateProfilView_Previews: PreviewProvider {
     static var previews: some View {
         CreateProfilView()
