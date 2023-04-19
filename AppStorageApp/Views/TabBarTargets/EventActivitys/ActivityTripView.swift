@@ -1,6 +1,5 @@
 
 import SwiftUI
-import SwiftUI
 
 struct ActivityTripView: View {
     

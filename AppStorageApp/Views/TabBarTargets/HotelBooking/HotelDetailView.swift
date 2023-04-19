@@ -1,10 +1,3 @@
-//
-//  HotelDetailView.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 03.03.23.
-//
-
 import SwiftUI
 import MapKit
 
@@ -25,91 +18,116 @@ struct HotelDetailView: View {
         
         ZStack {
             
-            
             LinearGradient(colors: [.black.opacity(0.97), .black.opacity(0.97)], startPoint: .topLeading, endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
             
             ScrollView {
                 VStack {
-                    VStack(alignment: .center, spacing:10){
+                    VStack(alignment: .center, spacing: 10){
                         
-                        HStack(alignment: .top){
-                            // Bild der Aktivität
-                            Image(hotel.image)
-                                .aspectRatio(contentMode: .fill)
-                                .cornerRadius(5)
-                        }
+                        // Bild der Aktivität
+                        Image(hotel.image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(height: 300)
+                            .cornerRadius(10)
+                            .padding([.horizontal, .bottom])
+                            .padding(.top, 30)
                         
                         // Name der Aktivität
                         Text(hotel.name)
+                            .font(.largeTitle)
+                            .fontWeight(.bold)
                             .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                            .padding(.horizontal)
+                            .padding(.bottom, 5)
+                            .padding(.top, 10)
                         
-                        VStack(alignment: .center, spacing:10){
+                        VStack(alignment: .leading, spacing: 10){
                             
-                            // Beschreibung der Aktivität
                             Text(hotel.description)
                                 .foregroundColor(.white)
                                 .font(.subheadline)
                                 .tracking(-1)
-                                .multilineTextAlignment(.center)
-                                .padding(.horizontal,65)
+                                .multilineTextAlignment(.leading)
+                                .padding(.horizontal)
+                                .multilineTextAlignment(.center) // Hinzufügen von .multilineTextAlignment(.center)
                             
+                            Divider()
                             
-                            HStack {
+                            HStack(alignment: .center, spacing: 20) {
                                 // Description of Prices
                                 Text("\(hotel.price)$")
+                                    .font(.title3)
+                                    .fontWeight(.bold)
                                     .foregroundColor(.white)
-                            }
-                            
-                            
-                            HStack {
+                                    .multilineTextAlignment(.center) // Hinzufügen von .multilineTextAlignment(.center)
+                                
                                 // Description of Amenities
-                                Text(hotel.amenities.joined(separator: ", "))
-                                    .foregroundColor(.white)
-                            }
-                            
-                            Button(action: {
-                                withAnimation {
-                                    hotelType.addHotels(newItem: hotel)
-                                    print("Added to the hotel booking list")
-                                }
-                            }) {
-                                Text("Booking Now")
-                                    .font(.headline)
-                                    .foregroundColor(.white)
-                                    .multilineTextAlignment(.center)
-                                    .blur(radius: 0.5)
-                                    .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
-                                    .padding(.horizontal, 50)
-                                    .padding(.vertical, 16)
-                                    .background(
-                                        RoundedRectangle(cornerRadius: 20)
-                                            .foregroundColor(
-                                                Color(
-                                                    red: 75 / 255,
-                                                    green: 115 / 255,
-                                                    blue: 115 / 255
-                                                )
+                                HStack(spacing: 5) {
+                                    ForEach(hotel.amenities, id: \.self) { amenity in
+                                        Text(amenity)
+                                            .foregroundColor(.white)
+                                            .font(.subheadline)
+                                            .padding(.horizontal, 10)
+                                            .padding(.vertical, 5)
+                                            .background(
+                                                RoundedRectangle(cornerRadius: 10)
+                                                    .foregroundColor(Color(red: 75/255, green: 115/255, blue: 115/255))
                                             )
-                                    )
+                                    }
+                                }
                             }
-                            .shadow(radius: 10)
-                            .padding(.top, 40)
-                            .padding(.bottom, 60)
+                            .padding(.horizontal)
+                            .padding(.vertical, 10)
+                            
+                            Divider()
+                            VStack(alignment: .center, spacing: 20) {
+                                
+                                Button(action: {
+                                    withAnimation {
+                                        hotelType.addHotels(newItem: hotel)
+                                        print("Added to the hotel booking list")
+                                    }
+                                }) {
+                                    Text("Jetzt buchen")
+                                        .font(.headline)
+                                        .foregroundColor(.white)
+                                        .multilineTextAlignment(.center)
+                                        .blur(radius: 0.5)
+                                        .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
+                                        .padding(.horizontal, 50)
+                                        .padding(.vertical, 16)
+                                        .background(
+                                            RoundedRectangle(cornerRadius: 20)
+                                                .foregroundColor(
+                                                    Color(
+                                                        red: 75 / 255,
+                                                        green: 115 / 255,
+                                                        blue: 115 / 255
+                                                    )
+                                                )
+                                        )
+                                        .multilineTextAlignment(.center) // Hinzufügen von .multilineTextAlignment(.center)
+
+                                }
+                                .shadow(radius: 10)
+                                .padding(.top, 20)
+                                .padding(.bottom, 60)
+                                .padding()
+                                
+                            }
                         }
-                        
-                        
-                    }.padding()
+                        VStack(alignment: .center, spacing: 10){
+                            // ...
+                           
+                        }
+                        .frame(minHeight: UIScreen.main.bounds.height - 300)
+                    }
                 }
             }
         }
-    }
-}
- 
-
-
-struct HotelDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        HotelDetailView(hotel: Hotels(name: "Italien", title: "Schloss · Gastgeber:in ist Nicola", image: "Italien", rating: 3, description: "Tolles Panorama-Schloss mit großem Pool. Die Unterkunft ist von Weinbergen und Olivenhainen umgeben! Das Hotel liegt im Herzen der Toskana zwischen Florenz und Siena! Ein Bahnhof ist nur 1 km entfernt! WLAN funktioniert immer im gesamten Anwesen. Klimaanlage. 5 Doppelzimmer, 6 Badezimmer. Ein sehr großer Wohnbereich, ideal für Veranstaltungen! Viele Terrassen mit Aussicht und ein erstaunlicher großer Innenhof, von dem aus du direkten Zugang zur kleinen privaten Kirche des Schlosses hast", price: 900, amenities: ["Kamin", "Küche", "Terrasse", "WLAN"]))
+        
     }
 }

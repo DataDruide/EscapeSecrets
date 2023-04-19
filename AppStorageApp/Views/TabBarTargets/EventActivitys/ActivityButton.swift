@@ -26,25 +26,23 @@ struct ActivityButton: View {
                 .overlay(RoundedRectangle(cornerRadius: 15).stroke(Color(.yellow), lineWidth: Constants.General.lineWidth))
             
             // Ein Rechteck, um den Text zu überlagern
-//            RoundedRectangle(cornerRadius: 20)
-//                .frame(width: 150, height: 30)
-//                .overlay(
-//                    // Der Name der Aktivität in fett gedruckter Schrift
+            RoundedRectangle(cornerRadius: 20)
+                .frame(width: 150, height: 30)
+                .overlay(
+                    // Der Name der Aktivität in fett gedruckter Schrift
                     Text(name)
                         .font(.caption)
                         .fontWeight(.bold)
                         .foregroundColor(.purple)
+                )
             
-            
-            
+            NavigationLink(destination: DetailActivityView(activity: Activities(name: name, image: image, description: "Beschreibung", price: 299, latitude: 0, longitude: 0))){
+                // Ein transparenter Button, um den NavigationLink auszulösen
+                Rectangle()
+                    .opacity(0)
+                    .frame(width: 150, height: 150)
+            }
                 
         }
-    }
-}
-
-struct ActivityButton_Previews: PreviewProvider {
-    static var previews: some View {
-        // Beispiel-Vorschau des ActivityButtons mit Namen "Rambo" und Bild "surf"
-        ActivityButton(name: "Rambo", image: "activityimage1")
     }
 }

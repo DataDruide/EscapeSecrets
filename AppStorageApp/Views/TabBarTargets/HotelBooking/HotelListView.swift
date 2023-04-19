@@ -33,6 +33,7 @@ struct HotelListView: View {
                 VStack {
                     SearchBarView2(searchTerm:  $searchText)
                         .padding(.horizontal)
+                        .padding()
                         .background(Color.black.opacity(0.75))
                     
                     ScrollView(showsIndicators: false) {

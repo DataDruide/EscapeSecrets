@@ -10,13 +10,13 @@ import SwiftUI
 struct FlightDetailView: View {
     
     var flight: Flights
-       
-       @EnvironmentObject var flightType : FlightTypeViewModel
-       @State var rotationAngle = 0.0
+    
+    @EnvironmentObject var flightType : FlightTypeViewModel
+    @State var rotationAngle = 0.0
 
-       init(flight:Flights){
-           self.flight = flight
-       }
+    init(flight: Flights){
+        self.flight = flight
+    }
     
     @State var remainingTime = 3600 // an example initial value
     
@@ -49,34 +49,61 @@ struct FlightDetailView: View {
                         .font(.title)
                         .bold()
                         .padding(.top)
+                        .accessibility(label: Text("Flight Name"))
                     
                     Text(flight.description)
                         .foregroundColor(.white)
                         .font(.headline)
                         .multilineTextAlignment(.center)
                         .padding()
+                        .accessibility(label: Text("Flight Description"))
+                    
+                    Text("Duration: \(flight.duration)")
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
+                        .accessibility(label: Text("Flight Duration"))
+                    
+                    Text("Departure Time: \(flight.departureTime)")
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
+                        .accessibility(label: Text("Flight Departure Time"))
+                    
+                    Text("Arrival Time: \(flight.arrivalTime)")
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
+                        .accessibility(label: Text("Flight Arrival Time"))
+                    
+                    Text("Origin: \(flight.origin)")
+                        .foregroundColor(.white)
+                        .font(.headline)
+                        .multilineTextAlignment(.center)
+                        .accessibility(label: Text("Flight Origin"))
                     
                     Text("$\(flight.price)")
                         .font(.title)
                         .fontWeight(.bold)
                         .foregroundColor(.white)
                         .padding(.bottom)
+                        .accessibility(label: Text("Flight Price"))
                     
                     Button(action: {
                         withAnimation {
-                        flightType.addFlights(newItem: flight)
+                            flightType.addFlights(newItem: flight)
                             print("Added to the flight booking list")
-                    }
+                        }
                     }) {
-                    Text("Book Now")
+                        Text("Book Now")
                             .font(.headline)
                             .foregroundColor(.white)
                             .padding(.horizontal, 50)
                             .padding(.vertical, 16)
                             .background(
                                 Capsule()
-                                .foregroundColor(Color(red: 75 / 255, green: 115 / 255, blue: 115 / 255))
-                                               )
+                                    .foregroundColor(Color(red: 75 / 255, green: 115 / 255, blue: 115 / 255)))
+
                     }
                     .shadow(radius: 10)
                     .padding(.top, 40)
@@ -96,7 +123,7 @@ struct FlightDetailView: View {
         }
         .onReceive(countdownTimer) { currentDate in
             let endTime = Date(timeIntervalSinceReferenceDate: TimeInterval(remainingTime))
-            let components = Calendar.current.dateComponents([.hour, .minute, .second], from: Date(), to: endTime)
+            _ = Calendar.current.dateComponents([.hour, .minute, .second], from: Date(), to: endTime)
             remainingTime -= 1
             
             if remainingTime < 0 {
@@ -129,9 +156,3 @@ struct CountdownCircle: View {
     }
 
 }
-//struct FlightDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FlightDetailView(flight: Flights(name: "flight1", image: "Turkish Airlines", description: "Türkisch Airline", price: 399))
-//    }
-//}
-
