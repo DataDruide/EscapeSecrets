@@ -2,6 +2,7 @@
 import SwiftUI
 import Foundation
 
+
 struct LoginView: View {
     
     @EnvironmentObject var authService: AuthService
@@ -23,8 +24,19 @@ struct LoginView: View {
 
             
             VStack{
-                var isButtonEnabled = !email.isEmpty && !password.isEmpty
-                
+                Text("Urlaub....")
+                    .font(.largeTitle)
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
+                    .blur(radius: 0.5)
+                    .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
+                    .padding(.top, 50)
+                Text("machts schöner")
+                    .font(.title)
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
+                    .blur(radius: 0.5)
+                    .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
                 Spacer()
                 
                 Text("Login")
@@ -85,13 +97,15 @@ struct LoginView: View {
                                 )
                         )
                         .blur(radius: 0.5)
-                        .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)                })
-                .disabled(!isButtonEnabled)
+                        .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
+                })
+                .disabled(email.isEmpty || password.isEmpty)
                 
                 // Login button
                 Button(action: {
                     authService.signIn(email: email, password: password)
-                }, label: {
+                }, label:
+ {
                     Text("Login")
                         .font(.headline)
                         .foregroundColor(.white)
@@ -109,12 +123,10 @@ struct LoginView: View {
                         )
                         .blur(radius: 0.5)
                         .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)                })
-                .disabled(!isButtonEnabled)
+             //   .disabled(!isButtonEnabled)
                 
                 Spacer(minLength: 150)
                 
-                Text("forget your Password")
-                    .foregroundColor(.white)
             }
         }.background(Color.black)
     }

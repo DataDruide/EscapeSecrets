@@ -116,6 +116,7 @@ struct BookingCartView: View {
                             Text("$\(flightType.total)")
                                 .foregroundColor(.white)
                                 .overlay(Rectangle().frame(height: 1).foregroundColor(.white), alignment: .bottom)
+                            
                         }
                     }
                     .padding(40)
