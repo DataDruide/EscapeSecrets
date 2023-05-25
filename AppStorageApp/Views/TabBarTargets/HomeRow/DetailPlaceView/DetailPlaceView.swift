@@ -35,7 +35,7 @@ struct DetailPlaceView: View {
                             .foregroundColor(.orange)
                             .font(.system(size: 44, weight: .semibold))
                             .blur(radius: 0.5)
-                            .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
+                            .shadow(color: .gray, radius: 0.55, x: 0.5, y: 0.5)
                     }
                     
                     // Hauptinhalt

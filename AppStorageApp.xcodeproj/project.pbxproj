@@ -37,6 +37,7 @@
 		E732BE3829CC6FAB0067BFC2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E732BE3729CC6FAB0067BFC2 /* .gitignore */; };
 		E732BE3A29CC6FFC0067BFC2 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732BE3929CC6FFC0067BFC2 /* APIKeys.swift */; };
 		E732BE4B29CD400F0067BFC2 /* TravelTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732BE4A29CD400F0067BFC2 /* TravelTicket.swift */; };
+		E73B47BA2A1EE56600E5BBC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E73B47B92A1EE56600E5BBC4 /* GoogleService-Info.plist */; };
 		E74092DB29C6C2BB005104CF /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74092DA29C6C2BB005104CF /* JobDetailView.swift */; };
 		E74092DD29C6C963005104CF /* BookingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74092DC29C6C963005104CF /* BookingRow.swift */; };
 		E74092DF29C6C9AB005104CF /* ImageSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74092DE29C6C9AB005104CF /* ImageSelectionView.swift */; };
@@ -81,7 +82,6 @@
 		E76D8B1529E6097B0058AF82 /* DetailPopularDestinationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E76D8B1429E6097B0058AF82 /* DetailPopularDestinationView.swift */; };
 		E7863AA529B2388C004B991F /* HotelDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7863AA429B2388C004B991F /* HotelDetailView.swift */; };
 		E7863AA729B238F6004B991F /* LandMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7863AA629B238F6004B991F /* LandMark.swift */; };
-		E793FA9529AF8723000B0B15 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E793FA9429AF8723000B0B15 /* GoogleService-Info.plist */; };
 		E793FA9929AF885B000B0B15 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = E793FA9829AF885B000B0B15 /* FirebaseAuth */; };
 		E793FA9B29AF885B000B0B15 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = E793FA9A29AF885B000B0B15 /* FirebaseDatabase */; };
 		E793FA9D29AF885B000B0B15 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = E793FA9C29AF885B000B0B15 /* FirebaseFirestore */; };
@@ -158,6 +158,7 @@
 		E732BE3729CC6FAB0067BFC2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		E732BE3929CC6FFC0067BFC2 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		E732BE4A29CD400F0067BFC2 /* TravelTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTicket.swift; sourceTree = "<group>"; };
+		E73B47B92A1EE56600E5BBC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E74092DA29C6C2BB005104CF /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
 		E74092DC29C6C963005104CF /* BookingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingRow.swift; sourceTree = "<group>"; };
 		E74092DE29C6C9AB005104CF /* ImageSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectionView.swift; sourceTree = "<group>"; };
@@ -201,7 +202,6 @@
 		E76D8B1429E6097B0058AF82 /* DetailPopularDestinationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPopularDestinationView.swift; sourceTree = "<group>"; };
 		E7863AA429B2388C004B991F /* HotelDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HotelDetailView.swift; sourceTree = "<group>"; };
 		E7863AA629B238F6004B991F /* LandMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandMark.swift; sourceTree = "<group>"; };
-		E793FA9429AF8723000B0B15 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E7B32CDC29DA90FE0032A478 /* PopularCompanysView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularCompanysView.swift; sourceTree = "<group>"; };
 		E7B32CDE29DA91B80032A478 /* BookingCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingCategories.swift; sourceTree = "<group>"; };
 		E7B32CE229DA92030032A478 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
@@ -417,7 +417,7 @@
 				E74EC15D29DD2E3D007585E0 /* Videos */,
 				E70EC79729D6C26400AB0B8C /* Utilities */,
 				E732BE3429CC6E410067BFC2 /* APIKeys */,
-				E793FA9429AF8723000B0B15 /* GoogleService-Info.plist */,
+				E73B47B92A1EE56600E5BBC4 /* GoogleService-Info.plist */,
 				E793FA5829AF55F4000B0B15 /* Views */,
 				E7D48BD029AE5381008C6B41 /* Models */,
 				E7D48BBE29AE50F6008C6B41 /* ViewModel */,
@@ -1054,7 +1054,7 @@
 				E721330B29ADABA40062D3FF /* Preview Assets.xcassets in Resources */,
 				E74EC15F29DD2E61007585E0 /* bookingvideo.mp4 in Resources */,
 				E721330829ADABA40062D3FF /* Assets.xcassets in Resources */,
-				E793FA9529AF8723000B0B15 /* GoogleService-Info.plist in Resources */,
+				E73B47BA2A1EE56600E5BBC4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

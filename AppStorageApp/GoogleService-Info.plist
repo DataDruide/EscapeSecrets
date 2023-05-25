@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>412216009720-4ib651p72vflgn1s6cuf9m81vb7pklh1.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.412216009720-4ib651p72vflgn1s6cuf9m81vb7pklh1</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC2m0q4SN2cF4j9BiQ43cqA2j_h5UxJmy0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>412216009720</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.My.MyDataApp.AppStorageApp</string>
+	<key>PROJECT_ID</key>
+	<string>take-off-find-out</string>
+	<key>STORAGE_BUCKET</key>
+	<string>take-off-find-out.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:412216009720:ios:754be1ed7ab200ce6cec0d</string>
+	<key>DATABASE_URL</key>
+	<string>https://take-off-find-out-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>

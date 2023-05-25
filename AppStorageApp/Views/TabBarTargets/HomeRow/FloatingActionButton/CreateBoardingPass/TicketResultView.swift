@@ -37,19 +37,15 @@ struct TicketResultView: View {
             Text(pets ? "Pets allowed" : "No pets allowed")
                 .font(.subheadline)
                 .foregroundColor(.white)
-            
             Spacer()
-            
             Text("Select your seat")
                 .font(.title2)
                 .bold()
                 .padding(.bottom, 5)
-            
             VStack(alignment: .leading, spacing: 10) {
                 Text("Please select your seat:")
                     .font(.headline)
                     .foregroundColor(.white)
-                
                 HStack(spacing: 20) {
                     Button(action: {
                         seatSelection = "Window"
@@ -74,7 +70,6 @@ struct TicketResultView: View {
                             .background(seatSelection == "Middle" ? Color.orange : Color.gray.opacity(0.5))
                             .cornerRadius(10)
                     })
-                    
                     Button(action: {
                         seatSelection = "Aisle"
                     }, label: {
