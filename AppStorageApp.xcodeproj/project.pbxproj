@@ -20,7 +20,7 @@
 		E70EC79229D617F700AB0B8C /* SearchTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70EC79129D617F700AB0B8C /* SearchTextField.swift */; };
 		E70EC79929D6C27A00AB0B8C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70EC79829D6C27900AB0B8C /* AudioPlayer.swift */; };
 		E70EC79C29D6C3AD00AB0B8C /* CircleGroupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70EC79B29D6C3AD00AB0B8C /* CircleGroupView.swift */; };
-		E71B3D3129C3638D00AAB7C0 /* Shape1.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B3D3029C3638D00AAB7C0 /* Shape1.swift */; };
+		E71B3D3129C3638D00AAB7C0 /* LogoutShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71B3D3029C3638D00AAB7C0 /* LogoutShape.swift */; };
 		E721330429ADABA30062D3FF /* AppStorageAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721330329ADABA30062D3FF /* AppStorageAppApp.swift */; };
 		E721330629ADABA30062D3FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E721330529ADABA30062D3FF /* ContentView.swift */; };
 		E721330829ADABA40062D3FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E721330729ADABA40062D3FF /* Assets.xcassets */; };
@@ -35,7 +35,6 @@
 		E724F76C29EC2D39000E5E08 /* VideoAssistentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724F76B29EC2D39000E5E08 /* VideoAssistentView.swift */; };
 		E7321A2A29B17C70003BA60D /* GifImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7321A2929B17C70003BA60D /* GifImage.swift */; };
 		E732BE3829CC6FAB0067BFC2 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = E732BE3729CC6FAB0067BFC2 /* .gitignore */; };
-		E732BE3A29CC6FFC0067BFC2 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732BE3929CC6FFC0067BFC2 /* APIKeys.swift */; };
 		E732BE4B29CD400F0067BFC2 /* TravelTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = E732BE4A29CD400F0067BFC2 /* TravelTicket.swift */; };
 		E73B47BA2A1EE56600E5BBC4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E73B47B92A1EE56600E5BBC4 /* GoogleService-Info.plist */; };
 		E74092DB29C6C2BB005104CF /* JobDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E74092DA29C6C2BB005104CF /* JobDetailView.swift */; };
@@ -138,7 +137,7 @@
 		E70EC79129D617F700AB0B8C /* SearchTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextField.swift; sourceTree = "<group>"; };
 		E70EC79829D6C27900AB0B8C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		E70EC79B29D6C3AD00AB0B8C /* CircleGroupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleGroupView.swift; sourceTree = "<group>"; };
-		E71B3D3029C3638D00AAB7C0 /* Shape1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape1.swift; sourceTree = "<group>"; };
+		E71B3D3029C3638D00AAB7C0 /* LogoutShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutShape.swift; sourceTree = "<group>"; };
 		E721330029ADABA30062D3FF /* AppStorageApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppStorageApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E721330329ADABA30062D3FF /* AppStorageAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorageAppApp.swift; sourceTree = "<group>"; };
 		E721330529ADABA30062D3FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -156,7 +155,6 @@
 		E724F76B29EC2D39000E5E08 /* VideoAssistentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAssistentView.swift; sourceTree = "<group>"; };
 		E7321A2929B17C70003BA60D /* GifImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifImage.swift; sourceTree = "<group>"; };
 		E732BE3729CC6FAB0067BFC2 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		E732BE3929CC6FFC0067BFC2 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		E732BE4A29CD400F0067BFC2 /* TravelTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTicket.swift; sourceTree = "<group>"; };
 		E73B47B92A1EE56600E5BBC4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E74092DA29C6C2BB005104CF /* JobDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailView.swift; sourceTree = "<group>"; };
@@ -264,7 +262,7 @@
 		E70EC74B29D4A35700AB0B8C /* LogoutShape */ = {
 			isa = PBXGroup;
 			children = (
-				E71B3D3029C3638D00AAB7C0 /* Shape1.swift */,
+				E71B3D3029C3638D00AAB7C0 /* LogoutShape.swift */,
 			);
 			path = LogoutShape;
 			sourceTree = "<group>";
@@ -414,9 +412,7 @@
 		E721330229ADABA30062D3FF /* AppStorageApp */ = {
 			isa = PBXGroup;
 			children = (
-				E74EC15D29DD2E3D007585E0 /* Videos */,
-				E70EC79729D6C26400AB0B8C /* Utilities */,
-				E732BE3429CC6E410067BFC2 /* APIKeys */,
+				E78F2BAA2A467E55003518A6 /* Mediadaten */,
 				E73B47B92A1EE56600E5BBC4 /* GoogleService-Info.plist */,
 				E793FA5829AF55F4000B0B15 /* Views */,
 				E7D48BD029AE5381008C6B41 /* Models */,
@@ -481,14 +477,6 @@
 				E707EFAD29E193A10032C880 /* FloatingActionButton.swift */,
 			);
 			path = FloatingActionButton;
-			sourceTree = "<group>";
-		};
-		E732BE3429CC6E410067BFC2 /* APIKeys */ = {
-			isa = PBXGroup;
-			children = (
-				E732BE3929CC6FFC0067BFC2 /* APIKeys.swift */,
-			);
-			path = APIKeys;
 			sourceTree = "<group>";
 		};
 		E74BF58D29E8BEEF005A9961 /* HomeRow */ = {
@@ -824,6 +812,15 @@
 			path = ProfilDataViewModel;
 			sourceTree = "<group>";
 		};
+		E78F2BAA2A467E55003518A6 /* Mediadaten */ = {
+			isa = PBXGroup;
+			children = (
+				E70EC79729D6C26400AB0B8C /* Utilities */,
+				E74EC15D29DD2E3D007585E0 /* Videos */,
+			);
+			path = Mediadaten;
+			sourceTree = "<group>";
+		};
 		E793FA5829AF55F4000B0B15 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -1124,11 +1121,10 @@
 				E74EC15829DD2798007585E0 /* StewardessView.swift in Sources */,
 				E7B32CE329DA92030032A478 /* Restaurant.swift in Sources */,
 				E74092DD29C6C963005104CF /* BookingRow.swift in Sources */,
-				E71B3D3129C3638D00AAB7C0 /* Shape1.swift in Sources */,
+				E71B3D3129C3638D00AAB7C0 /* LogoutShape.swift in Sources */,
 				E7D48B8929AE2A51008C6B41 /* Home.swift in Sources */,
 				E7B32CE529DA922A0032A478 /* Company.swift in Sources */,
 				E7D48BD629AE53C4008C6B41 /* ModelData.swift in Sources */,
-				E732BE3A29CC6FFC0067BFC2 /* APIKeys.swift in Sources */,
 				E721330629ADABA30062D3FF /* ContentView.swift in Sources */,
 				E7863AA529B2388C004B991F /* HotelDetailView.swift in Sources */,
 				E724F76C29EC2D39000E5E08 /* VideoAssistentView.swift in Sources */,
@@ -1319,8 +1315,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppStorageApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 55C3RLSR2Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1347,8 +1345,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AppStorageApp/Preview Content\"";
+				DEVELOPMENT_TEAM = 55C3RLSR2Z;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

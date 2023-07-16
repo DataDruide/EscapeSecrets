@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Shape1: View {
+struct LogoutShape: View {
     
     @State private var showYourWayView = false
     @EnvironmentObject var authService: AuthService
@@ -20,7 +20,7 @@ struct Shape1: View {
     var body: some View {
         CardViewShape1 {
             ZStack {
-                Image("EscapeSecretsLogo")
+                Image("studenten")
                     .resizable()
                     .overlay(Rectangle().foregroundColor(.clear))
                     .edgesIgnoringSafeArea(.all)
@@ -84,7 +84,7 @@ struct Shape1: View {
     // Eine Preview-Struktur, um eine Vorschau der View in der Xcode-Preview-Ansicht zu sehen
     struct Shape1_Previews: PreviewProvider {
         static var previews: some View {
-            Shape1(username: "Max Mustermann")
+            LogoutShape(username: "Max Mustermann")
                 .environmentObject(AuthService()) // Fügt ein EnvironmentObject hinzu, um die AuthService-Instanz zu verwenden
         }
     }

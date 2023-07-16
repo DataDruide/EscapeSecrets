@@ -1,19 +1,17 @@
-//
-//  OnboardingRules.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 13.04.23.
-//
 
 
 import SwiftUI
 // Hier regeln wir die Onboardregeln
 struct OnboardingRules: View {
     
-    @EnvironmentObject var authService : AuthService
-    @AppStorage("onBoarding")  var onBoarding = true
-    @State private var showLoginView = false
-    @State private var RestartOnboarding = false
+    @EnvironmentObject var authService : AuthService // Zugänglichkeit zum AuthService
+    @AppStorage("onBoarding")  var onBoarding = true // Speichert den Onboardingprozess (true sagt aus OnBoarding läuft noch)
+    
+    
+    // ###### Werden mit Benötigt zum Verhaltensprozess
+    @State private var showLoginView = false // Speichern Zustand der View
+    
+    @State private var RestartOnboarding = false  // Speichern Zustand der View
 
     var body: some View {
         VStack {
@@ -21,14 +19,14 @@ struct OnboardingRules: View {
                 OnBoardingView()
             } else {
                 Group{
-                    if authService.user != nil{
-                        Home()
+                    if authService.user != nil{ // nicht leer ist
+                        Home() // dann zeig mir Home an
                     }else{
-                        AfterOnBoarding()
+                        AfterOnBoarding() // ansonsten AfterOnboarding View
                             .transition(.opacity.animation(.default))
                         
                     }
-                }.onAppear{
+                }.onAppear{ // Beim Erscheinen der View (onAppear) wird die Funktion listenToAuthState aufgerufen, die zum Abhören des Authentifizierungsstatus im AuthService dient.
                     authService.listenToAuthState()
                 }
                

@@ -1,19 +1,12 @@
-//
-//  ContentView.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 28.02.23.
-//
 
-import SwiftUI
+
+import SwiftUI // Framework
 
 struct ContentView: View {
-    @EnvironmentObject var authService : AuthService
+    @EnvironmentObject var authService : AuthService // Hier machen wir uns den AuthService zugänglich mit dem EnvironmentObject
   
-
-
     var body: some View {
-        NavigationStack {
+        NavigationStack { // Ist ein Navigations Container und alle Objekte in dem Container erlauben eine Navigation
             
             
             ZStack {
@@ -22,7 +15,7 @@ struct ContentView: View {
                     .edgesIgnoringSafeArea(.all)
                 
                 VStack {
-                    OnboardingRules()
+                    OnboardingRules() // Hier rufen wir die Regeln auf wie sich die App beim ersten und 2 Start verhalten soll 
                 }
             }
         }
