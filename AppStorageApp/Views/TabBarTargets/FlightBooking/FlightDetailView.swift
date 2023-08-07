@@ -1,9 +1,3 @@
-//
-//  FlightDetailView.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 30.03.23.
-//
 
 import SwiftUI
 
@@ -11,26 +5,21 @@ struct FlightDetailView: View {
     
     var flight: Flights
     
-    @EnvironmentObject var flightType : FlightTypeViewModel
+    @EnvironmentObject var flightType: FlightTypeViewModel
     @State var rotationAngle = 0.0
-
-    init(flight: Flights){
-        self.flight = flight
-    }
-    
     @State var remainingTime = 3600 // an example initial value
-    
     let countdownTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
     var body: some View {
-        
         ZStack {
-            LinearGradient(colors: [.black.opacity(0.97), .black.opacity(0.97)], startPoint: .topLeading, endPoint: .bottomLeading)
+            // Hintergrundbild
+            Image("flight_background")
+                .resizable()
+                .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
-                VStack(alignment: .center, spacing: 10){
-                    
+                VStack(alignment: .center, spacing: 10) {
                     HStack(alignment: .top){
                         Image(flight.image)
                             .resizable()
@@ -41,11 +30,10 @@ struct FlightDetailView: View {
                             .shadow(radius: 7)
                             .rotationEffect(.degrees(rotationAngle))
                             .animation(Animation.linear(duration: 2).repeatForever())
-
                     }
                     
                     Text(flight.name)
-                        .foregroundColor(.white)
+                        .foregroundColor(.yellow)
                         .font(.title)
                         .bold()
                         .padding(.top)
@@ -58,36 +46,44 @@ struct FlightDetailView: View {
                         .padding()
                         .accessibility(label: Text("Flight Description"))
                     
-                    Text("Duration: \(flight.duration)")
-                        .foregroundColor(.white)
-                        .font(.headline)
-                        .multilineTextAlignment(.center)
-                        .accessibility(label: Text("Flight Duration"))
-                    
-                    Text("Departure Time: \(flight.departureTime)")
-                        .foregroundColor(.white)
-                        .font(.headline)
-                        .multilineTextAlignment(.center)
-                        .accessibility(label: Text("Flight Departure Time"))
-                    
-                    Text("Arrival Time: \(flight.arrivalTime)")
-                        .foregroundColor(.white)
-                        .font(.headline)
-                        .multilineTextAlignment(.center)
-                        .accessibility(label: Text("Flight Arrival Time"))
-                    
-                    Text("Origin: \(flight.origin)")
-                        .foregroundColor(.white)
-                        .font(.headline)
-                        .multilineTextAlignment(.center)
-                        .accessibility(label: Text("Flight Origin"))
-                    
-                    Text("$\(flight.price)")
-                        .font(.title)
-                        .fontWeight(.bold)
-                        .foregroundColor(.white)
-                        .padding(.bottom)
-                        .accessibility(label: Text("Flight Price"))
+                    // Halbtransparentes Overlay mit Flugdetails
+                    VStack(spacing: 10) {
+                        Text("Duration: \(flight.duration)")
+                            .foregroundColor(.white)
+                            .font(.headline)
+                            .multilineTextAlignment(.center)
+                            .accessibility(label: Text("Flight Duration"))
+                        
+                        Text("Departure Time: \(flight.departureTime)")
+                            .foregroundColor(.white)
+                            .font(.headline)
+                            .multilineTextAlignment(.center)
+                            .accessibility(label: Text("Flight Departure Time"))
+                        
+                        Text("Arrival Time: \(flight.arrivalTime)")
+                            .foregroundColor(.white)
+                            .font(.headline)
+                            .multilineTextAlignment(.center)
+                            .accessibility(label: Text("Flight Arrival Time"))
+                        
+                        Text("Origin: \(flight.origin)")
+                            .foregroundColor(.white)
+                            .font(.headline)
+                            .multilineTextAlignment(.center)
+                            .accessibility(label: Text("Flight Origin"))
+                        
+                        Text("$\(flight.price)")
+                            .font(.title)
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                            .accessibility(label: Text("Flight Price"))
+                    }
+                    .padding()
+                    .background(
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.black.opacity(0.6))
+                    )
+                    .padding(.horizontal)
                     
                     Button(action: {
                         withAnimation {
@@ -101,11 +97,16 @@ struct FlightDetailView: View {
                             .padding(.horizontal, 50)
                             .padding(.vertical, 16)
                             .background(
-                                Capsule()
-                                    .foregroundColor(Color(red: 75 / 255, green: 115 / 255, blue: 115 / 255)))
-
+                                RoundedRectangle(cornerRadius: 20)
+                                    .foregroundColor(
+                                        Color(
+                                            red: 75 / 255,
+                                            green: 115 / 255,
+                                            blue: 115 / 255
+                                        )
+                                    )
+                            )
                     }
-                    .shadow(radius: 10)
                     .padding(.top, 40)
                     .padding(.bottom, 60)
                     
@@ -131,28 +132,4 @@ struct FlightDetailView: View {
             }
         }
     }
-}
-
-struct CountdownCircle: View {
-    let remainingTime: Double
-    
-    var body: some View {
-        ZStack {
-            Circle()
-                .stroke(lineWidth: 10.0)
-                .opacity(0.3)
-                .foregroundColor(Color.white)
-            
-            Text("\(formattedTime)")
-                .font(.headline)
-                .foregroundColor(.white)
-        }
-    }
-    var formattedTime: String {
-        let hours = Int(remainingTime) / 3600
-        let minutes = Int(remainingTime) / 60 % 60
-        let seconds = Int(remainingTime) % 60
-        return String(format: "%02d:%02d:%02d", hours, minutes, seconds)
-    }
-
 }

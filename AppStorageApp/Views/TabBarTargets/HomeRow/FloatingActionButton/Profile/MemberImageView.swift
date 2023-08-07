@@ -1,30 +1,24 @@
-//
-//  ExampleView.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 07.04.23.
-//
 
-import SwiftUI
-
-import SwiftUI
+   import SwiftUI
    import PhotosUI
-   struct CircleImage: Identifiable {
-       let id: UUID = UUID()
-       let image: Image
-       var circleView: some View {
-           image
-               .resizable()
-               .aspectRatio(contentMode: .fill)
-               .frame(width: 100, height: 100)
-               .clipShape(Circle())
-               .overlay(Circle().stroke(.primary, lineWidth: 2))
-               .padding(2)
-               .overlay(Circle().strokeBorder(Color.black.opacity(0.1)))
-               .shadow(radius: 3)
-               .padding(4)
-       }
-   }
+
+struct CircleImage: Identifiable {
+    let id: UUID = UUID()
+    let image: Image
+    
+    var circleView: some View {
+        image
+            .resizable()
+            .aspectRatio(contentMode: .fill)
+            .frame(width: 100, height: 100)
+            .clipShape(Circle())
+            .overlay(Circle().stroke(.primary, lineWidth: 2))
+            .padding(2)
+            .overlay(Circle().strokeBorder(Color.black.opacity(0.1)))
+            .shadow(radius: 3)
+            .padding(4)
+    }
+}
    struct MemberImageView: View {
        @State var items: [PhotosPickerItem] = []
        @State var images: [CircleImage] = []

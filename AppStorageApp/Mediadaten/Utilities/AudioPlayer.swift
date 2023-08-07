@@ -1,9 +1,3 @@
-//
-//  AudioPlayer.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 31.03.23.
-//
 
 // Importieren der benötigten Frameworks
 import Foundation

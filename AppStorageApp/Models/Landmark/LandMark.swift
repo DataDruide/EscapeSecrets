@@ -1,16 +1,12 @@
-//
-//  LandMark.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 03.03.23.
-//
 
 import Foundation
 
-
+// Das Modell für eine Landmarke.
 struct Landmark: Identifiable {
+    // Eine eindeutige ID, die automatisch generiert wird (UUID).
     let id = UUID()
+    // Der Name der Landmarke.
     let name: String
+    // Der Name des Bildes, das der Landmarke zugeordnet ist.
     let imageName: String
 }
-

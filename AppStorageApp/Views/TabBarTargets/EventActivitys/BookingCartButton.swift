@@ -1,9 +1,3 @@
-//
-//  BookingCartButton.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 28.03.23.
-//
 
 import SwiftUI
 

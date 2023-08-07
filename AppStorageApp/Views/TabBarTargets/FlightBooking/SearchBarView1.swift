@@ -1,9 +1,3 @@
-//
-//  SearchBarView1.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 15.04.23.
-//
 
 import SwiftUI
 
@@ -28,7 +22,7 @@ struct SearchBarView1: View {
             TextField("Search", text: $searchTerm)
                 .padding(.vertical, 10)
                 .padding(.horizontal, 25)
-                .background(Color(.systemGray6))
+                .background(Color(.systemCyan))
                 .cornerRadius(8)
                 .padding(.horizontal)
             

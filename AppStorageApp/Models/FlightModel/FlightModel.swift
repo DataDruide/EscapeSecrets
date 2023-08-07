@@ -1,33 +1,42 @@
-////
-////  FlightModel.swift
-////  AppStorageApp
-////
-////  Created by Marcel Zimmermann on 30.03.23.
-////
 import Foundation
 import SwiftUI
 
-
-struct Flights : Identifiable {
-    
+// Die Struktur, die ein Flugobjekt repräsentiert.
+struct Flights: Identifiable {
+    // Eine eindeutige ID, die automatisch generiert wird (UUID).
     var id = UUID()
-    let name : String
-    let image : String
-    let description : String
-    let price : Int
-    let duration : String
-    let departureTime : String
-    let arrivalTime : String
-    let origin : String
-    let destination : String
-    let stops : Int
-    let airlineCode : String
-    let baggageAllowance : String
-    let wifiAvailability : Bool
-    let inFlightEntertainment : Bool
-    let mealIncluded : Bool
-   
+    // Der Name des Fluges.
+    let name: String
+    // Der Name des Bildes, das den Flug repräsentiert.
+    let image: String
+    // Eine Beschreibung des Fluges.
+    let description: String
+    // Der Preis des Fluges.
+    let price: Int
+    // Die Dauer des Fluges.
+    let duration: String
+    // Die Abflugzeit des Fluges.
+    let departureTime: String
+    // Die Ankunftszeit des Fluges.
+    let arrivalTime: String
+    // Der Abflugort des Fluges.
+    let origin: String
+    // Das Ziel des Fluges.
+    let destination: String
+    // Die Anzahl der Zwischenstopps.
+    let stops: Int
+    // Der Airline-Code des Fluges.
+    let airlineCode: String
+    // Die Gepäckregelung des Fluges.
+    let baggageAllowance: String
+    // Die Verfügbarkeit von WLAN während des Fluges.
+    let wifiAvailability: Bool
+    // Die Verfügbarkeit von In-Flight-Entertainment während des Fluges.
+    let inFlightEntertainment: Bool
+    // Gibt an, ob eine Mahlzeit während des Fluges enthalten ist.
+    let mealIncluded: Bool
 }
+
 
 // Erstellen weiterer Instanzen der Flights-Struct und Speichern in Variablen
 private var flight1 = Flights(name: "Ethiopian Airlines", image: "Ethiopian Airlines",description: "International Airline We fly with us 365 Days of the Year", price: 1140, duration: "6h 30m", departureTime: "12:30 PM", arrivalTime: "6:00 PM", origin: "ADD", destination: "FRA", stops: 0, airlineCode: "ET", baggageAllowance: "2 bags, 23kg each", wifiAvailability: true, inFlightEntertainment: true, mealIncluded: true)
@@ -48,9 +57,10 @@ private var flight8 = Flights(name: "WANDA AIRLINES", image: "WANDA AIRLINES",de
 
 
 
-
+// Das Modell für die Liste von Flügen.
 struct FlightModel {
-    var flightsList : [Flights] = [flight1,flight2,flight3,flight4,flight5,flight6,flight7,flight8]
-    var searchtext : String = ""
-    
+    // Eine Liste von Flugobjekten.
+    var flightsList: [Flights] = [flight1, flight2, flight3, flight4, flight5, flight6, flight7, flight8]
+    // Der Suchtext, der für die Filterung der Flüge verwendet wird.
+    var searchtext: String = ""
 }

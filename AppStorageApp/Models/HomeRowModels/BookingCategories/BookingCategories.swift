@@ -1,14 +1,10 @@
-//
-//  BookingCategories.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 03.04.23.
-//
-
-
 import Foundation
 import SwiftUI
 
-struct BookingCategories : Hashable {
-    let name, imageName: String
+// Das Modell für Buchungskategorien.
+struct BookingCategories: Hashable {
+    // Der Name der Buchungskategorie.
+    let name: String
+    // Der Name des Bildes, das der Buchungskategorie zugeordnet ist.
+    let imageName: String
 }

@@ -11,7 +11,8 @@ struct DetailPopularDestinationView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                Image(selectedImage == "" ? imageName : selectedImage) // show the selected image or the default image
+                // Anzeige des ausgewählten Bildes oder des Standardbildes
+                Image(selectedImage == "" ? imageName : selectedImage)
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: geometry.size.width, height: geometry.size.height / 3)
@@ -19,49 +20,57 @@ struct DetailPopularDestinationView: View {
                 
                 ScrollView {
                     VStack(alignment: .leading, spacing: 20) {
-                        Text("Ihr Land im Detail ")
+                        // Überschrift "Ihr Land im Detail"
+                        Text("Your Country in Detail")
                             .font(.title)
                             .fontWeight(.bold)
                             .multilineTextAlignment(.center)
+                            .foregroundColor(.yellow)
                             .padding(.top, 20)
-                        
-                        Text("Lage: ")
+
+                        // Section "Location"
+                        Text("Location:")
                             .font(.headline)
                             .fontWeight(.bold)
-                        Text("Hier können Sie eine kurze Beschreibung der Lage des Landes geben.")
-                        
-                        Text("Region: ")
+                        Text("Here, you can provide a brief description of the country's location.")
+
+                        // Section "Region"
+                        Text("Region:")
                             .font(.headline)
                             .fontWeight(.bold)
-                        Text("Hier können Sie eine kurze Beschreibung der Region des Landes geben.")
-                        
-                        Text("Menschen: ")
+                        Text("Here, you can provide a brief description of the country's region.")
+
+                        // Section "People"
+                        Text("People:")
                             .font(.headline)
                             .fontWeight(.bold)
-                        Text("Hier können Sie eine kurze Beschreibung der Bevölkerung des Landes geben.")
-                        
-                        Text("Jobs: ")
+                        Text("Here, you can provide a brief description of the country's population.")
+
+                        // Section "Jobs"
+                        Text("Jobs:")
                             .font(.headline)
                             .fontWeight(.bold)
-                        Text("Hier können Sie eine kurze Beschreibung der Arbeitsmöglichkeiten im Land geben.")
-                        
-                        Text("Unternehmen die bereits einen Standort haben")
+                        Text("Here, you can provide a brief description of the job opportunities in the country.")
+
+                        // Heading "Companies with Existing Locations"
+                        Text("Companies with Existing Locations")
                             .font(.headline)
                             .fontWeight(.bold)
-                        
+
                     }
                     .padding()
                     
                     VStack(alignment: .leading, spacing: 20) {
+                        // Zeige die PopularCompanysView
                         PopularCompanysView()
                     }
                 }
                 .frame(width: geometry.size.width, height: geometry.size.height / 1.5)
             }
             .onAppear {
-                selectedImage = imageName // set the default selected image when the view appears
+                selectedImage = imageName // Setze das Standardbild, wenn die Ansicht erscheint
             }
-            .background(Color.white)
+            .background(Color.black)
             .edgesIgnoringSafeArea(.all)
         }
     }

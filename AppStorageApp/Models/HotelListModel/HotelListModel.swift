@@ -1,38 +1,44 @@
-//
-//  HotelListModel.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 28.03.23.
-//
-
 
 import Foundation
 import SwiftUI
 
-//MARK: MODEL
-
-struct Hotels : Identifiable {
-   
+// Das Modell für ein Hotel.
+struct Hotels: Identifiable {
+    // Eine eindeutige ID, die automatisch generiert wird (UUID).
     var id = UUID()
-    let name : String
+    // Der Name des Hotels.
+    let name: String
+    // Der Titel des Hotels.
     let title: String
-    let image : String
+    // Der Name des Bildes, das das Hotel repräsentiert.
+    let image: String
+    // Die Bewertung des Hotels.
     var rating: Int
-    let description : String
-    let price : Int
+    // Eine Beschreibung des Hotels.
+    let description: String
+    // Der Preis des Hotels.
+    let price: Int
+    // Eine Liste von Annehmlichkeiten, die das Hotel bietet.
     let amenities: [String]
-
-   
-    
 }
-// Fake Hoteldaten
 
-private var hotel1 = Hotels(name: "Italien",title: "Schloss · Gastgeber:in ist Nicola", image: "Italien",  rating: 3, description: "Tolles Panorama-Schloss mit großem Pool. Die Unterkunft ist von Weinbergen und Olivenhainen umgeben! Das Hotel liegt im Herzen der Toskana zwischen Florenz und Siena! Ein Bahnhof ist nur 1 km entfernt! WLAN funktioniert immer im gesamten Anwesen. Klimaanlage. 5 Doppelzimmer, 6 Badezimmer. Ein sehr großer Wohnbereich, ideal für Veranstaltungen! Viele Terrassen mit Aussicht und ein erstaunlicher großer Innenhof, von dem aus du direkten Zugang zur kleinen privaten Kirche des Schlosses hast",price: 900, amenities: ["Kamin", "Küche", "Terrasse", "WLAN"])
-private var hotel2 = Hotels(name: "Kanada",title: "Gesamte Unterkunft: Cottage, Gastgeber ist David", image: "Kanada", rating: 4, description: "Willkommen in Muskoka A-Rahmen, dem perfekten Pärchenausflug oder Solo-Retreat, eingebettet in das wunderschöne Hidden Valley. Dieser klassische A-Rahmen aus den 70er Jahren wurde für die moderne Welt neu gestaltet. Wache mit schwankenden Baumkronen auf, mache Gourmet-Mahlzeiten zu und entspanne dich am Feuer mit zweistöckigem Waldblick.",price: 345, amenities: ["Kamin", "Rustikale Küche", "Terrasse mit Garten", "WLAN Standleitung"])
-private var hotel3 = Hotels(name: "Tokio",title:"Gesamte Unterkunft: Privatunterkunft · Gastgeber:in ist Seadiners", image: "Tokio", rating: 3, description: "3 Minuten zu Fuß zum Sunrise Beach. Zu den Aktivitäten gehören ein Außenpool, ein Grill auf dem Char-Broil-Grill, eine Fass-Sauna mit Harvia-Saunaheizung, ein Innen-Whirlpool im Freien mit LED-Licht, Hundeabfahrten mit Ihrem Hund und Surfen im Meer vor Ihnen.",price: 326, amenities: ["offenes Feuer", "küche", "Wald", "Kabel"])
-private var hotel4 = Hotels(name: "Finnland",title:"Gesamte Unterkunft: Chalet · Gastgeber:in ist Tanja", image: "Finnland", rating: 5, description: "Dies ist ein hochwertiges und gut ausgestattetes Chalet mit 4 Schlafzimmern im schönen Lappland.Es ist 200 m zu den Pisten, Skibushaltestelle nebenan und Levi Dorf 10min entfernt.Das Chalet verfügt über eine geräumige, offene Küche/Lounge mit großen Fenstern",price: 141, amenities: ["Kamin", "Küche", "Terrasse", "WLAN"])
-private var hotel5 = Hotels(name: "Suedkorea",title:"Privater Gastgeber", image: "Suedkorea", rating: 4, description: "Hanok Stay Emotional Day befindet sich im Zentrum von Taejo-ro, Jeonju Hanok Village. Nahe gelegene Sehenswürdigkeiten (Concubine, Jeonjeon-Kathedrale, Gyeonggi Pre-Gyeonggi, Hyanggyo usw.) sind 5 Minuten entfernt.Es befindet sich neben der Hauptstraße mit vielen Essensbügeln, und es ist ein sauberer und ziemlich Einfamilien-Hangok-Aufenthalt.",price: 188, amenities: ["Kamin", "Küche", "Terrasse", "WLAN"])
-private var hotel6 = Hotels(name: "CostaRica",title:"Gesamte Unterkunft: Villa · Gastgeber:in ist Petra", image: "CostaRica", rating: 5, description: "Überschreiten Sie die Grenzen zwischen Innen und Außen. Schieben Sie die Wände auf, rutschen Sie durch und sehen Sie die markante Weite der Außenwelt. Direkt über dem schönen Strand mit Meerblick und Dschungel. Gerade in Wall Paper, Dezeen usw. veröffentlicht.",price: 755, amenities: ["Bungalow", "Einheimische", "Garten", "WLAN"])
+// Fake Hoteldaten 
+private var hotel1 = Hotels(name: "Italy", title: "Castle · Hosted by Nicola", image: "Italien", rating: 3, description: "Great panoramic castle with a large pool. The accommodation is surrounded by vineyards and olive groves! The hotel is located in the heart of Tuscany between Florence and Siena! A train station is just 1 km away! WiFi always works throughout the property. Air conditioning. 5 double rooms, 6 bathrooms. A very large living area, ideal for events! Many terraces with views and an amazing large courtyard that gives you direct access to the castle's small private church.", price: 900, amenities: ["Fireplace", "Kitchen", "Terrace", "WiFi"])
+
+private var hotel2 = Hotels(name: "Canada", title: "Entire Cottage · Hosted by David", image: "Kanada", rating: 4, description: "Welcome to Muskoka A-Frame, the perfect couples' getaway or solo retreat nestled in beautiful Hidden Valley. This classic 70s A-frame has been reimagined for the modern world. Wake up to swaying treetops, whip up gourmet meals, and relax by the fire with two-story woodland views.", price: 345, amenities: ["Fireplace", "Rustic Kitchen", "Garden Terrace", "Dedicated WiFi"])
+
+private var hotel3 = Hotels(name: "Tokyo", title: "Entire Private Accommodation · Hosted by Seadiners", image: "tokio", rating: 3, description: "3 minutes walk to Sunrise Beach. Activities include an outdoor pool, a barbecue on the Char-Broil grill, a barrel sauna with Harvia sauna heater, an indoor-outdoor hot tub with LED lights, dog departures with your dog, and surfing the sea in front of you.", price: 326, amenities: ["Open Fire", "Kitchen", "Forest", "Cable"])
+
+private var hotel4 = Hotels(name: "Finland", title: "Entire Chalet · Hosted by Tanja", image: "Finnland", rating: 5, description: "This is a high-quality and well-equipped 4-bedroom chalet in beautiful Lapland. It is 200m to the slopes, ski bus stop next door, and Levi village 10min away. The chalet has a spacious open kitchen/lounge with large windows.", price: 141, amenities: ["Fireplace", "Kitchen", "Terrace", "WiFi"])
+
+private var hotel5 = Hotels(name: "South Korea", title: "Private Host", image: "Suedkorea", rating: 4, description: "Hanok Stay Emotional Day is located in the center of Taejo-ro, Jeonju Hanok Village. Nearby attractions (Concubine, Jeonjeon Cathedral, Gyeonggi Pre-Gyeonggi, Hyanggyo, etc.) are 5 minutes away. It is located next to the main street with many food stalls, and it is a clean and pretty single-family Hangok stay.", price: 188, amenities: ["Fireplace", "Kitchen", "Terrace", "WiFi"])
+
+private var hotel6 = Hotels(name: "Costa Rica", title: "Entire Villa · Hosted by Petra", image: "CostaRica", rating: 5, description: "Cross the boundaries between indoor and outdoor. Slide the walls, slip through, and see the striking expanse of the outside world. Located right above the beautiful beach with ocean views and jungle. Recently featured in Wall Paper, Dezeen, etc.", price: 755, amenities: ["Bungalow", "Locals", "Garden", "WiFi"])
+
+
+
+
+
 
 
 // gefüllte HotelListe mit den oben aufgeführten Hotels

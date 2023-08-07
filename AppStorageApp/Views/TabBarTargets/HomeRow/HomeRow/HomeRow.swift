@@ -11,7 +11,7 @@ struct HomeRow: View {
 
     
     var body: some View {
-        
+        // eine Liste von favorisierten Zielen
         let favoriteTargets = [
                 FavoriteTargets(name: "Eifelturm", imageName: "eiffel_tower"),
                 FavoriteTargets(name: "Spain", imageName: "spain"),
@@ -21,23 +21,23 @@ struct HomeRow: View {
         
         NavigationStack {
             ZStack {
-                Image("roma")
+                Image("roma") // oberes Bild
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(height: 650).opacity(0.8)
                     .position(x:196,y:250)
                 
-                // Button
+                // Button wo ein sheet öffnet wo man die Möglichkeit hat sich auszuloggen
                 Button(action: {
                     self.showShapeOne = true
                 }, label: {
                     Image(systemName: "figure.walk.arrival")
                         .padding()
-                        .background(Color.red.opacity(0.5))
-                        .clipShape(Circle())
+                        .background(Color.red.opacity(0.5)) // legt den Hintergrund auf rot
+                        .clipShape(Circle()) // definiert die Kreisform
                         .foregroundColor(.black.opacity(1.3))
-                        .blur(radius: 0.5)
-                        .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25)
+                        .blur(radius: 0.5) // Unschärfeeffekt
+                        .shadow(color: .gray, radius: 0.55, x: 0.25, y: 0.25) // grauer Schatten
                         .padding(.horizontal, 50)
                         .padding(.vertical, 16)
                     
@@ -52,7 +52,7 @@ struct HomeRow: View {
                 VStack(alignment: .center) {
                     
                     SearchBarHomeRow(text: $text)
-                        .position(x:250, y:30)
+                        .position(x:250, y:30) // legt Position fest 
                         .opacity(1.05)
                         .blur(radius: 0.8)
                         .shadow(color: .gray, radius: 0.65, x: 0.35, y: 0.35)

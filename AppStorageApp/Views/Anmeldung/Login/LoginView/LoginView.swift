@@ -50,7 +50,7 @@ struct LoginView: View {
                     .foregroundColor(.white)
                     .frame(width: 370, height: 45)
                     .background(Color.black.opacity(0.23))
-                    .cornerRadius(12)
+                    .cornerRadius(6)
                     .overlay(
                         RoundedRectangle(cornerRadius: 18)
                             .stroke(Color.gray, lineWidth: 1)
@@ -64,7 +64,7 @@ struct LoginView: View {
                     .foregroundColor(.white)
                     .frame(width: 370, height: 45)
                     .background(Color.black.opacity(0.23))
-                    .cornerRadius(12)
+                    .cornerRadius(6)
                     .overlay(
                         RoundedRectangle(cornerRadius: 18)
                             .stroke(Color.gray, lineWidth: 1)

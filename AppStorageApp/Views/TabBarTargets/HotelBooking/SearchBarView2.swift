@@ -1,9 +1,3 @@
-//
-//  SearchBarView2.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 31.03.23.
-//
 
 import SwiftUI
 

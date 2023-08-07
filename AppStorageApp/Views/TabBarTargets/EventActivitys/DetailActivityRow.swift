@@ -1,12 +1,3 @@
-//
-//  DetailActivityRow.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 28.03.23.
-//
-
-import SwiftUI
-import MapKit
 
 import SwiftUI
 import MapKit
@@ -20,7 +11,7 @@ struct DetailActivityRow: View {
     var body: some View {
         ZStack {
             // Ein Farbverlauf wird als Hintergrund festgelegt
-            LinearGradient(colors: [.black.opacity(0.57), .black.opacity(0.47)], startPoint: .topLeading, endPoint: .bottomLeading)
+            LinearGradient(colors: [.gray.opacity(0.57), .gray.opacity(0.47)], startPoint: .topLeading, endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
             
             VStack(alignment: .leading, spacing: 10) {

@@ -1,15 +1,10 @@
-//
-//  Restaurant.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 03.04.23.
-//
-
 import Foundation
 import SwiftUI
 
-// Model für die Restaurants
-
-struct Restaurant : Hashable {
-    let name, imageName: String
+// Das Modell für Restaurants.
+struct Restaurant: Hashable {
+    // Der Name des Restaurants.
+    let name: String
+    // Der Name des Bildes, das dem Restaurant zugeordnet ist.
+    let imageName: String
 }

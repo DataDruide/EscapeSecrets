@@ -1,4 +1,5 @@
 import SwiftUI
+
 struct FloatingActionButton: View {
     @State var showMenu = false
     @State var CreatedMemberViewIsShowing = false
@@ -25,21 +26,36 @@ struct FloatingActionButton: View {
                     }
                    
                 }
+                .transition(.customSlide) // Apply the custom transition here
             }
             Button(action: {
                 self.showMenu.toggle()
             }) {
-                Image(systemName: "pencil.tip.crop.circle.badge.plus")
+                Image(systemName: "ticket")
                     .frame(width: 45, height: 45)
                     .aspectRatio(contentMode: .fill)
-                    .foregroundColor(Color(red: 90/255, green: 125/255, blue: 115/255))
+                    .foregroundColor(Color(red: 25/255, green: 25/255, blue: 25/255))
                     .background(Circle())
-                    .foregroundColor(.green.opacity(0.9))
+                    .foregroundColor(.yellow.opacity(0.5))
                     .shadow(color: .gray, radius: 0.5, x: 1, y: 1)
             }
         }
     }
 }
+
+// Define a custom transition animation
+extension AnyTransition {
+    static var customSlide: AnyTransition {
+        let insertion = AnyTransition.move(edge: .trailing)
+            .combined(with: .opacity)
+            .animation(.spring())
+        let removal = AnyTransition.move(edge: .trailing)
+            .combined(with: .opacity)
+            .animation(.spring())
+        return .asymmetric(insertion: insertion, removal: removal)
+    }
+}
+
 
 struct MenuItem: View {
     var icon: String
@@ -47,11 +63,12 @@ struct MenuItem: View {
     var body: some View {
         ZStack {
             Circle()
-                .foregroundColor(Color(red: 75/255, green: 115/255, blue: 115/255))
+                .foregroundColor(Color(red: 200/255, green: 200/255, blue: 200/255))
                 .frame(width: 45, height: 45)
             Image(systemName: icon)
                 .aspectRatio(contentMode: .fill)
                 .foregroundColor(.black)
+                .opacity(0.65)
         }
         .shadow(color: .gray, radius: 0.3, x: 1, y: 1)
         .transition(.move(edge: .trailing))

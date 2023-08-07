@@ -1,11 +1,3 @@
-//
-//  VideoAssistentView.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 16.04.23.
-//
-
-
 import SwiftUI
 import AVKit
 
@@ -16,31 +8,32 @@ struct VideoAssistentView: View {
     private let player: AVPlayer
     
     init() {
-        
+        // Initialisierung des AVPlayers mit dem Video "FlightAssistent.mp4" aus dem Bundle
         if let videoURL = Bundle.main.url(forResource: "FlightAssistent", withExtension: "mp4") {
             self.player = AVPlayer(url: videoURL)
-            
         } else {
-            
+            // Fehlerbehandlung, falls die Video-URL nicht gefunden werden kann
             fatalError("Video URL not found")
         }
         
-        // Set up the audio player with an empty URL to mute the audio
+        // Den Audio-Player mit einer leeren URL einrichten, um den Ton zu stummschalten
         self.player.isMuted = true
     }
     
     var body: some View {
-      
         ZStack {
+            // VideoPlayer zur Anzeige des Videos hinzufügen
             VideoPlayer(player: player)
                 .onAppear() {
+                    // Das Video abspielen, wenn die Ansicht erscheint
                     player.play()
-                    
                 }
-            }
-            .ignoresSafeArea()
-            .onDisappear() {
-                player.pause()
+        }
+        // Den sicheren Bereich ignorieren, damit das Video über den gesamten Bildschirm abgedeckt wird
+        .ignoresSafeArea()
+        .onDisappear() {
+            // Das Video pausieren, wenn die Ansicht verschwindet
+            player.pause()
         }
     }
 }

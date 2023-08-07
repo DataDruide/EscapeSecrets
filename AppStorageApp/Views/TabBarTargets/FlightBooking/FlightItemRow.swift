@@ -1,9 +1,3 @@
-//
-//  FlightItemRow.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 30.03.23.
-//
 
 import SwiftUI
 
@@ -16,7 +10,7 @@ struct FlightItemRow: View {
     var body: some View {
         ZStack {
             // Ein Farbverlauf wird als Hintergrund festgelegt
-            LinearGradient(colors: [.black.opacity(0.57), .black.opacity(0.47)], startPoint: .topLeading, endPoint: .bottomLeading)
+            LinearGradient(colors: [.gray.opacity(0.57), .gray.opacity(0.47)], startPoint: .topLeading, endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
             
             
@@ -63,4 +57,14 @@ struct FlightItemRow: View {
         }
     }
     
+}
+struct FlightItemRow_Preview: PreviewProvider {
+    static var previews: some View {
+        let flight = Flights(name: "Sample Flight", image: "sample_image", description: "Sample description", price: 99, duration: "2h 30m", departureTime: "10:00 AM", arrivalTime: "12:30 PM", origin: "ABC", destination: "XYZ", stops: 1, airlineCode: "ABC123", baggageAllowance: "20 kg", wifiAvailability: true, inFlightEntertainment: true, mealIncluded: true)
+        let flightType = FlightTypeViewModel()
+        
+        return FlightItemRow(flight: flight)
+            .environmentObject(flightType)
+            .previewLayout(.fixed(width: 375, height: 150))
+    }
 }

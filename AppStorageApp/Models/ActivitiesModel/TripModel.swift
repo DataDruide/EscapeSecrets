@@ -37,14 +37,7 @@ var activities = [Activities(name: "SURFEN", image: "activityimage1",description
                        Activities(name: "KAYAK BOAT", image: "activityimage4",description: "Jump into this massive river in high speed\nyour decision is important, you will\nbe in the flow of the life surrended by the\ncliffs. Here you are small and become big\nafter this ",price: 80,latitude: 43.7614, longitude: 6.3788),
                        Activities(name: "GUIDE-TOUR", image: "activityimage2",description: "Visit a beautiful and pittoresque city\nhome to century of history ,\naccompagned by the best and passionate local\nguide. You will visit, learn and eat like never.", price: 200,latitude: 35.6773648, longitude: 139.6961693)]
 
-// Definition der Struct "Places", die einen Ort beschreibt
-struct Places : Identifiable {
-    var id = UUID()
-    let name : String
-    let description : String
-    let image : String
-    
-}
+
 
 // Erstellen von Instanzen der Orte-Struct und Speichern in einem Array
 var gorgesDuVerdon = Places(name: "gorges du verdon", description: "kayak", image: "activityimage4")

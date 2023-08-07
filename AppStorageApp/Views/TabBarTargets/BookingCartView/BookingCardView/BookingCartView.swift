@@ -1,15 +1,3 @@
-//
-//  BookingCartView.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 28.03.23.
-//
-//
-//  BookingCartView.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 28.03.23.
-//
 
 // MARK: - PROPERTY
 

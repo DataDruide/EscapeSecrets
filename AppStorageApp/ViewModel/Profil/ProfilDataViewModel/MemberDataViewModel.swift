@@ -21,6 +21,8 @@ import SwiftUI
     // NSPersistentContainer ist eine Klasse von CoreData, die die Kern-Daten-Stack-Infrastruktur bereitstellt.
     // Der Persistent Container wird verwendet, um auf die CoreData-Modellobjekte zuzugreifen.
     let container : NSPersistentContainer
+    
+    // @Published macht es manipulierbar
 
     // Ein Array von UserEntity-Objekten, das aus der CoreData-Datenbank geladen wird.
     @Published var savedUserDaten : [UserEntity] = []

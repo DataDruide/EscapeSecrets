@@ -1,19 +1,12 @@
-//
-//  FavoriteTargets.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 13.04.23.
-//
-//
 import Foundation
 import SwiftUI
 
-
-// Model für die Länder und Detailansicht
-
-struct FavoriteTargets : Hashable, Identifiable{
+// Das Modell für Länder und deren Detailansicht.
+struct FavoriteTargets: Hashable, Identifiable {
+    // Eine eindeutige ID, die automatisch generiert wird (UUID).
     var id = UUID()
-    
-    let name : String
-    let imageName : String
+    // Der Name des Landes.
+    let name: String
+    // Der Name des Bildes, das dem Land zugeordnet ist.
+    let imageName: String
 }

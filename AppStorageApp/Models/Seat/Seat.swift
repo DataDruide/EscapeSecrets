@@ -1,18 +1,9 @@
-//
-//  Seat.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 19.03.23.
-//
-
 import SwiftUI
 import Foundation
 
-
-// Modell Sitz
-
+// Das Modell für einen Sitzplatz.
 struct Seat {
-    var seatNumber: String  // Sitznummer
-    var isBooked: Bool      // ist gebucht
-    // Weitere relevante Sitzplatzinformationen hinzufügen...
+    var seatNumber: String  // Die Sitznummer.
+    var isBooked: Bool      // Gibt an, ob der Sitzplatz gebucht ist (true) oder nicht (false).
+    // Hier können weitere relevante Sitzplatzinformationen hinzugefügt werden...
 }

@@ -1,12 +1,3 @@
-//
-//  TicketViewModel.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 10.04.23.
-//
-
-
-
 
 import Foundation
 import Combine

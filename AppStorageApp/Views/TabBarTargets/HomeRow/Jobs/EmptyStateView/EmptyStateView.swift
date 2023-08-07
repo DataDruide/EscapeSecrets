@@ -1,38 +1,39 @@
-//
-//  EmptyStateView.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 14.04.23.
-//
-
 import SwiftUI
 
+// Definition der SwiftUI-View "EmptyStateView"
 struct EmptyStateView: View {
     var body: some View {
         ZStack {
             // Ein Farbverlauf wird als Hintergrund festgelegt
-            LinearGradient(colors: [.black,.black,.gray], startPoint: .topLeading, endPoint: .bottomLeading)
+            LinearGradient(colors: [.white, .gray, Color.black.opacity(0.19)], startPoint: .topLeading, endPoint: .bottomLeading)
                 .edgesIgnoringSafeArea(.all)
             
             VStack {
                 Spacer()
+                
+                // Anzeige eines Symbolbilds aus dem SF-Symbols-System ("graduationcap.circle")
                 Image(systemName: "graduationcap.circle")
                     .foregroundColor(.orange)
                     .font(.system(size: 85))
                     .padding(.bottom)
-                Text("you are looking for a travel and work\n job then you are right here")
+                
+                // Anzeige eines mehrzeiligen Texts
+                Text("Wenn du nach einer Reise- und Arbeitsstelle suchst,\nbist du hier genau richtig.")
                     .font(.headline)
                     .multilineTextAlignment(.center)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
                 Spacer()
             }
             .padding()
-            .foregroundColor(Color(.white))
+            .foregroundColor(Color(.white)) // Festlegung der Textfarbe im gesamten VStack
         }
     }
 }
+
+// Definition der Preview für die EmptyStateView
 struct EmptyStateView_Previews: PreviewProvider {
     static var previews: some View {
-        EmptyStateView()
+        EmptyStateView() // Anzeige der EmptyStateView in der Vorschau
     }
 }

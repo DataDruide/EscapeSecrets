@@ -1,11 +1,3 @@
-//
-//  JobRow.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 01.03.23.
-//
-
-
 
 import SwiftUI
 import Foundation
@@ -56,8 +48,10 @@ struct JobRow: View {
                             }
                             .padding(.vertical, 10)
                             .padding(.horizontal, 20)
-                            .background(Color.yellow)
-                            .cornerRadius(10)
+                            .background(
+                                RoundedRectangle(cornerRadius: 20)
+                                    .foregroundColor(Color(red: 75 / 255, green: 115 / 255, blue: 115 / 255))
+                            )                            .cornerRadius(10)
                             .scaleEffect(isTapped ? 0.9 : 1.0)
                             .animation(.spring())
                             .onTapGesture {
@@ -109,7 +103,7 @@ struct JobRow: View {
             }
             
             
-       }.background(Color.black)
+       }.background(Color.white)
     }
 }
 

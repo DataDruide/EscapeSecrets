@@ -2,7 +2,7 @@ import SwiftUI
 
 struct Home: View {
     
-    // Zustandsvariable zur Verwaltung der TripTypViewModel
+    // Zustandsvariable zur Verwaltung der ViewModels
     @EnvironmentObject var tripType: TripTypeViewModel
     @EnvironmentObject var hotelType: HotelTypeViewModel
     @EnvironmentObject var flightType: FlightTypeViewModel

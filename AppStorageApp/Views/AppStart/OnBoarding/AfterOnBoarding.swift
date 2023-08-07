@@ -1,28 +1,22 @@
-//
-//  OnBoardingPageTwo.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 28.02.23.
-//
-
 import SwiftUI
 
+// Die SwiftUI-View für den Bildschirm nach der Onboarding-Seite.
 struct AfterOnBoarding: View {
     
-    @AppStorage("onBoarding")  var onBoarding = false
+    // AppStorage, um den Zustand der Onboarding-Seite zu verfolgen (ob sie bereits angezeigt wurde oder nicht).
+    @AppStorage("onBoarding") var onBoarding = false
     
-    
+    // Ein State-Property, um zu verfolgen, ob die LoginView angezeigt werden soll.
     @State private var showLoginView = false
-    @State private var RestartOnboarding = false
+    
+    // State-Properties für Animationen.
     @State private var size = 0.8
     @State private var opacity = 0.5
-    
     @State private var imageRotation: Double = 0
-    
     
     var body: some View {
         ZStack {
-            
+            // Hintergrundbild.
             Image("studentonroad")
                 .resizable()
                 .scaledToFill()
@@ -34,7 +28,7 @@ struct AfterOnBoarding: View {
                 .opacity(01.05)
 
             VStack(spacing: 40) {
-                
+                // Überschrift.
                 Text("Explore ...")
                     .multilineTextAlignment(.center)
                     .foregroundColor(.yellow)
@@ -44,6 +38,7 @@ struct AfterOnBoarding: View {
                 
                 Spacer()
                 
+                // Bild mit Effekten.
                 Image("neuMap")
                     .resizable()
                     .frame(width: 150, height: 150)
@@ -52,6 +47,7 @@ struct AfterOnBoarding: View {
                     .shadow(color: .gray, radius: 0.65, x: 0.35, y: 0.35)
                     .padding(.bottom, 50)
                 
+                // Text.
                 Text("Hello\nCan I help You?........")
                     .multilineTextAlignment(.center)
                     .foregroundColor(.white)
@@ -60,7 +56,7 @@ struct AfterOnBoarding: View {
                 
                 Spacer()
                 
-                // 1 Button
+                // Button zum Entdecken.
                 Button(action: {
                     self.showLoginView = true
                 }, label: {
@@ -86,15 +82,14 @@ struct AfterOnBoarding: View {
                 .sheet(isPresented: $showLoginView) {
                     LoginView()
                 }
-               
             }
         }
     }
 }
 
+// Die Preview-Provider für die `AfterOnBoarding`.
 struct AfterOnBoarding_Previews: PreviewProvider {
     static var previews: some View {
         AfterOnBoarding()
     }
 }
-

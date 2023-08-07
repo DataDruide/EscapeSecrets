@@ -1,9 +1,3 @@
-//
-//  DashRow1.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 16.03.23.
-//
 
 import SwiftUI
 

@@ -1,17 +1,10 @@
-//
-//  Company.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 03.04.23.
-//
-
-
 import Foundation
 import SwiftUI
 
-
-// Model für die Companys wo Projekt positiv bewerten
-
-struct Company : Hashable {
-    let name, imageName: String
+// Das Modell für Unternehmen, die ein Projekt positiv bewerten.
+struct Company: Hashable {
+    // Der Name des Unternehmens.
+    let name: String
+    // Der Name des Bildes, das dem Unternehmen zugeordnet ist.
+    let imageName: String
 }

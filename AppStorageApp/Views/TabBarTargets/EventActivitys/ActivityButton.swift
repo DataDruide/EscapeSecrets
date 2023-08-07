@@ -1,9 +1,4 @@
-//
-//  ActivityButton.swift
-//  AppStorageApp
-//
-//  Created by Marcel Zimmermann on 28.03.23.
-//
+
 import SwiftUI
 
 struct ActivityButton: View {
@@ -44,5 +39,14 @@ struct ActivityButton: View {
             }
                 
         }
+    }
+}
+
+
+
+struct ActivityButton_Previews: PreviewProvider {
+    static var previews: some View {
+        ActivityButton(name: "Hiking", image: "hiking")
+            .previewLayout(.fixed(width: 200, height: 200)) // Optionale Größeneinstellung für die Vorschau
     }
 }
